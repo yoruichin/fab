@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <title>Fab Academy 2016 | MTM Group 2</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="bootstrap/css/fabacademy.css" rel="stylesheet">
+    
+    <!-- 3D files viewer -->
+    <script type="text/javascript" src="media/jsc3d_ie.min.js"></script>
+	<script type="text/javascript" src="media/jsc3d.min.js"></script>
+    <script type="text/javascript" src="media/jsc3d.webgl.js"></script>
+    <script type="text/javascript" src="media/jsc3d.touch.js"></script>
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="bootstrap/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="bootstrap/js/ie-emulation-modes-warning.js"></script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2><strong>MTM Group 2</strong></h2>
+
+<center><div class="container"><center>
+      <img src="photo/mtm2slide.png" class="img-thumbnail" width="800">
+</div></p></center><br>
+
+<center><iframe width="560" height="315" src="https://www.youtube.com/embed/V8Lfzwq7grg" frameborder="0" allowfullscreen></iframe><br>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/dc83SgVQFyw" frameborder="0" allowfullscreen></iframe></center><br><br>
+
+<h3>Project Requirement</h3>
+
+<ul>
+	 <li>Make a machine, including the end effector; build the passive parts; and operate it</li>
+	 <li>Automate the machine</li>
+	 <li>Document the group project on the <a href="index.html" target="_blank">group page</a> and individual contributions</li>
+</ul><br>
+
+<h3>Project Scope</h3>
+
+<p>Our group comprises of <a href="http://archive.fabacademy.org/archives/2016/fablabsingapore/students/37/index.html" target="_blank">Mark</a>, <a href="http://archive.fabacademy.org/archives/2016/fablabsingapore/students/179/index.html" target="_blank">Tham</a>, <a href="http://archive.fabacademy.org/archives/2016/fablabsingapore/students/101/index.html" target="_blank">Kaichi</a>, and <a href="http://archive.fabacademy.org/archives/2016/fablabsingapore/students/156/" target="_blank">Siew Chin</a>. We have decided to:</p>
+  <ul><li>Stage 1: make a xy-axis machine that drives a pen to draw various shapes on a piece of paper.</li>
+    <li>Stage 2 : make a moving platform for a target and shoot it down with rubberbands. </li><br>
+
+</ul>
+<h3>Workload Distribution</h3>
+
+<p>As this is a group project spread over 2 weeks (30 Mar - 13 Apr 2016), we have decided to split up the workload as such: 
+
+	<ul>
+		<li>Designing of the housing using AutoCAD - <font color="red">Tham</font></li>
+		<li>CNC Routing of plywood stoppers using StarCAM 2D router - <font color="red">Tham</font></li>
+		<li>Lasercutting the design using Epilog Fusion M2 40 - <font color="green">Kaichi</font></li>
+		<li>Assembly of the stepper motor housing - <font color="green">Kaichi</font> & <font color="red">Tham</font></li>
+		<li>Programming on Mac platform - <font color="orange">Mark</font></li>
+		<li>Programming on Windows platform - <font color="blue">Siew Chin</font></li>
+		<li>Modifying GUI codes of wxGestalt IDE - <font color="orange">Mark</font></li>
+    <li>Designing and making a "gun" which can load rubberbands - <font color="orange">Mark</font></li>
+    <li>Milling of FTDI board - <font color="blue">Siew Chin</font></li>
+    <li>Soldering of FTDI board - <font color="green">Kaichi</font> & <font color="orange">Mark</font></li>
+		<li>Video-editing - <font color="blue">Siew Chin</font></li>
+		<li>Documentation and update of group page - <font color="blue">Siew Chin</font></li>
+	</ul></p><br>
+
+<h2><strong>Mechanical Design</strong></h2>
+
+<h3>Designing the housing</h3>
+
+<p>We would be using 2.5mm thick plywood as that is the material we have been given. Tham designed the housing using AutoCAD. We went through a few versions of designing and cutting before being satisfied by the outcome. <br></p>
+
+<p>
+<div class="container"><center>
+      <img src="photo/mechanical01.jpg" class="img-thumbnail" width="400">
+      <img src="photo/mechanical02.jpg" class="img-thumbnail" width="400">
+      <img src="photo/mechanical03.jpg" class="img-thumbnail" width="400">
+      <img src="photo/mechanical04.jpg" class="img-thumbnail" width="400">
+      <legend>Designing, cutting the housing of the stepper motor</legend></center>
+</div><br><br></p>
+
+<h3>Putting the parts together</h3>
+
+<p>In this initial phase, we were not too worried with asthetic, as our goal was to make the machine work, which was why we secured some parts using cable ties. </p>
+
+<p>
+<div class="container"><center>
+      <img src="photo/assembly01.jpg" class="img-thumbnail" width="400">
+      <img src="photo/assembly02.jpg" class="img-thumbnail" width="400">
+      <img src="photo/assembly03.jpg" class="img-thumbnail" width="400">
+      <img src="photo/assembly04.jpg" class="img-thumbnail" width="400">
+      <img src="photo/assembly05.jpg" class="img-thumbnail" width="400">
+      <img src="photo/assembly06.jpg" class="img-thumbnail" width="400">
+      <legend>Assembling the housing of the stepper motor</legend></center>
+</div><br><br></p>
+
+<h3>Problem faced during designing stage</h3>
+
+<p>The workflow chosen was to first draw the a sketch of the design using pen and paper, then take measurement and move to AutoCAD. Then we import the drawing into PDF so that eventually we move to Coreldraw. However, the measurements in PDF format was not accurate as it turned out to be smaller than the actual size. We have to revise the image to bring it to-size. In the end, we used dxf and dwg which gave a more accurate conversion. </p>
+
+<p>
+<div class="container"><center>
+      <img src="photo/drawing01.jpg" class="img-thumbnail" width="300">
+      <img src="photo/drawing02.jpg" class="img-thumbnail" width="300">
+      <img src="photo/drawing03.jpg" class="img-thumbnail" width="300">
+      <legend>Sketch of the design of pen tool</legend></center>
+</div><br><br></p>
+
+<p>We noticed the poor support for the y-axis housing and decided to improve on it. Kaichi took measurement of the height of the housing, then designed 2 wheels from acrylic, which he cut using a laser cutter. Tham routed the bridging support from cnc router out of plywood. This outcome was much more stable than the single wheel previously. </p>
+
+<p>
+<div class="container"><center>
+      <img src="photo/assembly04.jpg" class="img-thumbnail" width="300">
+      <img src="photo/assembly04a.jpg" class="img-thumbnail" width="300">
+      <img src="photo/assembly04b.jpg" class="img-thumbnail" width="300">
+      <legend>Improving the support of y-axis housing</legend></center>
+</div></p><br><br>
+
+<h2><strong>Machine Design</strong></h2>
+
+<h3>Setting up the Virtual Machine environment</h3>
+
+  <p>Referring to the <a href="http://archive.fabacademy.org/archives/2016/doc/projects/wxgestalt.html" target="_blank">Tutorial on wxGestalt</a>, we found that there are many steps to take to prepare the environment to communicate with the fabnet boards. We need to use Python 2.7 instead of 3.5 because the libraries needed were customized to version 2.7. </p>
+  <ol>
+    <li>Install <a href="https://www.python.org/downloads/" target="_blank">Python 2.7</a></li>
+    <li>Install <a href="https://pip.pypa.io/en/stable/installing/" target="_blank">pip</a> on windows</li>
+    <li>Install <a href="http://pythonhosted.org/pyserial/pyserial.html#installation" target="_blank">pyserial</a> 3.0.1</li>
+    <li>Install <a href="http://fabacademy.org/archives/2015/doc/MachineMakingNotes.html" target="_blank">pygestalt</a></li>
+    <li>Install <a href="http://www.ftdichip.com/Drivers/VCP.htm" target="_blank">FTDI drivers</a> for windows. <a href="http://www.ftdichip.com/Support/Documents/InstallGuides/AN_396%20FTDI%20Drivers%20Installation%20Guide%20for%20Windows%2010.pdf" target="_blank">PDF Instruction</a></li>
+    <li>Install <a href="http://www.wxpython.org/download.php" target="_blank">wxPython</a> 32bit for python 2.7 </li>
+    <li>Execute <a href="http://archive.fabacademy.org/archives/2016/doc/projects/wxgestalt.html" target="_blank">wxgestalt</a></li>
+  </ol><br>
+ 
+  <h3>Understanding Stepper motor</h3>
+
+  <p>We are using Nema 17 stepper motor. It is a bipolar stepper motor. It has 200 steps per revolution, 1.8 degrees per step. We need to have a better understanding of how a stepper motor works. Instructables has a good tutorial on <a href="http://www.instructables.com/id/How-to-use-a-Stepper-Motor/" target="_blank">How to use a stepper motor</a>.</p><br>
+
+  <h3>Understand the Gestalt boards</h3>
+
+  <p>When connected to FTDI cable, gestalt boards can be daisy-chained to one another. In the command prompt, executing the python file the first time will initialize the nodes and tries to identify the X-axis and Y-axis nodes, indicated by a blue blinking LED on the gestalt board. Press the pushbutton on the gestalt board identifies it as a X or Y or Z node, depending on your codes. Once all the gestalt nodes have been identified, a persistence file, test.vmp containing this information is saved in the project folder. If the machine configuration is changed, test.vmp has to be deleted and the nodes re-identified.</p><br>
+  
+  <H3>Python Programming</H3>
+
+  <p>Based on the example files found in <b>~\pygestalt-master\examples\machines\htmaa\</b>, we learned the various functions of the programme.</p>
+
+  <ul>
+      <li><b>initInterfaces</b> sets up the communication between the software virtual machine and the serial bus.</li>
+      <li><b>initControllers</b> sets up software to control the two nodes for each axis, using the communication protocols defined in <b>086-005a.py</b>.</li>
+      <li><b>initCoordinates</b> stores the initial coordinates of the machine.</li>
+      <li><b>initKinematics</b> specifies the motor stepping, the number of turns on the leadscrew, and the screw handedness. This appears to be different from the code in <b>086-005a.py</b> which issues lower level motor commands over the bus.</li>
+      <li><b>initFunctions</b> specifies the operations that can be run on the virtual machine, which current consist of just the <b>move</b> operation—simultaneously moving the x and y axis nodes. There appears to be a stub for a <b>jog</b> function, which will presumably move the motors more quickly.</li>
+  </ul><br>
+
+<H3>Stage 1: Drawing Machine</H3><br>
+
+<p>Mapping the Portname - Windows environment</p>
+  <pre class="prettyprint linenums">
+def initInterfaces(self):
+    if self.providedInterface: self.fabnet = self.providedInterface   #providedInterface is defined in the virtualMachine class.
+    else: self.fabnet = interfaces.gestaltInterface('FABNET', interfaces.serialInterface(baudRate = 115200, interfaceType = 'ftdi', portName = '<font color="red">COM3</font>'))
+</pre>
+
+<p>Mapping the Portname - Mac environment</p>
+  <pre class="prettyprint linenums">
+def initInterfaces(self):
+    if self.providedInterface: self.fabnet = self.providedInterface   #providedInterface is defined in the virtualMachine class.
+    else: self.fabnet = interfaces.gestaltInterface('FABNET', interfaces.serialInterface(baudRate = 115200, interfaceType = 'ftdi', portName = '<font color="red">/dev/tty.usbserial-FTXW6Q4L</font>'))
+</pre>
+
+<p>To draw a Square</p>
+	<pre class="prettyprint linenums">
+	moves = [[0,0],[-40,0],[-40,40],[0,40],[0,0]]
+	</pre>
+
+<p>To draw a Triangle</p>
+	<pre class="prettyprint linenums">
+	moves = [[0,0],[10,20],[30,0],[0,0]]
+	</pre>
+<br>
+
+<h3>Exploring GUI control</h3>
+
+<p>We referred to a <a href="http://fabacademy.org/archives/2015/as/labs/kamakura/machine.html" target="_blank">past project</a> that was similar to us. Credits goes to Asako from Kamakura. We explored and tried to learn their method by modifying their Tkinter module. This is the standard Python interface to TK GUI toolkit from Scriptics.</p><br>
+
+<div class="container"><center>
+      <img src="photo/gui01.jpg" class="img-thumbnail" width="400">
+      <img src="photo/gui02.jpg" class="img-thumbnail" width="400">
+      <legend>Commanding a mouse movement to draw something</legend></center>
+</div><br></p>
+
+<p>To command a mouse movement to draw something:</p>
+  <pre class="prettyprint linenums">
+  class Draw:
+        
+    def on_pressed(self, event):
+        self.sx = event.x
+        self.sy = event.y
+        self.canvas.create_oval(self.sx, self.sy, event.x, event.y, outline = "black", width = 2)
+ 
+    def on_dragged(self, event):
+        self.canvas.create_line(self.sx, self.sy, event.x, event.y, fill = "black", width = 2)
+        self.sx = event.x
+        self.sy = event.y
+        
+        self.xx = self.sx/1.5
+        self.yy = self.sy/1.5
+        #print self.sx
+        moves = [[self.xx,self.yy]]
+
+        # Move!
+        for move in moves:
+            stages.move(move, 0)
+            status = stages.xAxisNode.spinStatusRequest()
+            # This checks to see if the move is done.
+            while status['stepsRemaining'] > 0:
+                time.sleep(0.001)
+                status = stages.xAxisNode.spinStatusRequest()
+ 
+    def __init__(self):
+        window = Tkinter.Tk()
+        self.canvas = Tkinter.Canvas(window, bg = "white", width = 150, height = 150)
+        self.canvas.pack()
+                
+        quit_button = Tkinter.Button(window, text = "Exit", command = window.quit)
+        quit_button.pack(side = Tkinter.RIGHT)
+        
+         self.canvas.bind("<ButtonPress-1>", self.on_pressed)
+        self.canvas.bind("<B1-Motion>", self.on_dragged)
+ 
+        window.mainloop()
+
+Draw()   
+  </pre>
+<br>
+
+<h3>Outcome</h3><br>
+
+<div class="container"><center>
+      <img src="photo/drawtriangle.jpg" class="img-thumbnail" width="300">
+      <img src="photo/drawsquare.jpg" class="img-thumbnail" width="300">
+      <img src="photo/drawstar.jpg" class="img-thumbnail" width="300">
+      <legend>Commanding the machine to draw something</legend></center><br><br>
+
+<h3>Stage 2: Hit the target</h3>
+
+<p>After we completed the drawing machine, we were inspired and challenged ourselves to develop the model further. For the fun of it, Mark 3d-printed a little bear to act as a target and lasercut a gun that can load rubberbands.</p>
+
+<p>To move the platform</p>
+  <pre class="prettyprint linenums">
+  moves = [[0,0],[-100,0],[-100,0],[-100,0],[0,100],[0,0],[-100,100],[0,0],[-50,50],[0,100],[0,0]]
+  </pre>
+<br>
+
+<div class="container"><center>
+      <img src="photo/bear.jpg" class="img-thumbnail" width="600">
+      <legend>Hitting a moving target with a toy gun loaded with rubberbands</legend></center><br><br>
+
+      <center><iframe width="560" height="315" src="https://www.youtube.com/embed/dc83SgVQFyw" frameborder="0" allowfullscreen></iframe></center><br>
+
+
+<h3>Mistake One</h3>
+
+<p>Yes, we made quite a few mistakes too. First, we "borrow" the design of our ftdi interface board from group 1 and it turned out that we had problems communicating, because the board did not have resistors. Then, Mark came out with the idea to solder the additional resistors to the header. We were able to use it for 2-3 days but on 13 Apr, this board decided to act up again. We didn't know why the gestalt boards refused to light up when we connect to power and the computer. Turned out that the ftdi board was short, VCC on ftdi with communicating pin on gestalt board. This resulted in 2 damaged gestalt boards. We decided we had better to re-mill the fdti interface board again, using <a href="http://fabacademy.org/archives/2015/doc/images/copper-V3.png" target="_blank">this design</a> on<a href="http://fabacademy.org/archives/2015/doc/MachineMakingNotes.html" target="_blank">Tutorial page</a>. Lesson learned: taking shortcuts can be costly.<br><br>
+
+This time, the challenge was to mill the board by importing a png file, instead of what we've previously learned, which was making from scratch using the eagle schematic to board file to gcode to etch file. </p><br>
+
+<div class="container"><center>
+      <img src="photo/mistake02.jpg" class="img-thumbnail" width="400">
+      <img src="photo/mistake03.jpg" class="img-thumbnail" width="400">
+      <img src="photo/mistake04.jpg" class="img-thumbnail" width="400">
+      <img src="photo/ftdiboard.jpg" class="img-thumbnail" width="400">
+      <legend>Communication error because of the lack of resistors, which we rectified with soldering</legend></center>
+</div></p><br>
+
+<p>To mill PCB board via "Import Image 2D" on <a href="http://planet-cnc.com/software/" target="_blank">CNC USB Software</a>:</p>
+<ul>
+<li>File > Open > Import Image 2D</li>
+<li>Adjust Image Parameters accordingly, in this case:</li>
+<ul><li>Despecle level: 6</li>
+  <li>Filter Iterations: 4</li></ul>
+<li>Calibrate XYZ axis</li>
+<li>If cuts are not deep enough, perform a second pass. Set Z-axis 0.05mm deeper.</li> 
+<li>Bring XY back to zero by selecting Machine > Go To > Zero XY</li>
+</ul>
+
+<div class="container"><center>
+      <img src="photo/pcbmill01.jpg" class="img-thumbnail" width="500"><br>
+      <img src="photo/pcbmill02.jpg" class="img-thumbnail" width="500">
+      <img src="photo/pcbmill03.jpg" class="img-thumbnail" width="500">  
+      <legend>Difference in toolpaths after adjusting the parameters</legend></center>
+</div></p><br>
+</ul>
+
+<h3>Mistake Two</h3>
+
+<p>Siew Chin made a noob mistake. Packing the board next to the motor steppers resulted in a disaster of damaging 2 boards because the board short-circuited on contact with metal. One colleague suggested to use electrical tape to protect the base from accidental short in future. Indeed, "Failures are the beginning of success", said one colleague. She will remember this lesson for good thanks to this mistake. Thanks to Steven who took the challenge to troubleshoot the boards, and managed to revived them. Basically he removed and replaced the damaged chip with an xmega328 board, downloaded the firmware from <a href="https://github.com/imoyer/086-005" target="_blank">imoyer github</a> and burned the firmware into the new MCU. Indeed we can learn something new with every problem we encounter.</p><br>
+
+<div class="container"><center>
+      <img src="photo/mistake01.jpg" class="img-thumbnail" width="400">
+      <legend>Gestalt boards were short-circuited.</legend></center>
+</div><br><br></p>
+
+<h3>Rooms for improvement to the model</h3>
+
+<p>There surely are opportunities for improvements with this design, but those will have to be on hold until we are able to work on this project again.</p>
+<ol>
+  <li>Add z axis (to lift up the pen when not drawing).</li>
+  <li>Add limit switch so that power will be cut off when stepper motor moves to the end of its range.</li>
+  <li>Better design for the end effector, instead of a cable tie.</li>
+  <li>Conceal the gestalt boards in the housing, the right way!</li>
+</ol><br>
+
+<h3>Download of work files</h3>
+
+<ul>
+  <li><a href="workfiles/plywood mod final.dwg">MTM housing</a></li>
+  <li><a href="workfiles/xy_square.py">Draw Square</a></li>
+  <li><a href="workfiles/xy_triangle.py">Draw Triangle</a></li>
+  <li><a href="workfiles/our_mouse.py">Drawing with a mouse</a></li>
+  <li><a href="workfiles/hitme.py">Shooting platform</a></li>
+</ul>
+
+
+    <!-- End of your content -->
+
+    </div> <!-- /container -->
+
+  <!-- footer -->
+    
+    <footer id="footer">
+        <p id="cclicense">
+                </p>
+        <p class="license">
+        Theme: <a href="https://github.com/openp2pdesign/FabAcademy_Template">Fab Academy Template</a> by <a href="http://openp2pdesign.org">Massimo Menichinelli</a> <br>
+        Based on <a href="http://getbootstrap.com/">Twitter Bootstrap</a>+<a href="http://jquery.com/">JQuery</a>+<a href="https://code.google.com/p/google-code-prettify/">google-code-prettify</a>+<a href="http://jmblog.github.io/color-themes-for-google-code-prettify/github/">GitHub theme for google-code-prettify</a>+<a href="https://code.google.com/p/jsc3d/">JSC3D</a>+<a href="https://github.com/thegrubbsian/jquery.ganttView">jquery.ganttView</a>.
+        </p>
+    </footer>
+    
+
+  <!-- Do not touch this! -->
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="media/jquery-1.9.1.min.js"></script>
+    
+    <!-- Syntax Highlighter -->
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js">
+    </script>
+    <!-- From https://github.com/jmblog/color-themes-for-google-code-prettify -->
+    <link href="media/github.css" type="text/css" rel="stylesheet">
+  <script type="text/javascript">
+    !function ($) {
+    $(function(){
+      window.prettyPrint && prettyPrint()   
+    })
+    }(window.jQuery)
+  </script>
+  
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="bootstrap/js/ie10-viewport-bug-workaround.js"></script>
+
+  </body>
+</html>
+
