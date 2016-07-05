@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Yue Siew Chin">
+    <link rel="icon" href="media/favicon.ico">
+
+    <title>Fab Academy 2016 | Yue Siew Chin | Mechanical Design</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="media/fabacademy.css" rel="stylesheet">
+    
+    <!-- 3D files viewer -->
+    <script type="text/javascript" src="media/jsc3d_ie.min.js"></script>
+	<script type="text/javascript" src="media/jsc3d.min.js"></script>
+    <script type="text/javascript" src="media/jsc3d.webgl.js"></script>
+    <script type="text/javascript" src="media/jsc3d.touch.js"></script>
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="bootstrap/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="bootstrap/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- Load the menu file -->
+    <script>
+	function menu() {
+					  $('#exercises').load("exercises-menu.html");
+					  $('#project').load("project-menu.html");
+					  $('#cclicense').load("license.html");
+					  }
+	</script>
+
+  </head>
+
+  <body onload="menu()">
+
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">Home</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="about.html">About</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Exercises <span class="caret"></span></a>
+              <ul id="exercises" class="dropdown-menu" role="menu">
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Final Project <span class="caret"></span></a>
+              <ul id="project" class="dropdown-menu" role="menu">
+              </ul>
+            </li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    	
+	<!-- Insert your content here below! -->
+
+
+  <h2><b>Final Project Mechanical Design</b></h2><br>
+  <p>
+    <a class="btn btn-primary" href="project01.html" target="_blank" role="button">Project Proposal</a>
+    <a class="btn btn-primary" href="exercise17.html" target="_blank" role="button">Project Planning</a>
+    <a class="btn btn-primary" href="project02.html" target="_blank" role="button">Project Documentation</a>
+    <a class="btn btn-primary" href="project03.html" target="_blank" role="button">Mechanical Design</a>
+    <a class="btn btn-primary" href="project04.html" target="_blank" role="button">Electronics Design</a>
+    <a class="btn btn-primary" href="exercise19.html" target="_blank" role="button">Final Project Presentation</a>
+  </p><br>
+
+  <h3>Inspiration of the Design</h3>
+
+
+  <p>The inspiration of my design comes from these projects:</p>
+
+  <ol>
+    <li><a href="https://www.youtube.com/watch?v=dC37ZY8Qljg" target="_blank">Automatic page turner</a></li>
+    <li><a href="http://portfolio.alvintai.com/files/Automatic%20Page%20Turner.pdf">Automatic Music Stand Page Turner</a> by Alvin Tai</li>
+    <li><a href="https://www.youtube.com/watch?v=1eKYomgIySQ" target="_blank">Automatic Page Turner ME 130</a></li>
+    <li><a href="https://www.youtube.com/watch?v=pQBrIDIbfpQ" target="_blank">Automatic page turner</a></li>
+   </ol>
+
+   <p>And it was in the design document by Alvin Tai that I first came across the term <b>Grashof crank-rocker</b>. It was then that I realised the massive mathematical calculation behind a design like that.</p><br>
+
+   <div class="container"><center>
+      <img src="final/scribbles04.jpg" class="img-thumbnail" width="400">
+      <img src="final/scribbles03.jpg" class="img-thumbnail" width="400">
+      <img src="final/scribbles01.jpg" class="img-thumbnail" width="600">
+      <img src="final/scribbles02.jpg" class="img-thumbnail" width="223">
+      <legend>Early scribbles and sketches</legend></center>
+</div><br><br>
+    
+  <h3>4-Bar Mechanism</h3> 
+
+  <p>A four-bar linkage, also called a four-bar, is the simplest movable closed chain linkage. It consists of four bodies, called bars or links, connected in a loop by four joints. Generally, the joints are configured so the links move in parallel planes, and the assembly is called a planar four-bar linkage.<br><br>
+
+  If the linkage has four hinged joints with axes angled to intersect in a single point, then the links move on concentric spheres and the assembly is called a spherical four-bar linkage. The Grashof condition for a four-bar linkage states: If the sum of the shortest and longest link of a planar quadrilateral linkage is less than or equal to the sum of the remaining two links, then the shortest link can rotate fully with respect to a neighboring link. In other words, the condition is satisfied if S+L ≤ P+Q where S is the shortest link, L is the longest, and P and Q are the other links.</p>  
+
+  <p class="pic"><img src="final/linkage_four_bar_fixed.jpg" width="600">
+  <legend>Types of four-bar linkages, s = shortest link, l = longest link. The crank-rocker design works for my project.</legend>
+  </p> 
+
+  <p>A Mechanical Engineer friend gave me some advice and shared this helpful website with me: <a href="http://www.mekanizmalar.com/fourbar.html" target="_blank">Four-Bar Linkage and Coupler Curve</a> - here I can input different arguments to simulate the paths of the bars. And I tried out 2 different versions, and decided to go with version 2.</p>
+  <ul>
+    <li>Crank = 20 mm</li>
+    <li>Coupler = 180 mm</li>
+    <li>Rocker = 40 mm</li>
+    <li>Frame (stand surface) = 150 mm</li>
+
+  </ul>
+
+  <center><iframe width="560" height="315" src="https://www.youtube.com/embed/Tyi3CUWaslU" frameborder="0" allowfullscreen></iframe></center><br>
+
+  <h3>Flipping Mechanism</h3>
+
+  <p>I designed the flipping arms on Corel Draw and lasercut onto acrylic. As each arm needs to be on a separate plane, I 3D printed some rings to fit the screws through to create the different planes the arms need so that they do not cross one another's path. I have designed the rotary disc to fit a M3 screw so that I can tighten the disc to the shaft of the stepper motor.</p>
+
+  <div class="container"><center>
+      <img src="final/roundplate.jpg" class="img-thumbnail" width="400">
+      <img src="final/roundplate02.jpg" class="img-thumbnail" width="400">
+      <legend>Printing the rotary disc for the flipping mechanism</legend><br>
+      <img src="final/flipping01.jpg" class="img-thumbnail" width="400">
+      <img src="final/flipping02.jpg" class="img-thumbnail" width="400">
+      <legend>Assembling the flipping arms using M4 screws and nuts and 3d printed rings</legend></center><br>
+      
+  <h3>End effector</h3>
+
+  <p>I was having some difficulty with the end effector. I discovered something new to me called <a href="http://ffden-2.phys.uaf.edu/211_fall2002.web.dir/ben_townsend/staticandkineticfriction.htm" target="_blank">Static and Kinetic Friction</a>. The level of friction that different materials exhibit is measured by the coefficient of friction. The formula is µ = f / N, where µ is the coefficient of friction, f is the amount of force that resists motion, and N is the normal force. Normal force is the force at which one surface is being pushed into another. If a rock that weighs 50 newtons is lying on the ground, then the normal force is that 50 newtons of force. The higher µ is, the more force resists motion if two objects are sliding past each other. If you try to slide two objects past each other, a small amount of force will result in no motion because the force of friction is greater than the applied force. This is static friction. If you apply a little more force, the object "breaks free" and slides, although you still need to apply force to keep the object sliding. This is kinetic friction. You do not need to apply quite as much force to keep the object sliding as you needed to originally break free of static friction.<br><br> 
+
+   I have tried to 3d print the end effector but because it was too tiny, the end result was not ideal. After trying a few different designs, I have decided to use a M4 screw and nut to do the job. Then I kneaded a blue tac into a ball and stick to the head of the screw, that is touching the paper. In order to create a forward stoke of the blue tac to lift the page off the book the applied force must be greater than the force of friction. So it seems that my end effector does not have enough force to apply a motion to the page.  Another problem I faced was the arm connecting the end effector is not heavy enough to keep the blue tac to the paper to lift the page off the book. I tried adding dead weight to the screw to make it heavier but that has caused the stepper motor to become sluggish. </p>
+
+  <div class="container"><center>
+      <img src="final/endeffector01.jpg" class="img-thumbnail" width="400">
+      <img src="final/endeffector.jpg" class="img-thumbnail" width="400">
+      <legend>The screw and nut end effector</legend></center>
+  </div><br>
+
+  <p>After the final presentation on 22 June, besides touching up the documentation, I have also sought to improve the end effector. I applied UHU patafix at the arm touching the page as it seems more effective than Blu tack. I applied the extra Blu tack on top of the screw to act as "dead weight" so that it might be able to lift up the page. However, when the second arm at the crank tries to sweep the page across the book, the weight was detrimental and causing the wiping arm to get stuck. I have make trying many methods to test the flipping mechanism but unsuccessful in finding a right balance in the arm. I even made a DIY spring by coiling a wire into a hand drill. It helped a little to keep the arm light. I think what I need is the arm to be heavy in the first half of the flipping and to somehow become light at the second half so that it does not get stuck to the page.</p>
+
+  <div class="container"><center>
+      <img src="final/endeffector02.jpg" class="img-thumbnail" width="400">
+      <img src="final/diy_springs.jpg" class="img-thumbnail" width="400">
+      <img src="final/blutack.jpg" class="img-thumbnail" width="400">
+      <legend>Trying to improve the end effector and experiment different methods to lift the page</legend><br><br>
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/MOlZkoh4Y7w" frameborder="0" allowfullscreen></iframe><legend>Requires assistance to lift page</legend>
+  </div></center>
+<br><br>
+
+
+  <h3>Stand Surface</h3>
+
+  <p>My initial idea was to fabricate a music stand using CNC machining. However, I have considered the purpose of the score turner and being lightweight is an important factor for this to be workable. Therefore, instead of fabricating a stand, I have borrowed a stand from my friend who is a musician to make a stand surface. I designed the stand surface using Corel draw. The stand is a 50cm x 40cm acrylic with some holes to mount the stepper motor, flipping geometry and circuitry housing. Version 1 has the frame of the flipping mechanism about 5mm away from the right edge. It turned out that this is a poor design as the end of the arm reached beyond the edge of the stand, sinking lower than the slanted stand, making it unable to return to to stand surface. I only discovered this problem after mounting the flipping device and motor to the stand and test the mechanism. Right away, I amended my design to version 2 and lasercut the stand again. The holes fit M3 screws and nuts after a little filing.</p>
+
+  <div class="container"><center>
+      <img src="final/bookstandcdrv1.jpg" class="img-thumbnail" width="400">
+      <img src="final/bookstandv1.jpg" class="img-thumbnail" width="400">
+      <legend>Stand surface version 1</legend><br>
+      <img src="final/standdimension.jpg" class="img-thumbnail" width="800">
+      <legend>Stand surface version 2 (shifted left by 10cm)</legend><br>
+      <img src="final/standinstall01.jpg" class="img-thumbnail" width="400">
+      <img src="final/standinstall02.jpg" class="img-thumbnail" width="400">
+      <img src="final/bookstandv2.jpg" class="img-thumbnail" width="400">
+      <img src="final/bookstandv202.jpg" class="img-thumbnail" width="400">
+      <legend>Filing the openings to mount the stepper motor</legend><br>
+      <img src="final/musicstand01.jpg" class="img-thumbnail" width="400">
+      <img src="final/musicstand02.jpg" class="img-thumbnail" width="400">
+      <img src="final/clamps.jpg" class="img-thumbnail" width="400"><br>
+      <legend>Mounting the Stand surface on a regular portable music stand using 2 clamps</legend></center>
+</div><br><br>
+
+  <h3>Circuitry Housing</h3>
+
+  <p>I made a housing for the circuitry to hide the unsightly wires using the newly acquired <a href="http://3dcubicon.com/english/product/product_01.asp?gidx=94" target="_blank">Cubicon 210</a>. This user-friendly 3D printer is a huge improvement over the existing ultimakers. However I was surprised that the base at one of the edges was warped. It could be because the container was too long (125mm x 60mm). The cover was a tight fit and was able to close well after a little filing.</p>
+
+  <div class="container"><center>
+      <img src="final/housing3dprint01a.jpg" class="img-thumbnail" width="400">
+      <img src="final/housing3dprint01.jpg" class="img-thumbnail" width="400">
+      <img src="final/housing3dprint02.jpg" class="img-thumbnail" width="400">
+      <legend>Base warped because it is too long</legend><br>
+      <img src="final/housing3dprint04.jpg" class="img-thumbnail" width="400">
+      <img src="final/housing3dprint03.jpg" class="img-thumbnail" width="400">
+      <img src="final/pcbhousing.jpg" class="img-thumbnail" width="400">
+      <legend>Adding a brim to the print job solved the problem</legend></center>
+</div><br><br>
+
+
+  <h3>Foot switch Housing</h3>
+
+  <p>Thingiverse user claudiorfernandes made a <a href="http://www.thingiverse.com/thing:1237436" target="_blank">Emergency stop punch button</a> and that was a perfect housing for my foot switch, so I used it just as it is. I have used a 2m wire to connect the snap action switch to the PCB. The VCC cable is soldered to the COM terminal, while the GND cable goes to SPST-NO (normally open) terminal.  </p>
+
+  <div class="container"><center>
+      <img src="final/footswitch3dprint01.jpg" class="img-thumbnail" width="400">
+      <img src="final/footswitch3dprint02.jpg" class="img-thumbnail" width="400">
+      <img src="final/footswitch3dprint03.jpg" class="img-thumbnail" width="400">
+      <img src="final/footswitch3dprint04.jpg" class="img-thumbnail" width="400">
+      <legend>Printing the housing for foot switch and soldering the wires to the switch</legend></center>
+</div><br><br>
+
+
+  <h3>Download work files</h3>
+
+  <ul>
+    <li><a href="workfiles/final/stand2.cdr" target="_blank">stand2.cdr</a></li>
+    <li><a href="workfiles/final/turner2.cdr" target="_blank">turner2.cdr</a></li>
+    <li><a href="workfiles/final/pcb housing.123dx" target="_blank">pcb housing.123dx</a></li>
+    <li><a href="workfiles/final/roundplate.123dx" target="_blank">roundplate.123dx</a></li>
+  </ul><br>
+
+  <h3>References</h3>
+  <ul>
+    <li>
+      <a href="https://learn.sparkfun.com/tutorials/switch-basics/all" target="_blank">Switch Basics</a></li>
+    <li>
+      <a href="http://www.instructables.com/id/BYJ48-Stepper-Motor/?ALLSTEPS" target="_blank">BYJ48 Stepper Motor</a>
+    </li>
+    <li>
+      <a href="http://www.instructables.com/id/How-to-use-a-Stepper-Motor/?ALLSTEPS" target="_blank">How to use a Stepper Motor</a>
+    </li>
+    <li>
+      <a href="https://www.adafruit.com/products/858" target="_blank">Small Reduction Stepper Motor - 5VDC 32-Step 1/16 Gearing</a>
+    </li>
+    <li>
+      <a href="https://www.adafruit.com/products/918" target="_blank">Small Reduction Stepper Motor - 12VDC 32-Step 1/16 Gearing</a>
+    </li>
+    <li>
+      <a href="https://www.circuitspecialists.com/blog/unipolar-stepper-motor-vs-bipolar-stepper-motors/" target="_blank">Unipolar Stepper Motor vs Bipolar Stepper Motors</a>
+    </li>
+    <li>
+      <a href="http://www.instructables.com/id/Fuzz-Pedal/" target="_blank">Fuzz Pedal</a>
+    </li>
+
+    <li>
+      <a href="http://www.instructables.com/id/Overdrive-Pedal/" target="_blank">Overdrive Pedal</a>
+    </li>
+    <li>
+      <a href="http://www.tigoe.com/pcomp/code/circuits/motors/stepper-motors/" target="_blank">Stepper Motors</a>
+    </li>
+    <li>
+      <a href="http://42bots.com/tutorials/28byj-48-stepper-motor-with-uln2003-driver-and-arduino-uno/" target="_blank">28BYJ-48 Stepper Motor with ULN2003 driver and Arduino Uno</a>
+    </li>
+    <li>
+      <a href="https://en.wikipedia.org/wiki/Decoupling_capacitor" target="_blank">Decoupling capacitor</a>
+    </li>
+    <li>
+      <a href="https://www.servocity.com/html/stepper_motor_mounts.html#.V06bx5F942x" target="_blank">Stepper Motor Mounts</a>
+    </li>
+    <li>
+      <a href="http://www.omc-stepperonline.com/nema-14-bipolar-stepper-54v-08a-18ncm255ozin-14hs130804s-p-93.html" target="_blank">Nema 14 Bipolar Stepper 5.4V 0.8A 18Ncm(25.5oz.in) 14HS13-0804S</a>
+    </li>
+    <li>
+      <a href="http://mechanicalexpressions.com/explore/kinematics/4-bar-linkage.html" target="_blank">4 Bar Linkage Kinematics</a>
+    </li>
+    <li>
+      <a href="http://www.mekanizmalar.com/fourbar.html" target="_blank">Four-Bar Linkage and Coupler Curve</a>
+    </li>
+    <li>
+      <a href="http://www.instructables.com/id/Folding-Book-Stand/?ALLSTEPS" target="_blank">How to Make a Folding Book Stand</a>
+    </li>
+    <li>
+      <a href="https://www.geckodrive.com/gecko/images/cms_files/Step%20Motor%20Basics%20Guide.pdf" target="_blank">STEP MOTOR BASICS GUIDE</a>
+    </li>
+    <li>
+      <a href="http://42bots.com/tutorials/bipolar-stepper-motor-control-with-arduino-and-an-h-bridge/" target="_blank">Bipolar stepper motor control with Arduino and an H-Bridge</a>
+    </li>
+    <li>
+      <a href="https://www.youtube.com/watch?v=BPs1K-h9Gx4" target="_blank">Bipolar Stepper Motor Control with an Arduino and H-Bridge</a>
+    </li>
+    <li>
+      <a href="http://www.electrical4u.com/bipolar-stepper-motor/" target="_blank">Bipolar Stepper Motor</a>
+    </li>
+    <li>
+      <a href="http://www.open-electronics.org/the-power-of-arduino-this-unknown/" target="_blank">Feeding power to Arduino: the ultimate guide</a>
+    </li>
+    <li>
+      <a href="http://42bots.com/tutorials/28byj-48-stepper-motor-with-uln2003-driver-and-arduino-uno/" target="_blank">28BYJ-48 Stepper Motor with ULN2003 driver and Arduino Uno</a>
+    </li>
+    <li>
+      <a href="https://www.youtube.com/watch?v=RzVc3o0iedM" target="_blank">Microcontrollers - AVR Atmega32 - Adding a Button to the Microcontroller</a>
+    </li>
+    <li>
+      <a href="https://www.newbiehack.com/MicrocontrollerAddingabutton.aspx" target="_blank">Microcontroller - A Beginners Guide - Adding a Button to the Microcontroller and Making it Do Something</a>
+    </li>
+    <li>
+      <a href="http://highlowtech.org/?p=1695" target="_blank">Programming an ATtiny w/ Arduino 1.6</a>
+    </li>
+    <li>
+      <a href="http://www.oreilly.com/pub/e/3018" target="_blank">Beyond the Arduino: Programming AVR Microcontrollers in C</a>
+    </li>
+    <li>
+      <a href="http://www.scoop.it/t/avrfreaks/p/4022876742/2014/06/12/make-avr-programming-learning-to-write-software-for-hardware-pdf-free-download-fox-ebook" target="_blank">Make: AVR Programming: Learning to Write Software for Hardware</a> by Elliot Williams.
+    </li>
+    <li>
+      <a href="https://www.youtube.com/watch?v=XbtklND_wig" target="_blank">Professional Hand Soldering Basic to Advance Surface Mount, Through Hole, Wires & Terminals</a>
+    </li>
+    <li>
+      <a href="https://www.youtube.com/watch?v=aoD2aUvnQXg" target="_blank">Soldering Basics - Popular Solder Connections</a>
+    </li>
+    <li>
+      <a href="https://www.newbiehack.com/MicrocontrollerTutorial.aspx" target="_blank">NewbieHack.com - LEARN THE FUNDAMENTALS OF MECHATRONICS!</a>
+    </li>
+    <li>
+      <a href="https://www.youtube.com/playlist?list=PLE72E4CFE73BD1DE1" target="_blank">NewbieHack - Microcontroller Tutorial - A Beginners Guide</a>
+    </li>
+    <li>
+      <a href="http://ffden-2.phys.uaf.edu/211_fall2002.web.dir/ben_townsend/staticandkineticfriction.htm" target="_blank">Static and Kinetic Friction</a>
+    </li>
+    <li>
+      <a href="http://whatis.techtarget.com/definition/end-effector" target="_blank">end effector</a>
+    </li>
+    <li>
+      <a href="https://en.wikipedia.org/wiki/Torque" target="_blank">Torque</a>
+    </li>
+
+               
+    
+  </ul><br>
+
+
+  
+    <!-- End of your content -->
+
+    </div> <!-- /container -->
+
+	<!-- footer -->
+    
+    <footer id="footer">
+        <p id="cclicense">
+                </p>
+        <p class="license">
+        Theme: <a href="https://github.com/openp2pdesign/FabAcademy_Template">Fab Academy Template</a> by <a href="http://openp2pdesign.org">Massimo Menichinelli</a> <br>
+        Based on <a href="http://getbootstrap.com/">Twitter Bootstrap</a>+<a href="http://jquery.com/">JQuery</a>+<a href="https://code.google.com/p/google-code-prettify/">google-code-prettify</a>+<a href="http://jmblog.github.io/color-themes-for-google-code-prettify/github/">GitHub theme for google-code-prettify</a>+<a href="https://code.google.com/p/jsc3d/">JSC3D</a>+<a href="https://github.com/thegrubbsian/jquery.ganttView">jquery.ganttView</a>.
+        </p>
+    </footer>
+    
+
+	<!-- Do not touch this! -->
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="media/jquery-1.9.1.min.js"></script>
+    
+    <!-- Syntax Highlighter -->
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js">
+    </script>
+    <!-- From https://github.com/jmblog/color-themes-for-google-code-prettify -->
+    <link href="media/github.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript">
+	  !function ($) {
+		$(function(){
+		  window.prettyPrint && prettyPrint()   
+		})
+	  }(window.jQuery)
+	</script>
+	
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="bootstrap/js/ie10-viewport-bug-workaround.js"></script>
+
+  </body>
+</html>

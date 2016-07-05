@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Yue Siew Chin">
+    <link rel="icon" href="media/favicon.ico">
+
+    <title>Fab Academy 2016 | Yue Siew Chin | Exercise 11</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="media/fabacademy.css" rel="stylesheet">
+    
+    <!-- 3D files viewer -->
+    <script type="text/javascript" src="media/jsc3d_ie.min.js"></script>
+	<script type="text/javascript" src="media/jsc3d.min.js"></script>
+    <script type="text/javascript" src="media/jsc3d.webgl.js"></script>
+    <script type="text/javascript" src="media/jsc3d.touch.js"></script>
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="bootstrap/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="bootstrap/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- Load the menu file -->
+    <script>
+	function menu() {
+					  $('#exercises').load("exercises-menu.html");
+					  $('#project').load("project-menu.html");
+					  $('#cclicense').load("license.html");
+					  }
+	</script>
+
+  </head>
+
+  <body onload="menu()">
+
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">Home</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="about.html">About</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Exercises <span class="caret"></span></a>
+              <ul id="exercises" class="dropdown-menu" role="menu">
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Final Project <span class="caret"></span></a>
+              <ul id="project" class="dropdown-menu" role="menu">
+              </ul>
+            </li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    	
+	<!-- Insert your content here below! -->
+
+
+    <h2><b>Exercise 11 Input Devices</b></h2>
+    
+  <p><a href="http://archive.fabacademy.org/archives/2016/master/videos/04-13/index.html" target="_blank">
+  <button type="button" class="btn btn-primary btn">This week's Lecture</button></a><br>
+
+  <h3>Requirement</h3>
+	
+	<ul>
+	 <li>Measure something: add a sensor to a microcontroller board that you have designed and read it </li>
+	</ul><br>
+	
+
+	<h3>Atmel ATtiny 45</h3>
+
+	<p>I started this week's assignment by reading up on ATtiny45 microchip. To locate the datasheet of an MCU, go to the <a href="http://www.atmel.com/" target="_blank">Atmel website</a> >> <a href="http://www.atmel.com/products/microcontrollers/avr/default.aspx" target="_blank">Atmel AVR 8-bit and 32-bit Microcontrollers</a> >> <a href="http://www.atmel.com/products/microcontrollers/avr/tinyAVR.aspx" target="_blank">tinyAVR MCUs</a> >> <a href="http://www.atmel.com/devices/ATTINY45.aspx" target="_blank">ATtiny45</a>. The ATtiny45 is a low-power CMOS 8-bit microcontroller that has an internal oscillator of 8MHz. The high-performance, low-power Atmel 8-bit AVR RISC-based microcontroller combines 4KB ISP flash memory, 256-Byte EEPROM, 256B SRAM, 6 general purpose I/O lines, 32 general purpose working registers, one 8-bit timer/counter with compare modes, one 8-bit high speed timer/counter, USI, internal and external Interrupts, 4-channel 10-bit A/D converter, programmable watchdog timer with internal oscillator, three software selectable power saving modes, and debugWIRE for on-chip debugging. The device achieves a throughput of 20 MIPS at 20 MHz and operates between 2.7-5.5 volts. Idle mode stops the CPU while allowing the SRAM, Timer/Counter, ADC, Analog Comparator, and Interrupt system to continue functioning. Power-down mode saves the register contents, disabling all chip functions until the next Interrupt or Hardware Reset. ADC Noise Reduction mode stops the CPU and all I/O modules except ADC, to minimize switching noise during ADC conversions. </p><br>
+
+  <div class="container"><center>
+      <img src="photo/11_attiny45_01.jpg" class="img-thumbnail" width="500"><br>
+      <img src="photo/11_attiny45_02.jpg" class="img-thumbnail" width="500">
+      <legend>ATtiny45 microchip</legend></center>
+</div><br><br>
+
+  <h3>Phototransistor</h3>
+
+  <p>I would like to measure the presence of light using a phototransistor for this assignment. I have taken reference from the board in class lecture to build the board. At first all was well, I was able the stuff the board and connect to my Arduino isp. But I didn't apply enough solder to the 2x3 headers and the whole header came off, together with the copper layer on the pad. It left me with no choice but to remill the board. But my 2nd attempt to mill was unsuccessful because the bit was blunt. So time was wasted testing what went wrong and fetching a new bit and milling again. Things to note: the ATtiny chip and phototransistor have polarity. Polarity on the ATtiny chip is denoted by a faint dot on pin 1 and polarity on the phototransistor is denoted by a green marker that should face the "C" which stands for Collector. The other side, "E" stands for emitter. </p>
+
+  <p class="pic"><img src="photo/11_blunt_bit.jpg" width="500">
+  <legend>A blunt milling bit in need to be changed</legend>
+</p>
+
+  <h4>Components needed</h4>
+  <ul>
+    <li>1 x ATTINY85</li>
+    <li>1 x 3X2 PIN HEADER (ARVISP SMD)</li>
+    <li>1 X 1X6 FTDI SMD HEADER</li>
+    <li>1 x CAPACITOR 1 uf</li>
+    <li>1 x Phototransistor</li>
+    <li>1 X 10 k ohm RESISTOR RES-US1206FAB</li>
+    <li>1 X 49.9 k ohm RESISTOR RES-US1206FAB</li>
+  </ul> 
+
+  <p class="pic"><center>
+      <img src="photo/11_fab_light.jpg" class="img-thumbnail" width="500">
+      <img src="photo/11_light_sch.jpg" class="img-thumbnail" width="500">
+      <img src="photo/11_light_board.jpg" class="img-thumbnail" width="500">
+      <img src="photo/11_light_pcb.jpg" class="img-thumbnail" width="500"><br>
+      <legend>Making the phototransistor board</legend></center>
+</p><br><br>
+
+
+  <h3>Thermistor</h3>
+
+  <p>I would be measuring temperature using a NTC thermistor for this assignement. We use a NTC thermistor for this assignment. Many NTC thermistors are made from a pressed disc, rod, plate, bead or cast chip of semiconducting material such as sintered metal oxides. They work because raising the temperature of a semiconductor increases the number of active charge carriers - it promotes them into the conduction band. The more charge carriers that are available, the more current a material can conduct. To measure temperature, we need to measure the resistance. However, a microcontroller does not have a resistance-meter built in. Instead, because it has an analog-digital-converter (ADC), we can convert the resistance into a voltage, and we do that by adding another resistor and connecting them in series. Now we just measure the voltage in the middle, as the resistance changes, the voltage changes too.
+  </p>
+
+  <h4>Components needed</h4>
+
+  <ul>
+    <li>1 x ATTINY85</li>
+    <li>1 x 3X2 PIN HEADER (ARVISP SMD)</li>
+    <li>1 X 1X6 FTDI SMD HEADER</li>
+    <li>1 x CAPACITOR 1 uf</li>
+    <li>1 x THERMISTOR NTC 10K OHM 1206</li>
+    <li>4 X 10 k ohm RESISTOR RES-US1206FAB</li>
+    <li>1 X 49.9 k ohm RESISTOR RES-US1206FAB</li>
+  </ul> 
+
+
+  <p class="pic"><center>
+      <img src="photo/11_fab_temp.jpg" class="img-thumbnail" width="500">
+      <img src="photo/11_temp_sch.jpg" class="img-thumbnail" width="500">
+      <img src="photo/11_temp_board.jpg" class="img-thumbnail" width="500">
+      <img src="photo/11_temp_pcb.jpg" class="img-thumbnail" width="500"><br>
+      <legend>Making the thermistor board</legend></center>
+</p><br><br>
+
+<h3>Communicating with the sensors</h3>
+
+<p>Even now, I was not able to understand enough to know how to load c code into the MCU using hex file and the Make command. I really need more time to read up on how to communicate with the boards and using python. Meanwhile I have successfully loaded the arduino program to the chip using the Arduino as a ISP. I could test the sensors and receive a response via the FTDI USB to TTL Serial Converter to be displayed on the Putty terminal.</p><br><br>
+
+
+  <h4>Phototransistor program</h4>
+  <p>Having noted that shining a touch light to the sensor brings the value to less than 100-300, I wrote the following code on Arduino IDE. </p>
+  <pre class="prettyprint linenums">
+  void loop() {
+  sensorValue = analogRead(sensorPin);
+  mySerial.print(sensorValue);
+  if (sensorValue < 300)
+    mySerial.println(" I sensed bright light.");
+  else
+    mySerial.println(" Not bright enough for me.");   
+  delay(5000);
+}
+  </pre>
+
+  <h4>Thermistor program</h4>
+
+  <p>I figured that if resistance value decreases with heat, and increases with cold sensation. I also noted that at aircon room temperature, resistance is between 500-530. Human warmth will bring the value down to about 490-500. Having noted these, I wrote the following code on Arduino IDE.</p>
+
+  <pre class="prettyprint linenums">
+  void loop() {
+  sensorValue = analogRead(sensorPin);
+  //mySerial.print(sensorValue);
+  if (sensorValue < 500)  {
+    mySerial.println(" I sensed warmth.");
+  }
+  else if (sensorValue == 1023)  {
+    mySerial.println(" Reading error.");
+  }
+  else if (sensorValue >= 540)  { 
+    mySerial.println(" It's cold.");  
+  }
+  else  {
+    mySerial.println(" I feel normal.");
+  }
+  delay(1000);
+}
+  </pre><br>
+
+  <h3>Programming with WinAVR</h3>
+
+  <p>I came back to week 11 to programme the input boards using WinAVR in <a href="exercise13.html" target="_blank">week 13</a>, after I completed the output devices. One important thing to note regarding Rx and Tx is this: Because RX and TX labels are with respect to the device itself, in the usual circumstance, the RX from one device should go to the TX of the other, and vice-versa. However, in this situation, the RX pin on the board is sending out information, so in this case it goes to the RX pin on the FDTI. Basically I did not make any additional changes to the c program and the make file because my board is exactly like the one on the class page. I downloaded the <a href="hello.temp.45.py" target="_blank">hello.temp.45.py</a> from class page to take reading of the room temperature. (See video below) </p>
+
+  <p>Successfully flashing the microchip set:</p>
+  <pre class="prettyprint linenums">
+C:\Users\yoruichin\Dropbox\FAB\Week 11 - Input\temperature>cp hello.temp.45.make makefile
+
+C:\Users\yoruichin\Dropbox\FAB\Week 11 - Input\temperature>make
+avr-gcc -mmcu=attiny45 -Wall -Os -DF_CPU=8000000 -I./ -o hello.temp.45.out hello.temp.45.c
+avr-objcopy -O ihex hello.temp.45.out hello.temp.45.c.hex;\
+        avr-size --mcu=attiny45 --format=avr hello.temp.45.out
+AVR Memory Usage
+----------------
+Device: attiny45
+
+Program:     428 bytes (10.4% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+C:\Users\yoruichin\Dropbox\FAB\Week 11 - Input\temperature>avrdude -P com4 -c stk500v1 -b 19200 -p t45 -U flash:w:hello.temp.45.c.hex
+
+avrdude: please define PAGEL and BS2 signals in the configuration file for part ATtiny45
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.08s
+
+avrdude: Device signature = 0x1e9206
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: please define PAGEL and BS2 signals in the configuration file for part ATtiny45
+avrdude: reading input file "hello.temp.45.c.hex"
+avrdude: input file hello.temp.45.c.hex auto detected as Intel Hex
+avrdude: writing flash (428 bytes):
+
+Writing | ################################################## | 100% 0.72s
+
+avrdude: 428 bytes of flash written
+avrdude: verifying flash memory against hello.temp.45.c.hex:
+avrdude: load data flash data from input file hello.temp.45.c.hex:
+avrdude: input file hello.temp.45.c.hex auto detected as Intel Hex
+avrdude: input file hello.temp.45.c.hex contains 428 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 0.36s
+
+avrdude: verifying ...
+avrdude: 428 bytes of flash verified
+
+avrdude: safemode: Fuses OK
+
+avrdude done.  Thank you.
+
+C:\Users\yoruichin\Dropbox\FAB\Week 11 - Input\temperature>
+  </pre>
+
+  <center><iframe width="560" height="315" src="https://www.youtube.com/embed/TohPa8kRshY" frameborder="0" allowfullscreen></iframe></center><br><br>
+
+  <h3>Download work files</h3>
+
+<ul>
+  <li><a href="workfiles/wk11/11_phototransistor.ino" target="_blank">Phototransistor.ino</a></li>
+  <li><a href="workfiles/wk11/11_temperature.ino" target="_blank">Temperature.ino</a></li>
+  <li><a href="workfiles/wk11/Temp1.sch" target="_blank">Temp1.sch</a></li>
+  <li><a href="workfiles/wk11/Temp1.brd" target="_blank">Temp1.brd</a></li>
+  <li><a href="workfiles/wk11/Light.sch" target="_blank">Light.sch</a></li>
+  <li><a href="workfiles/wk11/Light.brd" target="_blank">Light.brd</a></li>
+
+</ul><br>
+
+   <h3>References</h3>
+  <ul>
+    <li>
+      <a href="https://learn.adafruit.com/thermistor/using-a-thermistor" target="_blank">Using a Thermistor</a>
+    </li>
+    <li>
+      <a href="https://en.wikipedia.org/wiki/Steinhart%E2%80%93Hart_equation" target="_blank">Steinhart–Hart equation</a>
+    </li>
+    <li>
+      <a href="https://en.wikipedia.org/wiki/Thermistor" target="_blank">Thermistor - B parameter equation</a>
+    </li>
+        
+    
+	</ul><br>
+
+
+  
+
+
+	
+    <!-- End of your content -->
+
+    </div> <!-- /container -->
+
+	<!-- footer -->
+    
+    <footer id="footer">
+        <p id="cclicense">
+                </p>
+        <p class="license">
+        Theme: <a href="https://github.com/openp2pdesign/FabAcademy_Template">Fab Academy Template</a> by <a href="http://openp2pdesign.org">Massimo Menichinelli</a> <br>
+        Based on <a href="http://getbootstrap.com/">Twitter Bootstrap</a>+<a href="http://jquery.com/">JQuery</a>+<a href="https://code.google.com/p/google-code-prettify/">google-code-prettify</a>+<a href="http://jmblog.github.io/color-themes-for-google-code-prettify/github/">GitHub theme for google-code-prettify</a>+<a href="https://code.google.com/p/jsc3d/">JSC3D</a>+<a href="https://github.com/thegrubbsian/jquery.ganttView">jquery.ganttView</a>.
+        </p>
+    </footer>
+    
+
+	<!-- Do not touch this! -->
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="media/jquery-1.9.1.min.js"></script>
+    
+    <!-- Syntax Highlighter -->
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js">
+    </script>
+    <!-- From https://github.com/jmblog/color-themes-for-google-code-prettify -->
+    <link href="media/github.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript">
+	  !function ($) {
+		$(function(){
+		  window.prettyPrint && prettyPrint()   
+		})
+	  }(window.jQuery)
+	</script>
+	
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="bootstrap/js/ie10-viewport-bug-workaround.js"></script>
+
+  </body>
+</html>

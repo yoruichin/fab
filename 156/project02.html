@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Yue Siew Chin">
+    <link rel="icon" href="media/favicon.ico">
+
+    <title>Fab Academy 2016 | Yue Siew Chin | Project Documentation</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="media/fabacademy.css" rel="stylesheet">
+    
+    <!-- 3D files viewer -->
+    <script type="text/javascript" src="media/jsc3d_ie.min.js"></script>
+	<script type="text/javascript" src="media/jsc3d.min.js"></script>
+    <script type="text/javascript" src="media/jsc3d.webgl.js"></script>
+    <script type="text/javascript" src="media/jsc3d.touch.js"></script>
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="bootstrap/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="bootstrap/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- Load the menu file -->
+    <script>
+	function menu() {
+					  $('#exercises').load("exercises-menu.html");
+					  $('#project').load("project-menu.html");
+					  $('#cclicense').load("license.html");
+					  }
+	</script>
+
+  </head>
+
+  <body onload="menu()">
+
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">Home</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="about.html">About</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Exercises <span class="caret"></span></a>
+              <ul id="exercises" class="dropdown-menu" role="menu">
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Final Project <span class="caret"></span></a>
+              <ul id="project" class="dropdown-menu" role="menu">
+              </ul>
+            </li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    	
+	<!-- Insert your content here below! -->
+
+
+  <h2><b>Project Documentation</b></h2><br>
+
+  <p>
+    <a class="btn btn-primary" href="project01.html" target="_blank" role="button">Project Proposal</a>
+    <a class="btn btn-primary" href="exercise17.html" target="_blank" role="button">Project Planning</a>
+    <a class="btn btn-primary" href="project02.html" target="_blank" role="button">Project Documentation</a>
+    <a class="btn btn-primary" href="project03.html" target="_blank" role="button">Mechanical Design</a>
+    <a class="btn btn-primary" href="project04.html" target="_blank" role="button">Electronics Design</a>
+    <a class="btn btn-primary" href="exercise19.html" target="_blank" role="button">Final Project Presentation</a>
+  </p><br>
+    
+	<h3>Progress Milestones</h3><br>
+
+  <h4><b>26 to 31 May</b></h4>
+
+  <ul>
+    <li>26 May - Consulted local trainer on my final project</li>
+    <li>26-27 May - Project Timeline Planning</li>
+    <li>27 May 
+      <ul>
+        <li>Decide on what materials I need and created a Bill of Materials (BOM) for the electronics & mechanical components required</li>
+        <li>Collected electronic components from Fab supplies</li>
+      </ul>
+    <li>27-31 May - Answered questions for Exercise 17</li>
+  </ul>
+
+  <h4><b>30 May to 3 June</b></h4>
+
+  <ul>    
+    <li>30 May - 1 June 
+      <ul>
+        <li>Researched on stepper motors and how to design the circuitry</li>
+        <li>Worked on EAGLE on the stepper motor circuitry</li> 
+        <li>Researched on 4-bar mechanism, namely the Grashof Crank-rocker model</li>
+      </ul>
+    <li>30 May - 3 June - PCB Milling machine was out of service. Unable to make any progress on electronics fabrication.</li>
+    <li>1 June 
+      <ul>
+        <li>Designed and lasercut the flipping prototype - version 1, for my project</li>
+        <li>Designed version 2 of the flipping mechansim on Corel draw, yet to lasercut</li>
+      </ul>
+    <li>2 June - Researched on the housing for my stepper motor - planning to try 3D printing or lasercutting</li>
+    <li>3 June - Researched on the design of my bookstand</li>
+  </ul>
+
+  <h4><b>6 to 10 June</b></h4>
+
+  <ul>    
+    <li>6-8 June - Work retreat out of the country and therefore unable to work on my project</li>
+    <li>9 June 
+      <ul>
+        <li>The PCB milling machine has been repaired and I am planning to mill my board</li>
+        <li>Milled my PCB board and stuff the components onto the board</li>
+        <li>Uploaded Neil's c code for bipolar stepper motor onto the board using AVRDUDE</li>
+        <li>Connected the stepper motor to the board and successfully tested the movement of the stepper motor powered by a DC power supply available in the lab</li>
+        <li>Lasercutted version 2 of the flipping mechanism and attached it with the stepper motor.</li>
+      </ul>
+  </ul>
+
+  <h4><b>13 to 17 June</b></h4>
+
+  <ul>    
+    <li>13 June
+      <ul>
+        <li>Borrowed a music stand from a friend to test my prototype</li>
+        <li>Programming and testing - making the stepper motor turn in one direction infinitely</li>
+        <li>Reading up on AVR programming using C</li>
+      </ul>
+    <li>14 June
+      <ul>
+        <li>3D printed the housing for the circuitry board</li>
+        <li>14 June - 3D printed the housing for the foot switch</li>
+      </ul>
+    <li>15 June - reading up on AVR programming to understand how to add a pushbutton to the programme</li>
+    <li>16 June</li>
+      <ul>
+        <li>Troubleshoot of C programming with the help of my local instructor; started by just ensuring button was working. Then check that LED is working. Then check the if-else conditions and what was wrong with the codes. We discovered that the input parameters for the function bit_is_clear is incorrect and rectified.</li>
+        <li>remade the housing of the PCB circuitry due to warped edges caused by too long a length. Found out the problem could be resolved by adding a brim base structure.</li>
+        <li>3D-printed the round plate of the flipping mechanism</li>
+        <li>Explored options to design the end effector to lift the page</li>
+      </ul>
+    <li>17 June</li>
+      <ul>
+        <li>Lasercut version 2 of bookstand design (shifted everything 10cm towards the centre)</li>
+        <li>Installation of end effector (blue tac)</li>
+        <li>Soldered connecting wires of foot switch</li>
+        <li>Inserted foot switch into 3d printed housing</li>
+        <li>Assembly of all parts together</li>
+        <li>Testing of prototype with a music score</li>
+        <li>Troubleshoot stepper motor and end effector issues</li>
+        <li>Documentation of project</li>
+      </ul>
+  </ul>
+  
+  <h4><b>18 to 22 June</b></h4>
+
+  <ul>    
+      <li>Documentation of project and update of webpage</li>
+      <li>Design of presentation.png page</li>
+      <li>Putting a video together of final project</li>
+  </ul>
+
+  <h4><b>22 June</b></h4>
+
+  <ul>    
+      <li>Presentation of final project to Neil during class time</li>
+  </ul>
+
+  <h4><b>27 June - 8 July</b></h4>
+
+  <ul>    
+      <li>Troubleshoot jittery revolution of the stepper motor</li>
+      <li>Troubleshoot end effector</li>
+      <li>Refine website and documentation according to course requirements</li>
+  </ul><br>
+
+
+  <h2>Project Timeline</h2>
+
+  <div class="fluidMedia">
+    <iframe id="ganttframe" onLoad="calcHeight();" width="100%" src="gantt.html" scrolling="no" style="border: 0px;">
+  This is the Gantt.
+  </iframe> 
+  </div>
+
+
+
+
+  
+    <!-- End of your content -->
+
+    </div> <!-- /container -->
+
+	<!-- footer -->
+    
+    <footer id="footer">
+        <p id="cclicense">
+                </p>
+        <p class="license">
+        Theme: <a href="https://github.com/openp2pdesign/FabAcademy_Template">Fab Academy Template</a> by <a href="http://openp2pdesign.org">Massimo Menichinelli</a> <br>
+        Based on <a href="http://getbootstrap.com/">Twitter Bootstrap</a>+<a href="http://jquery.com/">JQuery</a>+<a href="https://code.google.com/p/google-code-prettify/">google-code-prettify</a>+<a href="http://jmblog.github.io/color-themes-for-google-code-prettify/github/">GitHub theme for google-code-prettify</a>+<a href="https://code.google.com/p/jsc3d/">JSC3D</a>+<a href="https://github.com/thegrubbsian/jquery.ganttView">jquery.ganttView</a>.
+        </p>
+    </footer>
+    
+
+	<!-- Do not touch this! -->
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="media/jquery-1.9.1.min.js"></script>
+    
+    <!-- Syntax Highlighter -->
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js">
+    </script>
+    <!-- From https://github.com/jmblog/color-themes-for-google-code-prettify -->
+    <link href="media/github.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript">
+	  !function ($) {
+		$(function(){
+		  window.prettyPrint && prettyPrint()   
+		})
+	  }(window.jQuery)
+	</script>
+	
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="bootstrap/js/ie10-viewport-bug-workaround.js"></script>
+
+  </body>
+</html>

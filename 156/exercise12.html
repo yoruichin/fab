@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Yue Siew Chin">
+    <link rel="icon" href="media/favicon.ico">
+
+    <title>Fab Academy 2016 | Yue Siew Chin | Exercise 12</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="media/fabacademy.css" rel="stylesheet">
+    
+    <!-- 3D files viewer -->
+    <script type="text/javascript" src="media/jsc3d_ie.min.js"></script>
+	<script type="text/javascript" src="media/jsc3d.min.js"></script>
+    <script type="text/javascript" src="media/jsc3d.webgl.js"></script>
+    <script type="text/javascript" src="media/jsc3d.touch.js"></script>
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="bootstrap/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="bootstrap/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- Load the menu file -->
+    <script>
+	function menu() {
+					  $('#exercises').load("exercises-menu.html");
+					  $('#project').load("project-menu.html");
+					  $('#cclicense').load("license.html");
+					  }
+	</script>
+
+  </head>
+
+  <body onload="menu()">
+
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">Home</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="about.html">About</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Exercises <span class="caret"></span></a>
+              <ul id="exercises" class="dropdown-menu" role="menu">
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Final Project <span class="caret"></span></a>
+              <ul id="project" class="dropdown-menu" role="menu">
+              </ul>
+            </li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    	
+	<!-- Insert your content here below! -->
+
+
+    <h2><b>Exercise 12 Molding and Casting</b></h2>
+    
+  <p><a href="http://archive.fabacademy.org/archives/2016/master/videos/04-20/index.html" target="_blank">
+  <button type="button" class="btn btn-primary btn">This week's Lecture</button></a><br>
+
+  <h3>Requirement</h3>
+	
+	<ul>
+	 <li>design a 3D mold, machine it, and cast parts from it</li>
+	</ul><br>
+	
+
+	<h3>Designing the positive mold</h3>
+
+	<p>I have decided to use a simple design as the object for my mold, for a start. And that is "SP", the logo of my organization, Singapore Polytechnic. I cropped the PNG photo into a size which I would like to use, and convert it into SVG format using inkscape. Then I can import the svg file to 123D design. I angled the base to about 2mm inward so that it would be easier to release from the mold. The problem with 3d-printing the positive mold is that it does not have a smooth finish. Because of that, I added a coat of <a href="http://www.smooth-on.com/Epoxy-Coatings-XTC/c1397_1429/index.html">XTC-3D</a>, which is a protective coating for smoothing and finishing 3D printed parts, to smoothen out the rough surfaces. Two liquids (A & B) are mixed together and brushed onto the surface. Coating self-levels and wets out uniformly without leaving brush strokes. Working time is 10 minutes and cure time is about 4 hours.</p><br>
+
+  <div class="container"><center>
+      <img src="photo/12_splogo_123d.jpg" class="img-thumbnail" width="400">
+      <img src="photo/12_positive_3dprint_cura.jpg" class="img-thumbnail" width="400">
+      <img src="photo/12_positive_3dprint.jpg" class="img-thumbnail" width="400">
+      <img src="photo/12_positive_gloss.jpg" class="img-thumbnail" width="400">
+      <legend>Designing the positive mold</legend></center>
+</div><br><br>
+
+  <p>I needed to make a container for the negative mold to sit. And I am using the <a href="http://boxmaker.connectionlab.org/">boxmaker</a> to make a box quickly. I made a noob mistake at the first cut. I forgot to take the thickness of both sides of the joints (+ 2.7 + 2.7) into consideration. The final parameters are:</p>
+
+  <ul><li> 70.4 x 55.4 x 25 mm</li>
+    <li>Material thickness: 2.7 mm</li>
+  </ul><br>
+
+<div class="container"><center>
+      <img src="photo/12_box_too_small.jpg" class="img-thumbnail" width="400">
+      <img src="photo/12_boxmaker.jpg" class="img-thumbnail" width="400">
+      <img src="photo/12_boxmaker_pdf.jpg" class="img-thumbnail" width="400">
+      <img src="photo/12_box_coreldraw.jpg" class="img-thumbnail" width="400">
+      <legend>Designing the rectangular container for the negative mold</legend></center>
+</div><br><br>
+
+<p>However, I didn't have time that day to cut a 2nd time. And I found an alternative to hold my mold. So I didn't have to waste time to lasercut again.</p>
+
+<div class="container"><center>
+      <img src="photo/12_container.jpg" class="img-thumbnail" width="400">
+      <img src="photo/12_container_sp.jpg" class="img-thumbnail" width="400">
+      <legend>A off-the-shelf container for my negative mold</legend></center>
+</div><br><br>
+
+
+  <h3>Making the Negative Mold</h3>
+
+  <p>We are using the <a href="https://www.eti-usa.com/easymold-silicone-rubber">Easy Mold Silicon rubber</a> to make the mold. Instructions can be found <a href="https://www.eti-usa.com/sites/eti-usa.com/files/EMSR-Instruction-Sheet.pdf" target="_blank">here</a>.There are some good tutorials on how to make a soft mold, such as this 2-part clip: <a href="https://www.youtube.com/watch?v=cImkZzJeiA0" target="_blank">How to Make a Block Mold Using Easy Mold Silicone Rubber</a> and <a href="https://www.youtube.com/watch?v=ZaysT6o1sic" target="_blank">How to Make a Resin Bangle Bracelet Using a Block Mold</a>.<br>
+  <p>EasyMold Silicone Rubber is ideal for a wide range of mold applications including Castin’Craft Clear Casting Resin and EasyCast Clear Casting Epoxy, plaster, concrete, wax, soap, low melt metals, baking, chocolates, ice cubes and air-dry clay. For block molds, we can determine how much silicone rubber is needed first by pouring rice into the area around and over the object in the contained area. Then, pour this rice into a measuring cup to determine how much silicone rubber to mix.</p>
+  <ol>
+    <li>Using a plastic container slightly larger than the original piece, apply hot melt glue or sulfur free clay to the base of the item. This creates a seal as well as securing the item. Position item in container and press firmly.</li>
+    <li>Measure equal amounts of parts A and B by volume. Blend until a uniform color is achieved.</li>
+    <li>Pour a thin stream to one side of item. Allow mold to cure 24 hours.</li>      
+  </ol></p>
+
+  <p>After mixing the Part A and B uniformly, I pour the mixture into the container. One of my classmates managed to borrow a vacuum degassing chamber for our project. I was told that we didn't really need a machine like this because if we take care to stir the mixture we can minimise bubbles and that the bubbles could be easily gotten rid of by simply knocking the container continuously for 5 minutes against the tabletop. However I felt that this equipment is a necessary step considering the amount of bubbles it was able to remove from the mixture because my model was 3d-printed, which was filled with air. After undergoing the vacuum chamber for about 30 minutes, I let it cure for 24 hours with the rest of my classmates.</p><br>
+
+  <div class="container"><center>
+      <img src="photo/12_silicon_02.jpg" class="img-thumbnail" width="400">
+      <img src="photo/12_silicon_03.jpg" class="img-thumbnail" width="400">
+      <img src="photo/12_silicon_04.jpg" class="img-thumbnail" width="400">
+      <img src="photo/12_silicon_06.jpg" class="img-thumbnail" width="400">
+      <img src="photo/12_silicon_07.jpg" class="img-thumbnail" width="400">
+      <img src="photo/12_silicon_08.jpg" class="img-thumbnail" width="400">
+      <legend>The process of making the negative mold out of silicon rubber</legend></center>
+</div><br><br>
+
+<h3>Casting</h3>
+
+  <p>I am using the <a href="https://www.eti-usa.com/easy-cast">EasyCast Clear Casting Epoxy</a> to make the mold. Instructions can be found <a href="https://www.eti-usa.com/sites/eti-usa.com/files/EasyCast-Instruction-Sheet-11-x-12-Final.pdf" target="_blank">here</a>.There are some good tutorials on how to do casting using epoxy resin, such as this clip: <a href="https://www.youtube.com/watch?v=ImhgPu1b-3I" target="_blank">How To Use EasyCast Clear Casting Epoxy</a>.<br>
+    <p>EasyCast is a two component, low odor, solvent free, clear casting epoxy. It can easily be colored, tinted or combined with fillers to create faux granite or metallic castings. These characteristics make it ideal for casting and embedding up to 6 ounces (maximum) per pour. </p>
+  <ol>
+    <li>Add equal volume of resin and hardener (1 is to 1) to a container and mix together for two full minutes. During mixing, use the stir stick to scrape the sides and bottom of your mixing container. Occasionally scrape the mixture from your stir stick back into the solution. After two full minutes of mixing, pour the contents from the first container into a second container. Using a new stir stick, mix the contents of this second container another minute, again scraping sides of container and stir stick. Pour immediately from this second container.</li>
+    <li>Cast pieces should cure at temperatures between 21°C and 29°C. Normal cure for castings 1" thick is 24 hours for soft cure, 72 hours for hard cure.</li>
+  </ol></p>
+
+  <p>After mixing the resin and hardener together uniformly, I added a drop of coloring to the content and mix until thorough. Then, I pour the content into the silicon mold and let it cure for another 24 hours.</p><br>
+
+  <div class="container"><center>
+      <img src="photo/12_mold_with_epoxy.jpg" class="img-thumbnail" width="600">
+      <legend></legend></center>
+</div><br><br>
+
+
+<h3>Milling Process</h3>
+
+<p>After I've done most of the work, I was informed only on the day of submission by the regional guru that 3d-printed mold was unacceptable, as the assessment criteria for the week requires us to <b>design appropriate objects within the limitations of 3 axis machining</b>. As a result, I spent an additional day working on the positive mold. The material used was high-density plastic block that a colleague helped me source from one of the schools in Singapore Polytechnic. With the guidance of my colleague, I was able mill the SP logo via <a href="http://www.mastercam.com/en-us/" target="_blank">Mastercam</a>. It was a complicated software but the toolpath it was able to control was very precise. <a href="http://www.mastercam.dk/x6/Dynamic_Milling.pdf">Dynamic Milling</a> was the technique utilized for the job. Dynamic area mill is a pocket toolpath that utilizes dynamic motion. A boundary is selected; islands, bosses, and geometry to avoid are added; tooling, parameters, entry method, and linking values are entered; and the toolpath is generated. Material is removed from the inside to the outside in a highly efficient manner. <br><br>
+
+  One interesting function of Mastercam is <b>Backplotting All Toolpaths</b>. Backplot is a Mastercam function that allows you to see the path the tools take to cut the part. This display lets you spot errors in the program before you machine the part. To do that, go to the top of the Toolpath Manager, click the Select all operations button. All five toolpath folders display a check mark. Right-click in the graphics window and choose Isometric (WCS) from the menu to view the part and all toolpaths in the isometric view. Use the buttons and sliders on the Backplot VCR bar to backplot the operations. Detailed instructions and settings on how to backplot and send NC file to the <a href="http://www.signvec.com/product.php?cid=1&pid=74" target="_blank">SK2030 CNC Router</a> can be found <a href="http://www.mastercam.dk/x6/Basic_2D_Machining_Tutorial.pdf" target="_blank">here</a>.</p><br><br>
+
+
+<div class="container"><center>
+      <img src="photo/12_mastercam01.jpg" class="img-thumbnail" width="400">
+      <img src="photo/12_mastercam02.jpg" class="img-thumbnail" width="400">
+      <img src="photo/12_mastercam04.jpg" class="img-thumbnail" width="400">
+      <img src="photo/12_mastercam05.jpg" class="img-thumbnail" width="400">
+      <img src="photo/12_mastercam06.jpg" class="img-thumbnail" width="400">
+      <img src="photo/12_mastercam07.jpg" class="img-thumbnail" width="400">
+      <img src="photo/12_mastercam08a.jpg" class="img-thumbnail" width="400">
+      <img src="photo/12_mastercam08.jpg" class="img-thumbnail" width="400">
+      <img src="photo/12_sp_gcode.jpg" class="img-thumbnail" width="400">
+      <img src="photo/12_hidensity_milling.jpg" class="img-thumbnail" width="400">
+      <legend></legend></center>
+</div><br><br><br>
+
+  <h3>Hero Shots</h3>
+  
+  <p class="pic"><img src="photo/12_finished_product.jpg" width="600">
+  <legend>Positive & negative mold and casting</legend></p>
+
+  <p class="pic"><img src="photo/12_milled_positive.jpg" width="600">
+  <legend>Positive mold milled by CNC router</legend></p>
+
+  <p class="pic"><img src="photo/12_epoxy_casting.jpg" width="600">
+  <legend>Epoxy resin - could see tiny bubbles within</legend></p>
+
+  <center><iframe width="560" height="315" src="https://www.youtube.com/embed/gTzvEOVHRcg" frameborder="0" allowfullscreen></iframe></center>
+
+  <br><br>
+  <h3>Download Week 12 work files</h3>
+  <ul>
+      <li><a href="workfiles/wk12/splogo.123dx" target="_blank">splogo.123dx</a></li>
+      <li><a href="workfiles/wk12/sp.emcx-8" target="_blank">Mastercam - sp.emcx-8</a></li>
+      <li><a href="workfiles/wk12/sp.nc" target="_blank">Gcode - sp.nc</a></li>
+   </ul><br>
+
+   <h3>References</h3>
+  <ul>
+    <li>
+      <a href="https://www.youtube.com/watch?v=JyQmEG9qmfw" target="_blank">Simple Silicone Rubber Molds (no parting line)</a>
+    </li>
+    <li>
+      <a href="https://www.youtube.com/watch?v=oabCofuknbc" target="_blank">Moldmaking With Clear Silicone Rubber</a>
+    </li>
+    <li>
+      <a href="https://www.youtube.com/watch?v=EPz8lnCOXSk" target="_blank">Mold Making - Surface Casting</a>
+    </li>
+    <li>
+      <a href="https://www.youtube.com/watch?v=WVes_FoBK4Y" target="_blank">Repro Fast Cast Urethanes</a>
+    </li>
+    <li>
+      <a href="https://www.youtube.com/watch?v=sOyBawt1-Ec" target="_blank">Mold Making Tutorial: How To Make a Brush-On Rubber Mold of a Bust</a>
+    </li>
+    <li>
+      <a href="https://www.youtube.com/watch?v=cImkZzJeiA0" target="_blank">How to Make a Block Mold Using Easy Mold Silicone Rubber</a>
+    </li>
+    <li>
+      <a href="https://www.youtube.com/watch?v=ZaysT6o1sic" target="_blank">How to Make a Resin Bangle Bracelet Using a Block Mold</a>
+    </li>
+    <li>
+      <a href="https://www.youtube.com/watch?v=ImhgPu1b-3I" target="_blank">How To Use EasyCast Clear Casting Epoxy</a>
+    </li>
+    <li>
+      <a href="http://www.mastercam.dk/download.html" target="_blank">Mastercam Download</a>
+    </li>
+    <li>
+      <a href="http://www.mastercam.dk/x6/Dynamic_Milling.pdf" target="_blank">mastercam x getting started tutorials - Dynamic Milling</a>
+    </li>
+    <li>
+      <a href="http://www.mastercam.dk/x6/Basic_2D_Machining_Tutorial.pdf" target="_blank">Basic 2D Machining</a>
+    </li>
+    <li>
+      <a href="https://www.youtube.com/watch?v=o-5NgNfsVWQ" target="_blank">Mastercam's Dynamic Milling</a>
+    </li>
+    <li>
+      <a href="http://mkmra2.blogspot.sg/2013/11/mastercam-toolpath-setup.html" target="_blank">Mastercam Toolpath Setup</a>
+    </li>
+
+
+        
+    
+	</ul><br>
+
+
+  
+    <!-- End of your content -->
+
+    </div> <!-- /container -->
+
+	<!-- footer -->
+    
+    <footer id="footer">
+        <p id="cclicense">
+                </p>
+        <p class="license">
+        Theme: <a href="https://github.com/openp2pdesign/FabAcademy_Template">Fab Academy Template</a> by <a href="http://openp2pdesign.org">Massimo Menichinelli</a> <br>
+        Based on <a href="http://getbootstrap.com/">Twitter Bootstrap</a>+<a href="http://jquery.com/">JQuery</a>+<a href="https://code.google.com/p/google-code-prettify/">google-code-prettify</a>+<a href="http://jmblog.github.io/color-themes-for-google-code-prettify/github/">GitHub theme for google-code-prettify</a>+<a href="https://code.google.com/p/jsc3d/">JSC3D</a>+<a href="https://github.com/thegrubbsian/jquery.ganttView">jquery.ganttView</a>.
+        </p>
+    </footer>
+    
+
+	<!-- Do not touch this! -->
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="media/jquery-1.9.1.min.js"></script>
+    
+    <!-- Syntax Highlighter -->
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js">
+    </script>
+    <!-- From https://github.com/jmblog/color-themes-for-google-code-prettify -->
+    <link href="media/github.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript">
+	  !function ($) {
+		$(function(){
+		  window.prettyPrint && prettyPrint()   
+		})
+	  }(window.jQuery)
+	</script>
+	
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="bootstrap/js/ie10-viewport-bug-workaround.js"></script>
+
+  </body>
+</html>

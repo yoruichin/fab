@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Yue Siew Chin">
+    <link rel="icon" href="media/favicon.ico">
+
+    <title>Fab Academy 2016 | Yue Siew Chin | Exercise 06</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="media/fabacademy.css" rel="stylesheet">
+    
+    <!-- 3D files viewer -->
+    <script type="text/javascript" src="media/jsc3d_ie.min.js"></script>
+	<script type="text/javascript" src="media/jsc3d.min.js"></script>
+    <script type="text/javascript" src="media/jsc3d.webgl.js"></script>
+    <script type="text/javascript" src="media/jsc3d.touch.js"></script>
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="bootstrap/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="bootstrap/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- Load the menu file -->
+    <script>
+	function menu() {
+					  $('#exercises').load("exercises-menu.html");
+					  $('#project').load("project-menu.html");
+					  $('#cclicense').load("license.html");
+					  }
+	</script>
+
+  </head>
+
+  <body onload="menu()">
+
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">Home</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="about.html">About</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Exercises <span class="caret"></span></a>
+              <ul id="exercises" class="dropdown-menu" role="menu">
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Final Project <span class="caret"></span></a>
+              <ul id="project" class="dropdown-menu" role="menu">
+              </ul>
+            </li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    	
+	<!-- Insert your content here below! -->
+
+
+    <h2><b>Exercise 06 Electronics Design</b></h2>
+    
+  <p><a href="http://archive.fabacademy.org/archives/2016/master/videos/03-02/index.html" target="_blank">
+  <button type="button" class="btn btn-primary btn">This week's Lecture</button></a><br>
+
+  <h3>Requirement</h3>
+	
+	<ol>
+	 <li>
+		Redraw the <a href="http://academy.cba.mit.edu/classes/embedded_programming/index.html#echo" target="_blank">echo hello-world</a> board
+	 </li>
+	 <li>
+		Add a button & LED to the board
+	 </li>
+	 <li>
+		Mill and stuff board
+	 </li>
+   <li>
+    Simulate its operations 
+   </li>
+	</ol>
+	
+
+	<h3>Introduction</h3>
+
+	<p>EAGLE is a PCB CAD softwares that is free and cross-platform. It was a seemingly uphill task - design a schematic and board using <a href="http://www.cadsoftusa.com/download-eagle/" target="_blank">EAGLE</a> (Easily Applicable Graphical Layout Editor). Fortunately, I was relieved to know that there are tutorials available to help me accomplish the task.  I am glad I spent my day one reading though them carefully before attempting to do anything. These tutorials are very detailed and were sufficient to help me work around Eagle.</p>
+
+  <ul>
+    <li>
+      <a href="http://archive.fabacademy.org/archives/2016/doc/electronics_design_eagle.html" target="_blank">Electronics Design - Eagle</a>
+    </li>
+    <li>
+      <a href="https://learn.sparkfun.com/tutorials/how-to-install-and-setup-eagle" target="_blank">How to Install and Setup EAGLE</a>
+    </li>
+    <li>
+      <a href="https://learn.sparkfun.com/tutorials/using-eagle-schematic" target="_blank">Using EAGLE: Schematic</a>
+    </li>
+    <li>
+      <a href="https://learn.sparkfun.com/tutorials/using-eagle-board-layout" target="_blank">Using EAGLE: Board Layout</a>
+    </li>
+  </ul>
+
+  <p>It can be as easy as reading the component image, following instruction and looking at other people's example. Study the component board and the existing traces carefully and take note what components are needed.<br><br>
+  <b>Things to take note:</b></p>
+
+  <ul>
+    <li>Download and install the <a href="http://fabacademy.org/archives/2015/doc/electronics/fab.lbr" target="_blank">Fab.lbr</a> Component Libraries.
+    </li>
+    <li>The Schematic Editor is where you select and add the relevant components and build the connections between them. The layout can be totally different from the board you finally generate.       
+    </li>
+    <li>The board editor generates all the connections made at the schematic editor and you arrange them to be milled and traced. For my assignment, I will be using a single-sided surface-mount PCB. I have to ensure there is no overlap or intersection of routes, which may cause a short. </li>
+    <li>After generating the board file, be sure to keep both schematic editor and board editor open at all times, so that changes made to the schematic editor can be reflected in the board editor.      
+    </li>
+    <li>If the components are too far, or too messy if routed directly, using a net stub to connect them. </li>
+  </ul>
+    
+  <h3>Hello World Component List</h3>
+  <div class="container"><img src="photo/06_hello_ftdi_44_req.png" width="400">
+ </div><br>
+  <p>For easy reference, names in brackets are the ones added to my schematic design on Eagle.
+  
+  <ul>
+  <li>1x Microcontroller Attiny44A (ATTINY44-SSU): IC chip for programming</li>
+  <li>1x 20MHz Resonator (RESONATOR): external clock. Faster and more accurate than attiny  8Mhz internal clock.</li>
+  <li>1x Programming Header J1, 2x3 (AVRISPSMD): to interface the programming of the board</li>
+  <li>1x FTDI Header J2, 1x6 (FTDI-SMD-HEADER): powers the board and allows board to talk to computer</li>
+  <li>1x Resistor 499 (RES-US1206): current limiting resistor so we don't burn out the LED.</li>
+  <li>2x Resistors 10K (RES-US1206): <a href="https://learn.sparkfun.com/tutorials/pull-up-resistors" target="_blank">pull-up resistor</a></li>
+  <li>1x Capacitor 1uF (CAP-US1206): to decouple one part of an electrical network (circuit) from another to remove voltage or signal spikes in electronic circuits.</li>
+  <li>1x LED (LED1206)</li>
+  <li>1x 6mm Switch button (6MM_SWITCH6MM_SWITCH)</li>
+  </ul>
+
+
+  <h3>Working on Eagle</h3>
+
+  <ul>
+  <li>Download and Install <a href="http://www.cadsoftusa.com/download-eagle/" target="_blank">Eagle</a></li>
+  <li>Download and install the <a href="http://fabacademy.org/archives/2015/doc/electronics/fab.lbr" target="_blank">Fab.lbr</a> Component Libraries.
+    </li>
+  <li>Create a new Project: File > New > Project</li>
+  <li>Right-click on the new project and create a new schematic.</li>
+  <li>Add all the required components onto the schematic view using the <b>ADD</b> tool and create connections between them using the <b>NET</b> tool. 
+  <li>Verify the design using the <b>ERC</b> (Electrical Rules Check).</li>
+  <li><b>NAME</b> the nets attached to components that need to be connected by naming them with the same name. After you name the component - label it so the name appears in the diagram. All of the components in the schematic named GND are all connected to a common ground point.</li>
+  <li><font color="red">Use pin 6 (PA7) on the to connect to the LED. Use pin 10 (PA3) on the to connect to the button.</font> </li>
+  <li>Go into the board view and place the components and route the traces. From top menu > File > switch to board. The components just added will be jumbled up in a corner with yellow unrouted traces attached to them.</li>
+  <li><b>MOVE</b> each individual component around.</li>
+  <li>I used the <b>AUTOROUTER</b> feature to generate the initial routing for my board, then fine-tune the traces manually.</li>
+  <li><b>ROUTE</b> the traces of the board. To draw all of our copper traces, use the ROUTE tool. After left-click a starting point, right-click to alternative between the different bend styles. To go back and re-work a route, use the <b>RIPUP</b> tool to remove traces. Make sure there is no overlap of traces, which will also be flagged out during a Design Rule Check (DRC).</li>
+   </ul>
+
+  <div class="container"><center>
+      <img src="photo/06_eagle_01.jpg" class="img-thumbnail" width="400">
+      <img src="photo/06_eagle_netstub01.jpg" class="img-thumbnail" width="400">
+      <img src="photo/06_eagle_netstub02.jpg" class="img-thumbnail" width="400">
+      <img src="photo/06_eagle_02.jpg" class="img-thumbnail" width="400">
+      <img src="photo/06_eagle_board_01.jpg" class="img-thumbnail" width="400">
+      <img src="photo/06_eagle_board_02.jpg" class="img-thumbnail" width="400">
+      <legend>Working on Eagle</legend></center>
+  </div><br><br>
+
+  <h3>Design Rule Check (DRC)</h3>
+
+  <p>Design Rule Check is the area of Electronic Design Automation that determines whether the physical layout of a particular chip layout satisfies a series of recommended parameters called Design Rules. The most basic design rules for single layer rules are width and spacing / clearance. A width rule specifies the minimum width of any shape in the design. A spacing (clearance) rule specifies the minimum distance between two adjacent objects. I have used the clearance settings as shown in screenshot below to run a DRC test on my board design and found some errors. Running 3 routes in between the tiny44 chipset was a bad idea. They were too close to one another.</p>
+
+  <p class="pic">
+    <img src="photo/06_drc_check.jpg" class="img-thumbnail" width="400">
+    <img src="photo/06_hello_v1.png" width="400"><legend>Version 1 - Insufficient clearance </legend>
+  </p>
+
+  <p>I amended and re-routed some of the traces and added my name at the top left corner. This time the text returned an error. This was be rectified by changing the properties of the text to <b>vector</b> format. </p>
+
+  <p class="pic">
+    <img src="photo/06_hello_v2.jpg" width="400">
+    <img src="photo/06_drc_vector.jpg" width="400">
+    <legend>Version 2 - The text "chin" at the top left corner retured an error, but was rectified by changing to vector format.</legend>
+  </p>
+
+
+  <div class="container"><center>
+            <img src="photo/06_eagle_drc_02.jpg" class="img-thumbnail" width="500">
+      <legend>Version 3 - Finally error-free.</legend></center><br><br>  
+  </div>
+
+  <h3>The Milling Process</h3>
+
+  <p>The recommended solution is to use <a href="http://fabmodules.org/" target="_blank">fabmodule</a> to generate the board. 
+
+    <p class="pic"><img src="photo/06_fabmodule_gcode.jpg" width="600">
+  <legend>Using Fabmodule</legend>
+</p>
+
+<h3>Settings used to generate G-code</h3>
+
+    In our lab, we have the following mills, and we will be using the PCB2020B for this week's assignment.
+    <ul><li>LKPF Protomat S103</li>
+    <li>Roland iModela</li>
+    <li><a href="http://www.aliexpress.com/item/PCB-milling-machine-CNC-2020B-DIY-cnc-wood-carving-machine-mini-engraving-machine-3050114C/32261769903.html" target="_blank">PCB2020B CNC Router</a> from China</li></ul> <br>
+
+  <div class="container"><center>
+    <img src="photo/06_milling_machine.jpg" class="img-thumbnail" width="400">
+    <img src="photo/06_testing_zparameters.jpg" class="img-thumbnail" width="400">
+    <legend>Configuring the Z axis of the PCB2020B CNC Router</legend>
+  </div><br>
+
+  <ul><li>On Eagle, turn off all layers except <b>Top</b> and <b>Unrouted</b>. This will show any unrouted paths. Draw a border (board outline) on the Top layer. </li>
+  <li>Generate G-code using <b>File > Run ULP</b> (User Language Program) and choose <a href="http://www.pcbgcode.com/" target="_blank">pcb-gcode-setup.ulp</a></li>
+  <li>Put in the following configuration: 
+    <ul>
+      <li>Machine > Select Millimeters (mm) as the unit of measure.</li>
+      <li>Under Generation Option</li>
+      <ul>
+      <li>Top side - generate top outlines</li>
+      <li>Deselect bottom side</li>
+      <li>Board - Show Preview 800x600</li>
+      <li>Board - Generate milling Depth -0.18</li>
+      <li>Board - Prefer Climb</li>
+      <li>Isolation - Single Pass, Minimum 0.12</li>
+    </ul>
+      <li>Machine > Tool Diameter - 0.12</li>
+  </ul>
+  <li>The output of this ULP is a file with the extension .etch.top. This is the G-code that must be loaded into CNC USB Controller, the software that operates the CNC-2020 machine for engraving.</li>
+    <ul>
+      <li>Move bit to the bottom left corner of the copper board using the jog function. Set x & y axis to zero.</li>
+      <li>Using a sheet of paper, determine the home location of the z axis.</li>
+      <li>Click "play" to begin milling.</li>
+    </ul> 
+  </ul>
+
+
+
+  <div class="container"><center>
+    <img src="photo/06_set_origin.jpg" class="img-thumbnail" width="400">
+    <img src="photo/06_ulp_pcb_gcode_setup.jpg" class="img-thumbnail" width="400">
+    <legend>Running the ULP</legend><br>
+    <img src="photo/06_machine_mm.png" class="img-thumbnail" width="400">
+    <img src="photo/06_generate_tab.jpg" class="img-thumbnail" width="400">
+    <img src="photo/06_machine_tool_diameter.png" class="img-thumbnail" width="400">
+    <img src="photo/06_path_generation.png" class="img-thumbnail" width="400">
+    <legend>Steps to generate the G-code of the milling path</legend><br>
+  </div><br>
+
+  <center><iframe width="560" height="315" src="https://www.youtube.com/embed/5g7Td1nIhps" frameborder="0" allowfullscreen></iframe></center><br>
+
+  <p class="pic"><img src="photo/06_milled_board.jpg" width="400"><legend>Milled Board</legend>
+  </p>
+
+  <h3>Stuffing the board</h3>
+
+  <p>Compared to week 4, stuffing the board was much smoother after I got the hang of how things should be done. I felt more confident in reading schematic diagrams. I was also able to know the right amount of solder to apply to prevent shorts. Things to take note includes: </p>
+
+    <ul><li>One trick I learnt is to apply a little solder on the pads first. With a pair of tweezers, position the component in place then heat the solder under the copper area to bridge the connections. Smear the end sides of the components with the melted solder to better hold the component.</li>
+    <li>ATTiny44 is polarized and needed to be oriented correctly. Look for a little circle at one of the corners of the chip.</li>
+    <li>First swab a little solder on the pads. Lay the FTDI header flat on the circuit board with the slightly bent part touching the pads. I held down my tweezers across the plastic part of the header to ensure the component is sitting correctly before melting the solder on the pad under the pins.</li>
+    <li>The legs of the button switch do not fit exactly. There are slightly wider. I applied solder to the inside area of the legs to bridge connection between the legs and the pads.</li>
+    <li>The LED is polarized. Ensure the positive is connected to the resistor, and negative to GND. We can test the workability of the LED with a multimeter.</li>
+    <li>Finally, after all the stuffing is done, use a multimeter to test for continuity and shorts between all the connections.</li></ul>
+
+    <div class="container"><center>
+    <img src="photo/06_hello_componentlist.jpg" class="img-thumbnail" width="400"><br>
+    <img src="photo/06_mesoldering.jpg" class="img-thumbnail" width="400"><br>
+    <img src="photo/06_stuffed_board_01.jpg" class="img-thumbnail" width="400">
+    <img src="photo/06_stuffed_board_02.jpg" class="img-thumbnail" width="400">
+    <legend>Stuffed Hello world PCB board</legend></center><br></div>
+    
+
+  <h3>Exploring <a href="https://123d.circuits.io/" target="_blank">123D Circuits</a></h3>
+
+  <p>To learn how to use, I watched the youtube <a href="https://www.youtube.com/playlist?list=PLu8TYSQ5jCFho31LxXCoEBlL3x94l6mLc" target="_blank">tutorial</a> by Autodesk 123D. This web application is very easy to use and can quickly simulate circuits. Similar to Eager, there are 2 interfaces: schematics view, PCB view, and there is an option to import EAGLE files to the application. The Lab view takes you to a bread board where you can set up and circuit and simulate it to test its workability. There is also a code editor to write program to it. There are some basic checks for overlapping and routing.<br></p>
+
+  The shortcomings are: 
+  <ul>
+    <li>simulation is only available at the lab view, not PCB or Schematic view.</li>
+    <li>it does not have many of the components required by my assignment.</li>
+    <li>it does not have an autoroute capability.</li>
+    <li>it does not have a net stub for the schematic view like Eagle, so the schematic can be quite messy.</li>
+    <li>Surface mounting components seem to be fewer than through-hole components, so I had a hard time finding the matching components required by my assignment.</li>  
+  </ul><br>
+  
+
+  <div class="container"><center>
+    <img src="photo/06_123dcircuit_01.jpg" class="img-thumbnail" width="400">
+    <img src="photo/06_123dcircuit_02.jpg" class="img-thumbnail" width="400">
+    <legend>123D Circuit</legend></center><br></div>
+
+
+  <br>
+  <h3>Download Week 6 work files</h3>
+  <ul>
+      <li><a href="workfiles/wk6/hello.sch" target="_blank">hello.sch</a></li>
+      <li><a href="workfiles/wk6/hello.brd" target="_blank">hello.brd</a></li>
+      <li><a href="workfiles/wk6/hello.top.etch.tap" target="_blank">hello.top.etch.tap</a></li>
+   </ul>
+
+
+    <h3>References</h3>
+  <ul>
+    <li>
+      <a href="http://archive.fabacademy.org/archives/2016/doc/electronics_design_eagle.html" target="_blank">Electronics Design - Eagle</a>
+    </li>
+    <li>
+      <a href="https://learn.sparkfun.com/tutorials/how-to-install-and-setup-eagle" target="_blank">How to Install and Setup EAGLE</a>
+    </li>
+    <li>
+      <a href="https://learn.sparkfun.com/tutorials/using-eagle-schematic" target="_blank">Using EAGLE: Schematic</a>
+    </li>
+    <li>
+      <a href="https://learn.sparkfun.com/tutorials/using-eagle-board-layout" target="_blank">Using EAGLE: Board Layout</a>
+    </li>
+    <li><a href="https://www.sparkfun.com/tutorials/108" target="_blank">Beginning Embedded Electronics - Lecture 8 - Eagle: Schematics</a>
+    </li>
+    <li><a href="https://www.sparkfun.com/tutorials/109" target="_blank">Beginning Embedded Electronics - Lecture 9 - Eagle: PCB Layout</a></li>
+    <li><a href="https://www.sparkfun.com/tutorials/110" target="_blank">Beginning Embedded Electronics - Lecture 10 - Eagle: Creating a new part</a></li>
+    <li><a href="https://www.sparkfun.com/tutorials/111" target="_blank">Beginning Embedded Electronics - Lecture 11 - Common Mistakes, Tips and Tricks</a></li>
+    <li><a href="https://www.youtube.com/playlist?list=PLu8TYSQ5jCFho31LxXCoEBlL3x94l6mLc" target="_blank">123D Circuits Youtube tutorials</a></li>
+    
+	</ul><br>
+
+
+  
+
+
+	
+    <!-- End of your content -->
+
+    </div> <!-- /container -->
+
+	<!-- footer -->
+    
+    <footer id="footer">
+        <p id="cclicense">
+                </p>
+        <p class="license">
+        Theme: <a href="https://github.com/openp2pdesign/FabAcademy_Template">Fab Academy Template</a> by <a href="http://openp2pdesign.org">Massimo Menichinelli</a> <br>
+        Based on <a href="http://getbootstrap.com/">Twitter Bootstrap</a>+<a href="http://jquery.com/">JQuery</a>+<a href="https://code.google.com/p/google-code-prettify/">google-code-prettify</a>+<a href="http://jmblog.github.io/color-themes-for-google-code-prettify/github/">GitHub theme for google-code-prettify</a>+<a href="https://code.google.com/p/jsc3d/">JSC3D</a>+<a href="https://github.com/thegrubbsian/jquery.ganttView">jquery.ganttView</a>.
+        </p>
+    </footer>
+    
+
+	<!-- Do not touch this! -->
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="media/jquery-1.9.1.min.js"></script>
+    
+    <!-- Syntax Highlighter -->
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js">
+    </script>
+    <!-- From https://github.com/jmblog/color-themes-for-google-code-prettify -->
+    <link href="media/github.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript">
+	  !function ($) {
+		$(function(){
+		  window.prettyPrint && prettyPrint()   
+		})
+	  }(window.jQuery)
+	</script>
+	
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="bootstrap/js/ie10-viewport-bug-workaround.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Yue Siew Chin">
+    <link rel="icon" href="media/favicon.ico">
+
+    <title>Fab Academy 2016 | Yue Siew Chin | Exercise 14</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="media/fabacademy.css" rel="stylesheet">
+    
+    <!-- 3D files viewer -->
+    <script type="text/javascript" src="media/jsc3d_ie.min.js"></script>
+	<script type="text/javascript" src="media/jsc3d.min.js"></script>
+    <script type="text/javascript" src="media/jsc3d.webgl.js"></script>
+    <script type="text/javascript" src="media/jsc3d.touch.js"></script>
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="bootstrap/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="bootstrap/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- Load the menu file -->
+    <script>
+	function menu() {
+					  $('#exercises').load("exercises-menu.html");
+					  $('#project').load("project-menu.html");
+					  $('#cclicense').load("license.html");
+					  }
+	</script>
+
+  </head>
+
+  <body onload="menu()">
+
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">Home</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="about.html">About</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Exercises <span class="caret"></span></a>
+              <ul id="exercises" class="dropdown-menu" role="menu">
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Final Project <span class="caret"></span></a>
+              <ul id="project" class="dropdown-menu" role="menu">
+              </ul>
+            </li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    	
+	<!-- Insert your content here below! -->
+
+
+    <h2><b>Exercise 14 Composites</b></h2>
+    
+  <p><a href="http://archive.fabacademy.org/archives/2016/master/videos/05-04/index.html" target="_blank">
+  <button type="button" class="btn btn-primary btn">This week's Lecture</button></a><br>
+
+  <h3>Requirement</h3>
+	
+	<ol>
+	 <li>design and make a 3D mold (~ft2)</li>
+   <li>produce a fiber composite part in it</li>
+	</ol><br>	
+
+	<h3>Introduction</h3>
+
+	<p>Composites are combinations of two materials in which one of the material is called the reinforcing phase, is in the form of fibers, sheets, or particles, and is embedded in the other material called the matrix phase. The advantages of composites are: weight ratio, tensile strength, toughness, better performance, fatigue resistance and design flexibility.<br><br>
+
+  The requirement is to build something that is at least one square foot big. I decided to make a frisbee after checking out some of the following past projects for inspirations.</p>
+
+  <ul>
+    <li><a href="http://fabacademy.org/archives/2015/eu/students/silli.saverio/exercise12.html" target="_blank">Saverio Silli</a></li>
+    <li><a href="http://fabacademy.org/archives/2013/students/paulet.jeanpierre/11-composites.html" target="_blank">Jean-Pierre Paulet</a></li>
+    <li><a href="http://fabacademy.org/archives/2015/eu/students/chalmers.iain/week-12-composites.html" taget="_blank">Iain Chalmers</a></li>
+  </ul>
+
+  <p class="pic"><img src="photo/14_frisbee.jpg" width="400">
+  <legend>Making a composite mold of a frisbee</legend>
+</p>
+
+<h3>Materials & Methods</h3>
+
+<p>The material I have chosen to use as my positive mold is a blue modelling foam as it is lightweight and strong to withstand the compaction of air pressure subsequently in the vacuum bagging process. As for the composite materials, I will be using natural fibre, namely cotton and felt. The method used is vacuum bagging. Vacuum bagging (or vacuum bag laminating) is a clamping method that uses atmospheric pressure to hold the adhesive or resin-coated components of a lamination in place until the adhesive cures. This process requires a vacuum pump and epoxy resin. The following is a list of some of the technical <a href="http://www.netcomposites.com/guide-tools/guide/repair/vacuum-bag-terms/" target="_blank">terms</a> associated with this process.<br><br>
+
+<ul>
+<li><b>Bleeder</b>: A nonstructural layer of material used in the manufacturing of composite parts to allow the escape of excess gas and resin during cure. The bleeder material is removed after the curing process is completed and the excess resin taken with it.</li>
+
+<li><b>Breather</b>: A loosely woven or nonwoven material that acts as a continuous vacuum path over a part but does not come in contact with the resin.</li>
+
+<li><b>Mold Release Agent</b>: A material applied to mold surfaces to facilitate the release of the molded article. Liquid, paste, spray and solid release materials are all common in composite fabrication.</li>
+
+<li><b>Peel Ply or Release Fabric</b>: A sacrificial nylon, polyester or non-porous Teflon ply that is placed over the outer plies of a laminate during lay-up. When the resin has cured the peel ply is removed. The results are a smooth surface that is easily prepared for subsequent bonding or painting.</li>
+
+<li><b>Perforated Release Film</b>: A solid release film that has been perforated with a uniform hole pattern comprised of usually 0.015” or 0.045”. Hole spacing ranges from 0.25” to 8” spacing. The effect is to restrict the amount of resin bleed that is able to pass through the film.</li>
+
+<li><b>Solid Film</b>: A barrier between the bleeder and breather layer to prevent the excess resin absorbed into the bleeder from soaking into the breather. The solid film is sized smaller than the bleeder and breather to allow an air path connecting both.</li>
+
+<li><b>Tool</b>: A structure, also referred to as a <b>mold</b>, that provides a specific size and shape in or over which a lay-up is formed, shaped and cured.</li>
+
+<li><b>Vacuum Bagging Film</b>: An airtight flexible sheet placed over a lay-up and sealed along its edges. The bag is fitted with vacuum ports and connected to a vacuum source. During the cure the bag is evacuated and the lay-up is compacted under atmospheric or autoclave pressure. Vacuum is applied to the bag during the entire cure cycle.</li>
+
+<li><b>Vacuum Port</b>: A machined or cast metal fitting that connects the vacuum bag to the vacuum source. The vacuum source can be a vacuum pump or a compressed air venturi. The port is connected to the vacuum source with a reinforced hose. Both the hoses and ports typically incorporate fittings that allow the hoses to be removed without losing the vacuum.</li>
+
+<li><b>Vacuum Sealant Tape</b>: A thick rubber based adhesive tape that is sticky on sides and used to form a seal between the vacuum bag and the tool surface. It has the ability to remain soft and pliable at temperatures in excess of 350ºF.</li>
+
+</ul>
+
+
+  <h3>Steps involved</h3>
+
+<p>
+<ul>
+  <li>Design the positive mold using Autodesk Inventor. Convert to STL file, and import to Mastercam.</li>
+  <li>Set the necessary toolpath and convert to G code. Then mill the design with the <a href="http://www.signvec.com/product.php?cid=1&pid=74" target="_blank">SK2030 CNC router</a>. Detailed steps on milling are documented <a href="exercise12.html" target="_blank">here</a>.</li>
+  <li>Fix the mold to a base plate.</li>
+  <li>Apply release wax to the entire mold.</li>
+  <li>Prepare epoxy mix: Epoxy resin to hardener proportion used in our lab is 10 parts epoxy to 6 parts hardener. I have used 135g of Epoxy with 85g of hardener.</li>
+  <li>1st layer: Peel Ply. Wet with epoxy mix.</li>
+  <li>2nd layer: cotton fabric. Wet with epoxy mix.</li>
+  <li>3rd layer: felt. Wet with epoxy mix.</li>
+  <li>4th layer: another release fabric. Wet with epoxy mix.</li>
+  <li>5th layer: Bleeder (white woolen material)</li>
+  <li>6th layer: flow media (blue netting)</li>
+  <li>Outermost layer: Vacuum bagging film</li>
+  <li>Before sealing the vacuum bag with sealant taping, secure the air tubing to one corner of the bag for extraction of air within the bag.</li>
+  <li>Turn on vacuum pump to remove air. Check sealant taping to ensure no leaking holes that air might escape.</li>
+  <li>Leave the vacuum pump on for the next 6-7 hours for the epoxy to cure.</li>
+</p>
+</ul><br>
+
+<h3>Milling process</h3>
+<p>I designed the frisbee using Inventor, then import to Mastercam to create the toolpath. Subsequently, the file needs to be converted to g-code that the CNC router can understand. </p><br>
+<div class="container"><center>
+      <img src="photo/14_frisbee01.jpg" class="img-thumbnail" width="400">
+      <img src="photo/14_milling_mold2.jpg" class="img-thumbnail" width="400">
+      <img src="photo/14_milling_mold.jpg" class="img-thumbnail" width="400">
+      <img src="photo/14_milling_mold3.jpg" class="img-thumbnail" width="400">
+      <legend>Milling the positive mold</legend></div><br><br> 
+
+<h3>Vacuum Bagging process</h3>
+<div class="container"><center>
+      <img src="photo/14_prep_baseplate.jpg" class="img-thumbnail" width="400">
+      <img src="photo/14_applying_wax.jpg" class="img-thumbnail" width="400">
+      <legend>Preparing the base plate and applying wax to the mold</legend><br>
+      <img src="photo/14_prep_materials.jpg" class="img-thumbnail" width="400">
+      <img src="photo/14_prep_resin.jpg" class="img-thumbnail" width="400">
+      <legend>Preparing the layers of materials and measure the resins</legend><br>
+      <img src="photo/14_mixing_resin.jpg" class="img-thumbnail" width="400">
+      <img src="photo/14_vacuum_pump.jpg" class="img-thumbnail" width="400">
+      <legend>Mix the right proportion of resin to hardener and pour on each layer. After the last layer, apply vacuum suction to hold the epoxy in place.</legend><br>
+      <img src="photo/14_curing.jpg" class="img-thumbnail" width="400">
+      <img src="photo/14_peeling_off_01.jpg" class="img-thumbnail" width="400">
+      <legend>Let vacuum suction continue for 24 hours while the epoxy cure. Then peel layer by layer.</legend><br>
+      <img src="photo/14_peeling_off_02.jpg" class="img-thumbnail" width="400">
+      <img src="photo/14_final_product_03.jpg" class="img-thumbnail" width="400">
+      <legend>Peeling off of release fabric, and bleeder layers </legend><br>
+      <img src="photo/14_final_product_02.jpg" class="img-thumbnail" width="400">
+      <img src="photo/14_final_product_04.jpg" class="img-thumbnail" width="400">
+      <legend>What was left is the composite of felt and cotton </legend></center>
+</div><br><br>  
+<p class="pic"><img src="photo/14_final_product_01.jpg" width="600">
+  <legend>Hero shot after trimming the edges</legend>
+</p><br>
+
+<center><iframe width="560" height="315" src="https://www.youtube.com/embed/3CPhGjcU9jQ" frameborder="0" allowfullscreen></iframe></center><br><br>
+
+<h3>Reflections</h3>
+
+<p>It would not have been possible to complete this week's assignment without my course mate, Tham for lending his pair of helping hands in much of the processes. I am also grateful for the Composite Technology Laboratory located in Workshop 14 in Singapore Polytechnic for allowing us to use the lab and the resources for this week's project. </p><br><br>
+
+<h3>Download Week 14 work files</h3>
+  <ul>
+      <li><a href="workfiles/wk14/frisbee.ipt" target="_blank">Inventor part file - frisbee.ipt</a></li>
+      <li><a href="workfiles/wk14/frisbee_2004.emcx-8" target="_blank">Mastercam - frisbee_2004.emcx-8</a></li>
+      <li><a href="workfiles/wk14/frisbee.nc" target="_blank">Gcode - frisbee.nc</a></li>
+   </ul><br>
+
+
+   <h3>References</h3>
+  <ul>
+    <li>
+      <a href="https://www.youtube.com/watch?v=t22vJLHWxYA" target="_blank">Layup Process</a></li>
+    <li>
+      <a href="https://www.youtube.com/watch?v=fnRAshCRaQs" target="_blank">Composites wet layup</a>
+    </li>
+    <li>
+      <a href="https://www.youtube.com/watch?v=IAdVO8Rkv6c" target="_blank">How To Make Your Own Carbon Fiber (Fibre) Parts.</a>
+    </li>
+    <li>
+      <a href="https://www.youtube.com/watch?v=qKrl1PPvliQ" target="_blank">How to make a mould for a carbon fiber (fibre) part</a>
+    </li>
+    <li>
+      <a href="http://www.netcomposites.com/guide-tools/guide/repair/vacuum-bag-terms/" target="_blank">Vacuum Bag Terms</a>
+    </li>
+    <li>
+      <a href="http://www.westsystem.com/ss/assets/HowTo-Publications/Vacuum-Bagging-Techniques.pdf" target="_blank">Vacuum Bagging Techniques</a>
+    </li>
+            
+    
+	</ul><br>
+
+
+  
+    <!-- End of your content -->
+
+    </div> <!-- /container -->
+
+	<!-- footer -->
+    
+    <footer id="footer">
+        <p id="cclicense">
+                </p>
+        <p class="license">
+        Theme: <a href="https://github.com/openp2pdesign/FabAcademy_Template">Fab Academy Template</a> by <a href="http://openp2pdesign.org">Massimo Menichinelli</a> <br>
+        Based on <a href="http://getbootstrap.com/">Twitter Bootstrap</a>+<a href="http://jquery.com/">JQuery</a>+<a href="https://code.google.com/p/google-code-prettify/">google-code-prettify</a>+<a href="http://jmblog.github.io/color-themes-for-google-code-prettify/github/">GitHub theme for google-code-prettify</a>+<a href="https://code.google.com/p/jsc3d/">JSC3D</a>+<a href="https://github.com/thegrubbsian/jquery.ganttView">jquery.ganttView</a>.
+        </p>
+    </footer>
+    
+
+	<!-- Do not touch this! -->
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="media/jquery-1.9.1.min.js"></script>
+    
+    <!-- Syntax Highlighter -->
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js">
+    </script>
+    <!-- From https://github.com/jmblog/color-themes-for-google-code-prettify -->
+    <link href="media/github.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript">
+	  !function ($) {
+		$(function(){
+		  window.prettyPrint && prettyPrint()   
+		})
+	  }(window.jQuery)
+	</script>
+	
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="bootstrap/js/ie10-viewport-bug-workaround.js"></script>
+
+  </body>
+</html>

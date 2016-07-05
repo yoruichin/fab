@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Yue Siew Chin">
+    <link rel="icon" href="media/favicon.ico">
+
+    <title>Fab Academy 2016 | Yue Siew Chin | Exercise 15</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="media/fabacademy.css" rel="stylesheet">
+    
+    <!-- 3D files viewer -->
+    <script type="text/javascript" src="media/jsc3d_ie.min.js"></script>
+	<script type="text/javascript" src="media/jsc3d.min.js"></script>
+    <script type="text/javascript" src="media/jsc3d.webgl.js"></script>
+    <script type="text/javascript" src="media/jsc3d.touch.js"></script>
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="bootstrap/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="bootstrap/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- Load the menu file -->
+    <script>
+	function menu() {
+					  $('#exercises').load("exercises-menu.html");
+					  $('#project').load("project-menu.html");
+					  $('#cclicense').load("license.html");
+					  }
+	</script>
+
+  </head>
+
+  <body onload="menu()">
+
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">Home</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="about.html">About</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Exercises <span class="caret"></span></a>
+              <ul id="exercises" class="dropdown-menu" role="menu">
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Final Project <span class="caret"></span></a>
+              <ul id="project" class="dropdown-menu" role="menu">
+              </ul>
+            </li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    	
+	<!-- Insert your content here below! -->
+
+
+    <h2><b>Exercise 15 Networking and Communications</b></h2>
+    
+  <p><a href="http://archive.fabacademy.org/archives/2016/master/videos/05-11/index.html" target="_blank">
+  <button type="button" class="btn btn-primary btn">This week's Lecture</button></a><br>
+
+  <h3>Requirement</h3>
+	
+	<ol>
+    <li>design, and</li>
+    <li>build a wired &/or wireless network connecting at least two processors</li>
+	</ol><br>	
+
+	<h3>Introduction</h3>
+
+	<p>So far in this course, we have been making PCB boards to each do something on its own, whether input or output or using it as an ISP. This week, we learn how to build a network using 2 or more boards, to have them talk to one another. This week's lesson is going to be quite helpful for me to learn how to communicate with more than one microcontroller.<br><br>
+
+  Below are some of the different methods of networking and communication discussed in class:</p>
+
+  <ul>
+    <li>Synchronous serial communication</li>
+    <li>Asynchronous serial communication</li>
+    <li>I<sup>2</sup>C</li>
+    <li>Serial Peripheral Interface (SPI)</li>
+  </ul><br>
+
+  <h3>Synchronous serial communication</h3>
+
+    <p>A synchronous serial interface always pairs its data line(s) with a clock signal, so all devices on a synchronous serial bus share a common clock. This makes for a more straightforward, often faster serial transfer, but it also requires at least one extra wire between communicating devices. Examples of synchronous interfaces include SPI, and I<sup>2</sup>C.</p><br>
+
+
+  <h3>Asynchronous serial communication</h3>
+
+    <p>Asynchronous serial communication is a form of serial communication in which the communicating endpoints' interfaces are not continuously synchronized by a common clock signal. Data is transferred without support from an external clock signal. Instead of a common synchronization signal, the data stream contains synchronization information in form of start and stop signals, before and after each unit of transmission, respectively. The start signal prepares the receiver for arrival of data and the stop signal resets its state to enable triggering of a new sequence. Both sides must also agree on the transmission speed (such as 9600 bits per second) in advance.</p><br>
+
+    <h3>I<sup>2</sup>C</h3>
+
+    <p>The I<sup>2</sup>C bus is a half-duplex, synchronous, multi-master bus requiring only two signal wires: data (SDA) and clock (SCL). These lines are pulled high via pull-up resistors and controlled by the hardware via open-drain drivers, giving a wired-AND interface. I<sup>2</sup>C uses an addressable communications protocol that allows the master to communicate with individual slaves using a 7-bit or 10-bit address. During communication with slave devices, the master generates all clock signals for both communication to and from the slave. Each communication begins with the master generating a start condition, an 8-bit data word, an acknowledge bit, followed by a stop condition or a repeated start. Each data bit transition takes place while SCL is low, except for the start and stop conditions. The start condition is a high-to-low transition of the SDA line while the SCL line is high. A stop condition is a low-to-high transition of the SDA line while the SCL line is high. The acknowledge bit is generated by the receiver of the message by pulling the SDA line low while the master releases the line and allows it to float high. If the master reads the acknowledge bit as high, it should consider the last communication word not received and take appropriate action, including possibly resending the data.</p>
+
+
+  <h3>Serial Peripheral Interface (SPI)</h3>
+
+    <p>Serial Peripheral Interface (SPI) is an interface bus commonly used to send data between microcontrollers and small peripherals such as shift registers, sensors, and SD cards. It uses separate clock and data lines, along with a select line to choose the device you wish to talk to.  It uses separate lines for data and a “clock” that keeps both sides in perfect sync. The clock is an oscillating signal that tells the receiver exactly when to sample the bits on the data line. This could be the rising (low to high) or falling (high to low) edge of the clock signal; the datasheet will specify which one to use. When the receiver detects that edge, it will immediately look at the data line to read the next bit. Because the clock is sent along with the data, specifying the speed isn’t important, although devices will have a top speed at which they can operate. <br><br>
+
+    The SPI bus consists of four signals: master out slave in (MOSI), master in slave out (MISO), serial clock (SCK), and active-low slave select (/SS). As a multi-master/slave protocol, communications between the master and selected slave use the unidirectional MISO and MOSI lines, to achieve data rates over 1Mbps in full duplex mode. The data is clocked simultaneously into the slave and master based on SCK pulses the master supplies. Only one side generates the clock signal (usually called CLK or SCK for Serial ClocK). The side that generates the clock is called the “master”, and the other side is called the “slave”. There is always only one master (which is almost always your microcontroller), but there can be multiple slaves (more on this in a bit). When data is sent from the master to a slave, it is sent on MOSI data line. If the slave needs to send a response back to the master, the master will continue to generate a prearranged number of clock cycles, and the slave will put the data onto the MISO data line. A disadvantage to SPI is the requirement to have separate /SS lines for each slave. Provided that extra I/O pins are available, or extra board space for a demultiplexer IC, this is not a problem. But for small, low-pin-count microcontrollers, a multi-slave SPI interface might not be a viable solution.</p><br><br>
+
+
+  <h3>Designing the asynchronous serial communication boards</h3>
+
+  <p>I will be attempting to build an asynchronous serial communication network, making 3 boards (one bridge and 2 nodes) to communicate with the computer via a FTDI interface. I would be referring to Neil's boards in my design, making attempts to add a button to the bridge board, which I think might come in handy for my final project.</p><br>
+
+<h3>Components needed</h3>
+
+<p></p>
+  <ul>
+    <li>1 x BRIDGE:
+      <ul>
+      <li>1 x ATTINY85 </li>
+      <li>1 x 3X2 PIN HEADER (ARVISP SMD)</li>
+      <li>1 x 2X2 PIN HEADER SMD</li>
+      <li>1 x 1X6 FTDI SMD HEADER</li>
+      <li>1 x CAPACITOR 1 uf</li>
+      <li>1 x 10 k Ohm RESISTOR RES-US1206FAB</li>
+      <li>1 x LED 1206 smd</li>
+      <li>1 x 1 k Ohm RESISTOR RES-US1206FAB</li>
+      <li>1 x OMRON SWITCH </li>
+    </ul> 
+
+    <li>2 x NODES:</li>
+    <ul>
+        <li>2 x ATTINY45</li>
+        <li>2 x 3X2 PIN HEADER (ARVISP SMD)</li>
+        <li>2 x 2X2 PIN HEADER SMD</li>
+        <li>2 x CAPACITOR 1 uf</li>
+        <li>2 x 10 k Ohm RESISTOR RES-US1206FAB</li>
+        <li>2 x LED 1206 smd</li>
+        <li>2 x 1 k Ohm RESISTOR RES-US1206FAB</li>
+    </ul>
+  </ul> 
+<br><br>
+
+<div class="container"><center>
+      <legend>Bridge & Node design</legend>
+      <img src="photo/15_hello.bus.45.bridge.jpg" class="img-thumbnail" width="400">
+      <img src="photo/15_hello.bus.45.node.jpg" class="img-thumbnail" width="400">
+      <img src="photo/15_hello_bridge_sch.jpg" class="img-thumbnail" width="400">
+      <img src="photo/15_hello_node_sch.jpg" class="img-thumbnail" width="400">
+      <img src="photo/15_hello_bridge_brd.jpg" class="img-thumbnail" width="400">
+      <img src="photo/15_hello_node_brd.jpg" class="img-thumbnail" width="400">
+      <img src="photo/15_hello-bbutton_path.jpg" class="img-thumbnail" width="400">
+      <img src="photo/15_hello-n_path.jpg" class="img-thumbnail" width="400">
+      <img src="photo/15_bridge_pcb.jpg" class="img-thumbnail" width="400">
+      <img src="photo/15_node_pcb.jpg" class="img-thumbnail" width="400">
+      </center>
+</div><br><br>
+
+<h3>Short-circuited Traces</h3>
+
+<p>I converted the eagle file to G-code to be milled by the <a href="http://www.aliexpress.com/item/PCB-milling-machine-CNC-2020B-DIY-cnc-wood-carving-machine-mini-engraving-machine-3050114C/32261769903.html" target="_blank">PCB2020B CNC Router</a>. Details of the milling process has been documented in <a href="exercise06.html" target="_blank">week 6</a>. I did not realize one of my traces was too near to the pad of the microchip until it has been milled. I only found out when I tried to stuff the components onto the board. The board has a shorted path (circled portion). I have considered changing the width of the traces running through my ATtiny45 from 16mil to 12mil and re-mill the boards. But because the milling bit was blunt, I wasn't successful in my re-mill. At this moment, I remembered the lab purchased a new ultrasonic cutter which might just do the trick! At 40,000 ultrasonic vibrations per second, the <a href="http://www.taihei.com.sg/ultrasonic-hand-held-cutters.html" target="_blank">ZO-41PLUS</a> ultrasonic cutter cuts at a non-audible sound, reducing the friction during the cutting process. It worked like a charm and I was able to use those boards for my assignment. </p>
+
+<div class="container"><center>
+      <img src="photo/15_zo-41plus.jpg" class="img-thumbnail" width="400">
+      <img src="photo/15_short_circuit_traces.jpg" class="img-thumbnail" width="400">
+      <legend>Shorted path rectified by cutting the copper to isolate trace</legend>
+      </center>
+</div><br><br>
+
+<h3>Polarity of LED</h3>
+
+<p>For my own reference, I have included in my documentation, the symbols that indicate polarity of LEDs:</p>
+
+<div class="container"><center>      
+      <img src="photo/15_ledpolarity3.jpg" class="img-thumbnail" height="150">
+      <img src="photo/15_ledpolarity1.jpg" class="img-thumbnail" height="150">
+      <img src="photo/15_ledpolarity2.jpg" class="img-thumbnail" height="150">
+      </center>
+</div><br><br>
+
+<h3>Programming the ATtiny45</h3>
+
+<p>Below is a list of the important commands I used in the command prompt:</p>
+  <pre class="prettyprint linenums">
+  
+  1.    cp "C:\Users\yoruichin\Dropbox\FAB\Week 15\hello bus\ccode\hello.bus.45.make" makefile  // "makefile" will be generated
+
+  2.    make    // 2 files will be generated, *.out and *.hex
+
+  3.    avrdude -P com4 -c stk500v1 -b 19200 -p t45 -U flash:w:hello.bus.45-b.c.hex   // flash the ATtiny45
+
+  4.    python term.py com9 9600  // com9 is my FTDI serial interface and 9600 is the transmission speed
+  
+  </pre>
+
+  <p>Because I was using different file name for the bridge and nodes, I have made the following amendments to my make file to accommodate this change, removing the "#" sign next to the line of the board I am flashing.</p>
+
+  hello.bus.45.make
+  <pre class="prettyprint linenums">
+  #PROJECT=hello.bus.45-b
+  #PROJECT=hello.bus.45-n1
+  #PROJECT=hello.bus.45-n2
+  SOURCES=$(PROJECT).c
+  </pre>
+
+  <p>Details on Programming the firmware with WinAVR has been documented in <a href="exercise13.html" target="_blank">week 13</a> and details on setting up the environment for executing python codes has been documented in <a href="exercise09.html" target="_blank">week 9</a>. I was able to make small changes to the programme to make the LED flash 3 times when I press the number corresponding to the node id.</p>
+
+  <div class="container"><center>      
+      <img src="photo/15_ftdi_interface.jpg" class="img-thumbnail" width="300">
+      <img src="photo/15_wire_setup.jpg" class="img-thumbnail" width="300">
+      <img src="photo/15_termpy.jpg" class="img-thumbnail" width="600">
+      <legend>Setting up and testing the C programme using term.py</legend>
+      </center>
+</div><br><br>
+
+  
+<center><iframe width="560" height="315" src="https://www.youtube.com/embed/UOx9PQokfw4" frameborder="0" allowfullscreen></iframe></center><br><br>
+
+<h3>Reflections</h3>
+
+<p>I'm glad I was able to build upon previous knowledge on WinAVR to flash the microchip and successfully met the requirements for this week's assignment. However, I wished I could do more than making the LEDs blink 3 times. I stuffed in a button but had no time to do anything with the button. It was also partly due to a lack of understanding of C language. I need to understand c language a bit more deeply so that I can better manipulate the codes to do more complex stuff.</p>
+
+  <h3>Download work files</h3>
+
+<ul>
+  <li><a href="workfiles/wk15/hello.bus.45-b.c">hello.bus.45-b.c</a></li>
+  <li><a href="workfiles/wk15/hello.bus.45-n1.c">hello.bus.45-n1.c</a></li>
+  <li><a href="workfiles/wk15/hello.bus.45-n2.c">hello.bus.45-n2.c</a></li>
+  <li><a href="workfiles/wk15/hellobusbridge_button.sch">hellobusbridge_button.sch</a></li>
+  <li><a href="workfiles/wk15/hellobusbridge_button.brd">hellobusbridge_button.brd</a></li>
+  <li><a href="workfiles/wk15/hellobusnode.sch">hellobusnode.sch</a></li>
+  <li><a href="workfiles/wk15/hellobusnode.brd">hellobusnode.brd</a></li>
+  
+</ul>
+
+   <h3>References</h3>
+  <ul>
+    <li>
+      <a href="https://www.youtube.com/watch?v=Iek4yEF_jLo" target="_blank">Asynchronous serial communication</a></li>
+    <li>
+      <a href="https://www.youtube.com/watch?v=6IAkYpmA1DQ" target="_blank">How I2C Communication Works and How To Use It with Arduino</a>
+    </li>
+    <li>
+      <a href="http://www.embedded.com/design/connectivity/4023975/Serial-Protocols-Compared" target="_blank">Serial Protocols Compared</a>
+    </li>
+    <li>
+      <a href="https://learn.sparkfun.com/tutorials/serial-communication" target="_blank">Serial Communication</a>
+    </li>
+    <li>
+      <a href="https://learn.sparkfun.com/tutorials/serial-peripheral-interface-spi" target="_blank">Serial Peripheral Interface (SPI)</a>
+    </li>
+    <li>
+      <a href="https://learn.sparkfun.com/tutorials/i2c" target="_blank">I2C</a>
+    </li>
+    <li>
+      <a href="https://www.youtube.com/watch?v=UUBxxFODyc4" target="_blank">11B. Serial Communications: I2C and SPI</a>
+    </li>
+            
+    
+	</ul><br>
+
+
+  
+    <!-- End of your content -->
+
+    </div> <!-- /container -->
+
+	<!-- footer -->
+    
+    <footer id="footer">
+        <p id="cclicense">
+                </p>
+        <p class="license">
+        Theme: <a href="https://github.com/openp2pdesign/FabAcademy_Template">Fab Academy Template</a> by <a href="http://openp2pdesign.org">Massimo Menichinelli</a> <br>
+        Based on <a href="http://getbootstrap.com/">Twitter Bootstrap</a>+<a href="http://jquery.com/">JQuery</a>+<a href="https://code.google.com/p/google-code-prettify/">google-code-prettify</a>+<a href="http://jmblog.github.io/color-themes-for-google-code-prettify/github/">GitHub theme for google-code-prettify</a>+<a href="https://code.google.com/p/jsc3d/">JSC3D</a>+<a href="https://github.com/thegrubbsian/jquery.ganttView">jquery.ganttView</a>.
+        </p>
+    </footer>
+    
+
+	<!-- Do not touch this! -->
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="media/jquery-1.9.1.min.js"></script>
+    
+    <!-- Syntax Highlighter -->
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js">
+    </script>
+    <!-- From https://github.com/jmblog/color-themes-for-google-code-prettify -->
+    <link href="media/github.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript">
+	  !function ($) {
+		$(function(){
+		  window.prettyPrint && prettyPrint()   
+		})
+	  }(window.jQuery)
+	</script>
+	
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="bootstrap/js/ie10-viewport-bug-workaround.js"></script>
+
+  </body>
+</html>

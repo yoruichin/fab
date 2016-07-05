@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Yue Siew Chin">
+    <link rel="icon" href="media/favicon.ico">
+
+    <title>Fab Academy 2016 | Yue Siew Chin | Exercise 03</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="media/fabacademy.css" rel="stylesheet">
+    
+    <!-- 3D files viewer -->
+    <script type="text/javascript" src="media/jsc3d_ie.min.js"></script>
+	<script type="text/javascript" src="media/jsc3d.min.js"></script>
+    <script type="text/javascript" src="media/jsc3d.webgl.js"></script>
+    <script type="text/javascript" src="media/jsc3d.touch.js"></script>
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="bootstrap/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="bootstrap/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- Load the menu file -->
+    <script>
+	function menu() {
+					  $('#exercises').load("exercises-menu.html");
+					  $('#project').load("project-menu.html");
+					  $('#cclicense').load("license.html");
+					  }
+	</script>
+
+  </head>
+
+  <body onload="menu()">
+
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">Home</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="about.html">About</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Exercises <span class="caret"></span></a>
+              <ul id="exercises" class="dropdown-menu" role="menu">
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Final Project <span class="caret"></span></a>
+              <ul id="project" class="dropdown-menu" role="menu">
+              </ul>
+            </li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    	
+	<!-- Insert your content here below! -->
+
+
+     <h2><b>Exercise 03 Computer-controlled Cutting</b></h2>
+
+  <p><a href="http://archive.fabacademy.org/archives/2016/master/videos/02-10/index.html" target="_blank">
+  <button type="button" class="btn btn-primary btn">This week's Lecture</button></a><br>
+    
+    <h3>Requirement</h3>
+	
+	<ol>
+	 <li>
+		Design, make, and document a press-fit construction kit.
+	 </li>
+	 <li>
+		Design and print something from a vinyl cutter.
+	 </li>
+	</ol>
+	<br>
+    
+	<h3>Press-Fit Construction Kit</h3>
+	<p>
+	I walked into this week's requirement with some anxiety because I am quite weak in designing, and I find it challenging to visualize 3D objects from 2D diagram. The whole of Thursday was spent looking through tutorials such as <a href="http://wiki.fablab.is/wiki/Inkscape_how_to_make_a_pressfit_design" target="_blank">this</a> and <a href="http://makezine.com/2012/04/13/cnc-panel-joinery-notebook/" target="_blank">this</a>. I also looked at other peoples' works for inspirations, such as the following:
+  <li><a href="http://fab.cba.mit.edu/classes/863.11/people/vernelle.noel/press-fit-kit.html" target="_blank">International chess set</a></li>
+  <li><a href="http://fabacademy.org/archives/2015/na/students/stroyne.stephen/computercontrolledcutting.html" target="_blank">Tissue box cover</a></li>
+  <li><a href="http://fabacademy.org/archives/2014/students/opichka.jeff/computer-controlled-cutting.html" target="_blank">Kleenex boxes</a></li>
+  <li><a href="http://www.instructables.com/id/Press-fit-Construction-Kit/" target="_blank">Two connecting Spheres</a></li>
+  <li><a href="http://fab.cba.mit.edu/classes/4.140/section.Architecture/people/Saulnier/pages/pressfit.htm" target="_blank">Locking joints</a></li></p>
+
+  <p>I finally decided to make a tissue box as I have packs of tissue sitting at home, and a tissue box would come in handy to store an opened pack. Then I came across a <a href="http://boxmaker.connectionlab.org/" target="_blank">Box Maker</a> website. Simply input the dimensions and material thickness and viola, I can receive my template in PDF. What more can I ask?! I could have finish this week's assignment in a flash! But in this way, I don't learn anything. I quickly abandoned the idea and confronted the subject matter head-on because the learning journey, though rocky, is more important than the end-product.</p>
+
+  <p>I have difficulty visualizing a 3D object to design on a 2D platform. My brain just cannot process the information, so I need to physically construct a model to know where to cut, where not to cut etc. I took some scrap materials to build the following model after taking measurement from my tissue pack. 
+
+  <div class="container"><center>
+  <img src="photo/03_scrap2.jpg" class="img-thumbnail" width="300">
+  <img src="photo/03_scrap4.jpg" class="img-thumbnail" width="300">
+  <legend>Trying to construct a tissue box from scrap foam board, and discovered it to be too tight.</legend>
+  </center></div><br></p>
+
+  <p>Another problem was using <a href="https://inkscape.org/en/">Inkscape</a> to create the template. I didn't think it was that difficult to create the jagged edges of the joints. At first, I made all the edges have the same orientation, and only realised I have to offset the edges of the receiving face so they can fit each other. </li>
+      <div class="container"><center>
+      <img src="photo/03_inkscape_same.jpg" class="img-thumbnail" width="300">
+      <img src="photo/03_inkscape_different.jpg" class="img-thumbnail" width="300">
+      <legend>Edges have to be offset at the receiving face.</legend></center></div><br>
+
+  <p>According to this <a href="http://www.microugly.com/inkscape-quickguide/#clone-objects" target="_blank">guide</a>, my edges should be clones, and not clone of clones, or clone of clone of clones. Midway, I got confused which objects were linked to the original, and which were not, because they all look the same. So I had to start all over.</p>
+
+  Then after I got that sorted out, I was not able to "subtract" the cloned "edges" to the board. I spent the whole of Friday and Saturday just doing the template. The error I received was "one of the objects is not a path". It seems that somehow I need to make the object become a path, and not group or anything else. 
+
+  Someone gave a comment (Comment No. 13) on this issue on <a href="https://cleversomeday.wordpress.com/2010/03/27/video-make-a-font-in-inkscape/">this page</a>: "When you click to select the imported svg, the infobar at the bottom of the screen should read “path” (not group or ellipse or rectangle or clipped path or anything else). If it doesn’t you will need to ungroup, release clips, path> object to path or whatever is indicated until it says only path. Once it is a path, the rest of the process should work properly."</p>
+  <br>
+
+  <h4>Adobe Illustrator</h4>
+
+  <p>After spending a good amount of time in Inkscape trying to sort out how to subtract 2 objects, I have decided to put it aside, and use Adobe Illustrator instead to work on my template. And I was glad that I was able to get the result I want, or so I thought.<br><br>
+  The dimensions are 165mm x 120mm x 40mm.  
+  Material thickness is 2mm.
+  </p>
+    <p><ol>
+    <li>Draw the shapes with the rectangle tool. </li>
+    <li>Select the object and set weight of the stroke to 2mm. Alighn stroke to outside. Check on Dashed Line. Input 10mm for dash, and 10.2mm for gap. This is to compensate the <a href="http://www.cutlasercut.com/resources/tips-and-advice/what-is-laser-kerf" target="_blank"> laser kerf</a>.</li>
+    <li>To make the edges editable, select the rectangle, go to <b>Object > Expand Appearance</b>. Click Ok. </li>
+    <li>Next, select the dashes, go to <b>Object > Compound path > Release.</b></li>
+    <li>Adjust the dashes to your desired placement.</li>
+    <li>Select the dashes, and the layout and apply subtract tool.</li>
+    </ol></p><br><br>
+
+
+  <div class="container"><center>
+   <img src="photo/03_ai_template_stroke.jpg" title="b. Set weight to 2mm, dash to 10mm, gap to 10.2mm"  class="img-thumbnail" width="300">
+  <img src="photo/03_ai_template_subtract.jpg" title="d. Use the subtract tool to cut off overlapping layers." class="img-thumbnail" width="300">
+  <img src="photo/03_ai_subtract.jpg" title="e. Use the subtract icon to remove unwanted materials of overlapping objects." class="img-thumbnail" width="300">
+  <legend>Designing the template of the tissue box using Adobe Illustrator.</legend>
+  </center></div><br></p>
+
+ 
+  <h4>Laser cutting Process</h4>
+
+  <p>I have read up various sources, including <a href="http://fabacademy.org/archives/content/tutorials/04_Computer-Controlled_Cutting/Press-Fit_Construction_Tips.html" target="_blank">this</a> and <a href="http://www.cutlasercut.com/resources/tips-and-advice/what-is-laser-kerf" target="_blank">this</a> that it is important to take into consideration <a href="https://en.wiktionary.org/wiki/kerf" target="_blank">the kerf</a> when planning to laser cut my design. In FabLab @ SP, we have some 2mm white cardboard, and some 3mm MDF boards. I would be using the 2mm white cardboard. First I took measurement of the thickness.</p>
+
+  <p class="pic"><img src="photo/03_thickness_of_board_calli.jpg" width="400">
+  <legend>The board is 2.06mm thick.</legend>
+
+  <p>Because Steven has already done some cutting test using the same material to determine the speed and power to use, I would be referring to Steven's <a href="http://archive.fabacademy.org/archives/2016/fablabsingapore/students/98/images/03-img01.jpg" target="_blank">test cuts</a> of 20mm x 20mm to input my settings. The lasercutters we use are the Epilog Fusion M2 40 and the EAS Laser Engraver.</p>
+
+  <p>I spent the whole of Monday at the fablab, testing out my template and trying out my design. I cut a total of 4 versions because I kept making mistakes. After each version, I would evaluate what went wrong, and how to do better the next time.</p><br> 
+
+  <h4>Version 1</h4>
+
+  <p class="pic"><img src="photo/03_pressfit_v1_didntfit.jpg" width="300">
+  <legend>I sent the svg file to Corel Draw, which the cutter accepts. The edges totally didn't match. <br>And the size was 25% smaller than my original dimension.</legend>
+
+  <h4>Version 2</h4>
+  <p> I went back to Illustrator to try work out my edges. One of my classmates recommended me to try Inkscape using the <a href="https://github.com/paulh-rnd/TabbedBoxMaker" target="_blank">tabbed box maker</a> extension which can be downloaded and added separately. The unzipped files saved in ~\Inkscape\share\extensions would appear in Inkscape under the tab <b>Extensions > Laser Tools > Tabbed Box Maker</b>. It seems like common sense, but when I used the extension to generate my template that I understood that the facing joints of each panel must look opposite, and I have to take note of the ending edges of the panels to ensure that they do not obstruct the joints.</p>
+
+  <center><iframe width="560" height="315" src="https://www.youtube.com/embed/BeCIGLskLsY" frameborder="0" allowfullscreen></iframe></center> 
+  <legend>This time I made sure the dimensions of the imported file are the ones I desired.</legend><br>
+
+  <p class="pic"><img src="photo/03_lasercut_output.jpg" width="400">
+ 
+
+  
+  <p class="pic"><img src="photo/03_pressfit_v2_gaps.jpg" width="300">
+  <legend>The pieces are now the right size but.... this time, they were too loose. There was no friction at all, and so they fell apart.</legend>
+
+  <h4>Version 3</h4>
+
+  <p>I know it was the kerf that I need to adjust, but I wasn't sure how to tweak it. This time, I lowered the amount and the result was the same. It was near the end of the day already, so I had to stop cutting. But that gave me time to think through where I could have gone wrong and how to rectify the problem.</p><br>
+
+  <h4>Version 4</h4>
+
+  <p>The next morning I decided to do a test print of various settings to find my best fit. I needed to test it out step by step, and not be in a hurry to cut the model.</p>
+
+  <p class="pic"><img src="photo/03_kerf_test_template.jpg" width="400">
+    <img src="photo/03_kerf_test.jpg" width="400">
+    <legend>As I tried to fit each piece, I found that 0.2mm was loose and 0.3mm is a tight fit. So 0.3mm is the answer. 0.4mm is too tight that it distorted the joint. </legend></p><br>
+
+  <div class="container"><center>
+    <img src="photo/03_tissueboxv2_settings.jpg" class="img-thumbnail" width="200">
+    <img src="photo/03_tissueboxv3_settings.jpg" class="img-thumbnail" width="200">
+    <img src="photo/03_tissueboxv4_settings.jpg" class="img-thumbnail" width="200">
+    <legend>Just for comparison, these are the Kerf settings of version 2, 3, and 4.</legend>
+  </center></div><br></p>
+
+    <p>Except for the top panel, all other sides were cut with a 0.3mm kerf setting. I've re-used the top panel of a previous cut (0.015mm) because I would expect the top panel to be opened and closed frequently to change the content, so it cannot be too tight. On hind side, I should have done the test print of the kerf I need right from the start. As different materials with different thickness will have a different kerf value, this is a caliberation that needed to be done right from the start, even before designing the slots or joints. Now that I know, I will be able to perform better next time.</p><br>
+
+    <p class="pic"><img src="photo/03_tissuebox_v4.jpg" width="500">
+    <legend>The final product - tissue box.</legend></p><br>
+
+  <h3>Vinyl Cutter</h3>
+
+  <p>The vinyl cutter I used was the Roland GS-24. The process is as follows:</p>
+
+  <ol>
+    <li>Search for a design, clean up and import to Inkscape.</li>
+    <li>Convert to vector using <b>Trace bitmap</b>, save to svg and import to Cut-studio or Corel Draw or whatever software the cutter uses.</li>
+    <li>Make sure the lines are not too fine as that might become a problem during cutting and transferring. Change the image to outline.</li>
+    <li>Feed vinyl and get measurement from machine.</li>
+    <li>Ensure the cutter knife is just the right depth, not too deep that would crample the cut portions.</li>
+    <li>When cutting is completed, with a pair of scissors, carefully cut out the area where the design was located and shear off the unwanted portions.</li>
+    <li>Apply transfer tape on what's left (only the design should be left) and carefully press the design towards the tape to allow it to stick to the transfer tape.</li>
+    <li>Peel of the transfer take, carefully lifting the design together with it, and place it over the surface of where you wanted to stick it. Finally, remove the transfer tape from the vinyl. That's it! </li>
+  </ol><br>
+
+
+
+  <div class="container"><center>
+  <img src="photo/03_vinyl_stickman2.jpg" class="img-thumbnail" width="200">
+  <img src="photo/03_vinyl_stickman1.jpg" class="img-thumbnail" width="200">
+  <img src="photo/03_vinyl_outline.jpg" class="img-thumbnail" width="200">
+  <legend>Designs were cleaned up and converted to vector outline using Inkscape.</legend>
+  <br>  
+  <img src="photo/03_vinyl_weeded_stickman2.jpg" class="img-thumbnail" width="200">
+  <img src="photo/03_vinyl_apply_transfertape.jpg" class="img-thumbnail" width="200">
+  <img src="photo/03_vinyl_transfertape.jpg" class="img-thumbnail" width="200">
+  
+  <legend>Weed out unwanted portion and apply transfer tape to vinyl to transfer to surface. </legend>
+  </center></div><br></p>
+
+  <p class="pic"><img src="photo/03_vinyl_final.jpg" width="500">
+    <legend>The result.</legend></p><br>
+
+
+  <br><br>
+
+  <h3>Download Week 3 work files</h3>
+  <ul>
+    <li><a href="workfiles/wk3/tissuebox.ai" target="_blank">tissuebox.ai</a></li>
+    <li><a href="workfiles/wk3/tissuebox_v3.svg" target="_blank">tissuebox_v3.svg</a></li>
+    <li><a href="workfiles/wk3/stickman.ai" target="_blank">stickman.ai</a></li>
+    <li><a href="workfiles/wk3/stickman.svg" target="_blank">stickman.svg</a></li>
+    <li><a href="workfiles/wk3/stickman2.svg" target="_blank">stickman2.svg</a></li>
+   </ul>
+
+	<br>
+
+	<h3>References</h3>
+  <ul>
+   <li>
+    <a href="http://fabacademy.org/archives/content/tutorials/04_Computer-Controlled_Cutting/Press-Fit_Construction_Tips.html" target="_blank">Press-Fit Construction Tips</a> 
+   </li>
+   <li>
+    <a href="http://makezine.com/2012/04/13/cnc-panel-joinery-notebook/" target="_blank">CNC Panel Joinery Notebook</a> - different types of joints are introduced.
+   </li>
+   <li>
+    <a href="http://wiki.fablab.is/wiki/Inkscape_how_to_make_a_pressfit_design" target="_blank">Inkscape how to make a pressfit design</a> - a step-by-step guide using Inkscape.
+   </li>
+   <li>
+    <a href="http://fablab.waag.org/archive/press-fit-boxes" target="_blank">Press fit boxes</a> - a step-by-step guide using Adobe Illustrator.
+   </li>
+   <li>
+    <a href="http://thedigitalhandprint.com/category/cardboard-origami/" target="_blank">Cardboard Origami</a> - advice on cutting on corrugated cardboard.
+   </li>
+   <li>
+    <a href="http://www.microugly.com/inkscape-quickguide/#clone-objects" target="_blank">A Quick Guide to Inkscape</a> - how to make clone objects using Inkscape.
+   </li>
+   <li>
+    <a href="http://www.cutlasercut.com/resources/tips-and-advice/what-is-laser-kerf" target="_blank">Understanding the "kerf" of the laser</a>
+   </li>
+   <li>
+    <a href="http://www.instructables.com/id/How-to-Adjust-for-Wood-Thickness-and-Kerf-on-a-Las/" target="_blank">How to Adjust for Wood Thickness and Kerf on a Laser Cutter at Techshop</a>
+   </li></ul>
+
+
+
+    <!-- End of your content -->
+
+    </div> <!-- /container -->
+
+	<!-- footer -->
+    
+    <footer id="footer">
+        <p id="cclicense">
+                </p>
+        <p class="license">
+        Theme: <a href="https://github.com/openp2pdesign/FabAcademy_Template">Fab Academy Template</a> by <a href="http://openp2pdesign.org">Massimo Menichinelli</a> <br>
+        Based on <a href="http://getbootstrap.com/">Twitter Bootstrap</a>+<a href="http://jquery.com/">JQuery</a>+<a href="https://code.google.com/p/google-code-prettify/">google-code-prettify</a>+<a href="http://jmblog.github.io/color-themes-for-google-code-prettify/github/">GitHub theme for google-code-prettify</a>+<a href="https://code.google.com/p/jsc3d/">JSC3D</a>+<a href="https://github.com/thegrubbsian/jquery.ganttView">jquery.ganttView</a>.
+        </p>
+    </footer>
+    
+
+	<!-- Do not touch this! -->
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="media/jquery-1.9.1.min.js"></script>
+    
+    <!-- Syntax Highlighter -->
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js">
+    </script>
+    <!-- From https://github.com/jmblog/color-themes-for-google-code-prettify -->
+    <link href="media/github.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript">
+	  !function ($) {
+		$(function(){
+		  window.prettyPrint && prettyPrint()   
+		})
+	  }(window.jQuery)
+	</script>
+	
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="bootstrap/js/ie10-viewport-bug-workaround.js"></script>
+
+  </body>
+</html>

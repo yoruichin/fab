@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Yue Siew Chin">
+    <link rel="icon" href="media/favicon.ico">
+
+    <title>Fab Academy 2016 | Yue Siew Chin | Exercise 08</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="media/fabacademy.css" rel="stylesheet">
+    
+    <!-- 3D files viewer -->
+    <script type="text/javascript" src="media/jsc3d_ie.min.js"></script>
+	<script type="text/javascript" src="media/jsc3d.min.js"></script>
+    <script type="text/javascript" src="media/jsc3d.webgl.js"></script>
+    <script type="text/javascript" src="media/jsc3d.touch.js"></script>
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="bootstrap/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="bootstrap/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- Load the menu file -->
+    <script>
+	function menu() {
+					  $('#exercises').load("exercises-menu.html");
+					  $('#project').load("project-menu.html");
+					  $('#cclicense').load("license.html");
+					  }
+	</script>
+
+  </head>
+
+  <body onload="menu()">
+
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">Home</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="about.html">About</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Exercises <span class="caret"></span></a>
+              <ul id="exercises" class="dropdown-menu" role="menu">
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Final Project <span class="caret"></span></a>
+              <ul id="project" class="dropdown-menu" role="menu">
+              </ul>
+            </li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    	
+	<!-- Insert your content here below! -->
+
+
+    <h2><b>Exercise 08 Embedded Programming</b></h2>
+    
+  <p><a href="http://archive.fabacademy.org/archives/2016/master/videos/03-16/index.html" target="_blank">
+  <button type="button" class="btn btn-primary btn">This week's Lecture</button></a><br>
+
+  <h3>Requirement</h3>
+	
+	<ul>
+	 <li>read a microcontroller data sheet </li>
+   <li>program your board to do something, with as many different programming languages and programming environments as possible</li>
+	</ul>
+	
+
+	<h3>Datasheet of Atmel Microcontroller</h3>
+
+	<p>The microcontroller we are working to on is a <a href="http://www.atmel.com/" target="_blank">Atmel</a> ATtiny44A MCU. The difference between a ATtiny44 and a ATtiny44A is that the latter is an optimized version of the former. The ATtiny44A is a functionally identical, drop-in replacement for the ATtiny44. They are subject to the same qualification process and same set of production tests, but as the manufacturing process is not the same, some electrical characteristics differ. <br>
+
+  To locate the datasheet of an MCU, go to the <a href="http://www.atmel.com/" target="_blank">Atmel website</a> >> <a href="http://www.atmel.com/products/microcontrollers/avr/default.aspx" target="_blank">Atmel AVR 8-bit and 32-bit Microcontrollers</a> >> <a href="http://www.atmel.com/products/microcontrollers/avr/tinyAVR.aspx" target="_blank">tinyAVR MCUs</a> >> <a href="http://www.atmel.com/devices/ATTINY44A.aspx" target="_blank">ATtiny44A</a></p>
+
+    <ul><li><a href="http://www.atmel.com/Images/doc8183.pdf" target="_blank">ATtiny24A/44A/84A Complete datasheet</a>, 286 pages</li>
+    <li><a href="http://www.atmel.com/Images/doc8006.pdf" target="_blank">ATtiny24/44/84 Complete datasheet</a>, 238 pages</li>
+    <li><a href="http://www.atmel.com/Images/doc8187.pdf" target="_blank">Difference between ATtiny44 and ATtiny44A</a>, 3 pages</li>
+    </ul>
+
+    <p class="pic"><img src="photo/08_ds_attiny44a_pinconfig.jpg" width="600">
+    <legend>Pin Configurations of ATtiny24A/44A/84A</legend>
+    </p>
+
+    <p>Words like PDIP/SOIC/QFN/MLF/VQFN really buffet me, and I came across a helpful <a href="http://shannonstrutz.com/component-packages" target="_blank">article</a> which explains these confusing acronyms.<br><br>
+
+      Characteristics of the ATtiny44A:</p>
+
+    <ul><li>There are 14 pins on this chip. </li>
+        <li>VCC supplies voltage. </li>
+        <li>GND is ground. </li>
+        <li>Port B (PB3:PB0) is a 4-bit bi-directional I/O port with internal pull-up resistors. </li>
+        <li>RESET (PB3) A low level on this pin for longer than the minimum pulse length will generate a reset. </li>
+        <li>Port A (PA7:PA0) is a 8-bit bi-directional I/O port with internal pull-up resistors. Port A has alternate functions as analog inputs for the ADC, analog comparator, timer/counter, SPI and pin change interrupt.</li>
+        <li>CPU(central processing unit) ensures correct program execution by accessing memories, performing calculations, controlling peripherals, and handling interrupts.</li>
+        <li>There are three types of memory </li>
+        <li>Flash stores the compiled program even when the power is off. </li>
+        <li>SRAM saves temporarily variables while calculating. </li>
+        <li>EEPROM is for data storage.</li>
+        <li>ATtiny44A features successive approximation Analog-to-Digital Converter (ADC). It generates a 10-bit result which is presented in the ADC Data Registers, ADCH and ADCL. ADCL presents only the low byte of the ADC conversion result and ADCH presents only the high byte. ADCL is read first, then ADCH. When ADCH is read, ADC access to the ADCH and ADCL Registers is re-enabled and a new result is provided.</li>
+</ul>
+
+    
+
+  <h3>Programming of Microcontroller</h3>
+
+  <p>To upload a program to a microcontroller (MCU) chip, an ISP programmer is required. In-system programming (ISP), also called In-Circuit Serial Programming (ICSP), is the ability of some programmable logic devices, microcontrollers, and other embedded devices to be programmed while installed in a complete system, rather than requiring the chip to be programmed prior to installing it into the system. I have decided to buy an <a href="https://www.arduino.cc/en/Main/ArduinoBoardUno" target="_blank">Arduino Uno</a>, which cost me $21. This will be as a <a href="https://www.arduino.cc/en/Tutorial/ArduinoISP" target="_blank">ISP</a> to programme my <a href="exercise06.html">Hello board</a>, which I milled and stuffed in week 6. The board uses an ATtiny44A AVR chip microcontroller. <b>AVR</b> is a modified Harvard architecture 8-bit RISC single-chip microcontroller, which was developed by Atmel in 1996. The AVR was one of the first microcontroller families to use on-chip flash memory for program storage, as opposed to one-time programmable ROM, EPROM, or EEPROM used by other microcontrollers at that time.</p>
+
+  <h3>Using an Arduino as an AVR ISP</h3>
+
+  <p>There is an example sketch in Arduino IDE called ‘ArduinoISP.’ Uploading this code to the Arduino will basically make the Ardunino act as an AVR programmer. This isn’t really recommended for production of boards, or boards with lots of memory.</p>
+  <ul>
+    <li>Install and launch the <a href="https://www.arduino.cc/en/Main/Software" target="_blank">Arduino IDE</a></li>
+    <li>Open ArduinoISP sketch from File >> Examples >> ArduionISP</li>
+    <li>Select Board >> Arduino Uno</li>
+    <li>Select Port that correspond to your port, in my case it's COM4</li>
+    <li><b>Upload</b> the ArduinoISP sketch to the Arduino Uno</li>
+    <li>Connect the hello board to the Arduino Uno in the following order:</li>
+      <ul>
+        <li>VCC: 5V</li>
+        <li>GND: GND</li>
+        <li>RST: Pin 10</li>
+        <li>MOSI: Pin 11</li>
+        <li>MISO: Pin 12</li>
+        <li>SCK: Pin 13</li></ul>
+    </ul>
+
+  <p class="pic">
+    <img src="photo/08_isp_schematic.jpg" width="500">
+    <img src="photo/08_uno.jpg" width="500">
+    <img src="photo/08_connect_hello.jpg" width="500">
+  <legend>Connecting the Hello board to an Arduino ISP</legend>
+  </p>
+
+  <h3>Installing a Bootloader</h3>
+  <p>The bootloader is basically a .hex file that runs when you turn on the board. It is very similar to the BIOS that runs on your PC. It does two things. First, it looks around to see if the computer is trying to program it. If it is, it grabs the program from the computer and uploads it into the ICs memory (in a specific location so as not to overwrite the bootloader). That is why when you try to upload code, the Arduino IDE resets the chip. This basically turns the IC off and back on again so the bootloader can start running again. If the computer isn’t trying to upload code, it tells the chip to run the code that’s already stored in memory. Once it locates and runs your program, the Arduino continuously loops through the program and does so as long as the board has power.</p>
+  <ul>
+    <li>Tools >> Board >> ATtiny</li>
+    <li>Tools >> Processor >> ATtiny44</li>
+    <li>Tools >> Clock >> 20 MHz (External)</li>
+    <li>Tools >> Port >> select the corresponding port connecting the board</li>
+    <li>Tools >> Programmer >> Arduino as ISP</li>
+    <li>Burn Bootloader</li>
+  </ul>
+
+  <p class="pic">
+    <img src="photo/08_arduinoide_setting_01.jpg" width="400">
+  <legend>Arduino IDE settings for programming the hello board</legend>
+  </p>
+
+  <h3>Programming the Hello board</h3>
+
+  <p class="pic">
+    <img src="photo/08_arduinoide_setting_02.jpg" width="400">
+  <legend>File >> Preference >> Check on show verbose output.</legend>
+  </p>
+
+  <p>If all goes well, you should see something like this:</p>
+  <pre class="prettyprint linenums">
+   
+Sketch uses 1,094 bytes (26%) of program storage space. Maximum is 4,096 bytes.
+Global variables use 9 bytes of dynamic memory.
+C:\Program Files (x86)\Arduino\hardware\tools\avr/bin/avrdude -CC:\Program Files (x86)\Arduino\hardware\tools\avr/etc/avrdude.conf -v -pattiny44 -cstk500v1 -PCOM4 -b19200 -Uflash:w:C:\Users\YORUIC~1\AppData\Local\Temp\build3a1d06f32e72991acd30501dda9c5795.tmp/Blink.ino.hex:i 
+
+avrdude: Version 6.0.1, compiled on Apr 15 2015 at 19:59:58
+         Copyright (c) 2000-2005 Brian Dean, http://www.bdmicro.com/
+         Copyright (c) 2007-2009 Joerg Wunsch
+
+         System wide configuration file is "C:\Program Files (x86)\Arduino\hardware\tools\avr/etc/avrdude.conf"
+
+         Using Port                    : COM4
+         Using Programmer              : stk500v1
+         Overriding Baud Rate          : 19200
+         AVR Part                      : ATtiny44
+         Chip Erase delay              : 4500 us
+         PAGEL                         : P00
+         BS2                           : P00
+         RESET disposition             : possible i/o
+         RETRY pulse                   : SCK
+         serial program mode           : yes
+         parallel program mode         : yes
+         Timeout                       : 200
+         StabDelay                     : 100
+         CmdexeDelay                   : 25
+         SyncLoops                     : 32
+         ByteDelay                     : 0
+         PollIndex                     : 3
+         PollValue                     : 0x53
+         Memory Detail                 :
+
+                                  Block Poll               Page                       Polled
+           Memory Type Mode Delay Size  Indx Paged  Size   Size #Pages MinW  MaxW   ReadBack
+           ----------- ---- ----- ----- ---- ------ ------ ---- ------ ----- ----- ---------
+           eeprom        65     6     4    0 no        256    4      0  4000  4500 0xff 0xff
+           flash         65     6    32    0 yes      4096   64     64  4500  4500 0xff 0xff
+           signature      0     0     0    0 no          3    0      0     0     0 0x00 0x00
+           lock           0     0     0    0 no          1    0      0  9000  9000 0x00 0x00
+           lfuse          0     0     0    0 no          1    0      0  9000  9000 0x00 0x00
+           hfuse          0     0     0    0 no          1    0      0  9000  9000 0x00 0x00
+           efuse          0     0     0    0 no          1    0      0  9000  9000 0x00 0x00
+           calibration    0     0     0    0 no          1    0      0     0     0 0x00 0x00
+
+         Programmer Type : STK500
+         Description     : Atmel STK500 Version 1.x firmware
+         Hardware Version: 2
+         Firmware Version: 1.18
+         Topcard         : Unknown
+         Vtarget         : 0.0 V
+         Varef           : 0.0 V
+         Oscillator      : Off
+         SCK period      : 0.1 us
+
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.05s
+
+avrdude: Device signature = 0x1e9207
+avrdude: NOTE: "flash" memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: reading input file "C:\Users\YORUIC~1\AppData\Local\Temp\build3a1d06f32e72991acd30501dda9c5795.tmp/Blink.ino.hex"
+avrdude: writing flash (1094 bytes):
+
+Writing | ################################################## | 100% 1.91s
+
+avrdude: 1094 bytes of flash written
+avrdude: verifying flash memory against C:\Users\YORUIC~1\AppData\Local\Temp\build3a1d06f32e72991acd30501dda9c5795.tmp/Blink.ino.hex:
+avrdude: load data flash data from input file C:\Users\YORUIC~1\AppData\Local\Temp\build3a1d06f32e72991acd30501dda9c5795.tmp/Blink.ino.hex:
+avrdude: input file C:\Users\YORUIC~1\AppData\Local\Temp\build3a1d06f32e72991acd30501dda9c5795.tmp/Blink.ino.hex contains 1094 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 1.25s
+
+avrdude: verifying ...
+avrdude: 1094 bytes of flash verified
+
+avrdude done.  Thank you.
+</pre>
+
+<h3>Modifying the codes of example sketches</h3>
+
+  <p>Blink at 1 second interval</p>
+  <pre class="prettyprint linenums">
+  digitalWrite(7, HIGH);   // turn the LED on (HIGH is the voltage level)
+  delay(1000);              // wait for a second
+  digitalWrite(7, LOW);    // turn the LED off by making the voltage LOW
+  delay(1000);  
+  </pre>
+
+  <p>Blink Faster at 0.1 second interval</p>
+  <pre class="prettyprint linenums">
+  digitalWrite(7, HIGH);   // turn the LED on (HIGH is the voltage level)
+  delay(100);              // wait for a second
+  digitalWrite(7, LOW);    // turn the LED off by making the voltage LOW
+  delay(100);  
+  </pre>
+
+  <p>LED turns on only when button is pressed</p>
+  <pre class="prettyprint linenums">
+  if (buttonState == HIGH) {
+    // turn LED on:
+    digitalWrite(ledPin, LOW);
+  } else {
+    // turn LED off:
+    digitalWrite(ledPin, HIGH);
+  </pre>
+
+  Toggle LED on and off when a button is pressed
+  <pre class="prettyprint linenums">
+
+  val = digitalRead(BUTTON);  // read input value and store it
+
+  // check if the input is HIGH (button pressed)
+  // and change the state
+
+  if ((val == HIGH) && (val != old_val)) { // differeniate the exact moment when 
+                                           // the button is pressed.
+    state = 1 - state;
+    delay(10);
+  }
+
+  old_val = val; // val is now old
+
+  if (state == 1) {
+    digitalWrite(LED, HIGH);
+  } else {
+    digitalWrite(LED, LOW);
+  </pre>
+
+  <h3>Connecting the Hello board to FTDI USB to TTL Serial Converter</h3>
+
+  <p>A serial bus consists of just two wires - one for sending data and another for receiving. As such, serial devices should have two serial pins: the receiver, <b>RX</b>, and the transmitter, <b>TX</b>. It’s important to note that those RX and TX labels are with respect to the device itself. So the RX from one device should go to the TX of the other, and vice-versa. The transmitter should be talking to the receiver, not to another transmitter.</p>
+
+  <p class="pic">
+    <img src="photo/08_serial_comm.png" width="500">
+    <img src="photo/08_fdti_schematic.jpg" width="500">
+    <img src="photo/08_connect_hello_ftdi.jpg" width="500">
+  <legend>Physical connection between the Arduino, Hello board and the FTDI USB To TTL Serial Converter</legend>
+  </p><br>
+
+
+  Display the state of LED on putty terminal via FTDI USB To TTL Serial Converter
+  <pre class="prettyprint linenums">
+  if(mySerial.available() > 0){
+    state = mySerial.read();
+    flag=0;
+  }
+  // read the state of the pushbutton value:
+  val = digitalRead(buttonPin);
+
+  // check if the pushbutton is pressed.
+  // if it is, the buttonState is HIGH:
+  // resets written counter to 0
+  if ((val == HIGH) && (old_val == LOW)) {
+    state = 1 - state;
+    flag = 0;
+    delay(10);
+  }
+  old_val = val; 
+
+  if ((state == 1) && (flag == 0)) {
+    digitalWrite(ledPin, HIGH);   // turn the LED on (HIGH is the voltage level)
+    mySerial.println("led is on!");
+    flag = 1;
+  } else if ((state == 0) && (flag == 0)) {
+        digitalWrite(ledPin, LOW);
+        mySerial.println("led is off!");
+        flag = 1;
+        }
+    else {
+      //do nothing
+    }
+  </pre>
+
+  
+  <center><iframe width="560" height="315" src="https://www.youtube.com/embed/OuBDadbKN_c" frameborder="0" allowfullscreen></iframe>
+  </center><br>
+
+  <h3>Errors encountered</h3>
+
+    <pre class="prettyprint linenums">
+  avrdude: stk500_recv(): programmer is not responding
+  </pre>
+
+  <pre class="prettyprint linenums">
+  avrdude: Yikes!  Invalid device signature.
+         Double check connections and try again, or use -F to override
+         this check.
+  </pre>
+
+  <pre class="prettyprint linenums">
+  avrdude: ser_open(): can't set com-state for "\\.\COM4"
+  </pre>
+
+
+  <pre class="prettyprint linenums">
+  avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.05s
+
+avrdude: Device signature = 0x000000 (retrying)
+
+Reading | ################################################## | 100% 0.05s
+
+avrdude: Device signature = 0x00ffff
+avrdude: Expected signature for ATtiny44 is 1E 92 07
+         Double check chip, or use -F to override this check.
+
+avrdude done.  Thank you.
+
+Wrong microcontroller found.  Did you select the right board from the Tools > Board menu?
+
+</pre>
+
+<p>So far I've encountered with these error messages when I tried to upload the sketch to the board. I tried many ways to troubleshoot, such as exchanging the cables, testing the board with a multimeter for shorts, reflowing in case there's any cold joints, using a classmate's computer and arduino isp, etc and all didn't work. The solution was very odd because it was after I heated up the chip area on the board a little with a hot gun or a hairdryer, it was able to load the program! Somehow heating the board a little causes it to work. That really puzzles me! </p><br><br>
+
+
+<h3>Download Week 8 work files</h3>
+  <ul>
+      <li><a href="workfiles/wk8/blink.ino" target="_blank">blink.ino</a></li>
+      <li><a href="workfiles/wk8/display_led_state_onto_terminal_when_button_is_pressed.ino" target="_blank">display_led_state_onto_terminal_when_button_is_pressed.ino</a></li>
+      <li><a href="workfiles/wk8/toggle_on_off_when_button_is_pressed.ino" target="_blank">toggle_on_off_when_button_is_pressed.ino</a></li>
+      <li><a href="workfiles/wk8/turn_on_led_when_button_is_being_pressed.ino" target="_blank">turn_on_led_when_button_is_being_pressed.ino</a></li>
+   </ul><br>
+
+
+    <h3>References</h3>
+  <ul>
+    <li>
+      <a href="http://shannonstrutz.com/component-packages" target="_blank">IC Packages</a>
+    </li>
+    <li>
+      <a href="https://www.youtube.com/watch?v=_ZL-YNOH_jA" target="_blank">Programming AVR with Arduino</a>
+    </li>
+    <li>
+      <a href="https://www.kanda.com/blog/microcontrollers/avr-microcontrollers/avr-microcontroller/" target="_blank">WHAT IS AVR MICROCONTROLLER?</a>
+    </li>
+    <li>
+      <a href="https://learn.sparkfun.com/tutorials/installing-an-arduino-bootloader" target="_blank">Installing an Arduino Bootloader</a>
+    </li>
+    <li>
+      <a href="http://fabacademy.org/archives/2015/as/students/nishihara.yumi/week7.html#w7-1" target="_blank">Yumi Nishihara's Embedded programming</a>
+    </li>
+    <li>
+      <a href="https://learn.sparkfun.com/tutorials/serial-communication" target="_blank">Serial Communication</a>
+    </li>
+    
+    
+	</ul><br>
+
+
+  
+
+
+	
+    <!-- End of your content -->
+
+    </div> <!-- /container -->
+
+	<!-- footer -->
+    
+    <footer id="footer">
+        <p id="cclicense">
+                </p>
+        <p class="license">
+        Theme: <a href="https://github.com/openp2pdesign/FabAcademy_Template">Fab Academy Template</a> by <a href="http://openp2pdesign.org">Massimo Menichinelli</a> <br>
+        Based on <a href="http://getbootstrap.com/">Twitter Bootstrap</a>+<a href="http://jquery.com/">JQuery</a>+<a href="https://code.google.com/p/google-code-prettify/">google-code-prettify</a>+<a href="http://jmblog.github.io/color-themes-for-google-code-prettify/github/">GitHub theme for google-code-prettify</a>+<a href="https://code.google.com/p/jsc3d/">JSC3D</a>+<a href="https://github.com/thegrubbsian/jquery.ganttView">jquery.ganttView</a>.
+        </p>
+    </footer>
+    
+
+	<!-- Do not touch this! -->
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="media/jquery-1.9.1.min.js"></script>
+    
+    <!-- Syntax Highlighter -->
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js">
+    </script>
+    <!-- From https://github.com/jmblog/color-themes-for-google-code-prettify -->
+    <link href="media/github.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript">
+	  !function ($) {
+		$(function(){
+		  window.prettyPrint && prettyPrint()   
+		})
+	  }(window.jQuery)
+	</script>
+	
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="bootstrap/js/ie10-viewport-bug-workaround.js"></script>
+
+  </body>
+</html>

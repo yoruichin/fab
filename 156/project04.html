@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Yue Siew Chin">
+    <link rel="icon" href="media/favicon.ico">
+
+    <title>Fab Academy 2016 | Yue Siew Chin | Electronics Design</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="media/fabacademy.css" rel="stylesheet">
+    
+    <!-- 3D files viewer -->
+    <script type="text/javascript" src="media/jsc3d_ie.min.js"></script>
+	<script type="text/javascript" src="media/jsc3d.min.js"></script>
+    <script type="text/javascript" src="media/jsc3d.webgl.js"></script>
+    <script type="text/javascript" src="media/jsc3d.touch.js"></script>
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="bootstrap/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="bootstrap/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- Load the menu file -->
+    <script>
+	function menu() {
+					  $('#exercises').load("exercises-menu.html");
+					  $('#project').load("project-menu.html");
+					  $('#cclicense').load("license.html");
+					  }
+	</script>
+
+  </head>
+
+  <body onload="menu()">
+
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">Home</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="about.html">About</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Exercises <span class="caret"></span></a>
+              <ul id="exercises" class="dropdown-menu" role="menu">
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Final Project <span class="caret"></span></a>
+              <ul id="project" class="dropdown-menu" role="menu">
+              </ul>
+            </li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    	
+	<!-- Insert your content here below! -->
+
+
+  <h2><b>Final Project Electronics Design</b></h2><br>
+  <p>
+    <a class="btn btn-primary" href="project01.html" target="_blank" role="button">Project Proposal</a>
+    <a class="btn btn-primary" href="exercise17.html" target="_blank" role="button">Project Planning</a>
+    <a class="btn btn-primary" href="project02.html" target="_blank" role="button">Project Documentation</a>
+    <a class="btn btn-primary" href="project03.html" target="_blank" role="button">Mechanical Design</a>
+    <a class="btn btn-primary" href="project04.html" target="_blank" role="button">Electronics Design</a>
+    <a class="btn btn-primary" href="exercise19.html" target="_blank" role="button">Final Project Presentation</a>
+  </p><br>
+    
+  <h3>Choosing the Right Stepper Motor</h3>
+
+  <p>Selecting the right motor for the project was a challenge. During the <a href="exercise13.html" target="_blank">Output Devices</a> week, I thought a servo motor would be sufficient for my project. Therefore during that week, I have chosen to study on servo motors. Then I found out I might need to use a stepper motor which has more torque. My instructor has a <a href="http://robocraft.ru/files/datasheet/28BYJ-48.pdf" target="_blank">28BYJ-48</a> which I thought would do the trick. I quickly realise that being only unipolar, the pull-in torque of a mere 300 gf/cm is not sufficient. I actually would need a more powerful bipolar stepper motor in order to perform the action of flipping a page. My instructor lent me his <a href="http://www.omc-stepperonline.com/nema-14-bipolar-stepper-54v-08a-18ncm255ozin-14hs130804s-p-93.html" target=_"blank">Nema 14HS13-0804S</a> for this project.</p><br>
+
+  <div class="container"><center>
+      <img src="final/5v-stepper-motor.jpg" class="img-thumbnail" width="400">
+      <img src="final/nema_stepper.jpg" class="img-thumbnail" width="400">
+      <legend>5V unipolar and 12V bipolar stepper motors</legend><br>
+      <img src="final/nema1.jpg" class="img-thumbnail" width="500"><br>
+      <img src="final/nema2.jpg" class="img-thumbnail" width="500">
+      <legend>Specifications of Nema 14HS13-0804S</legend></center>
+  </div><br><br>
+
+
+  <h3>Circuitry Design</h3>
+
+  <p>I made close reference to Neil's board on output week when designing my circuitry. I could have done this component earlier at the <a href="exercise13.html" target="_blank">Output Devices</a> week if I have known that I needed a stepper motor for my project.  </p>
+
+  <p class="pic"><img src="http://academy.cba.mit.edu/classes/output_devices/stepper/hello.stepper.bipolar.44.png" width="600">
+  <legend>Neil's bipolar stepper motor circuitry</legend>
+  </p>
+
+  <h4>Component List</h4>
+  <ul>
+    <li>1 x 12V STEPPER MOTOR</li>
+    <li>1 x ATTINY44 MICROCONTROLLER</li>
+    <li>3 x 2x2 HEADER (POWER)</li>
+    <li>1 x 3X2 PIN HEADER (AVRISP & SERVO)</li>
+    <li>2 x CAPACITOR 10 uf</li>
+    <li>1 x CAPACITOR 1 uf</li>
+    <li>2 x CAPACITOR 0.1 uf</li>
+    <li>3 x 10k Ohm RESISTOR RES-US1206FAB</li>
+    <li>1 x 1k Ohm RESISTOR RES-US1206FAB</li>
+    <li>1 x 5V REGULATOR</li>
+    <li>1 x LED 1206 SMD</li>
+    <li>2 x A4950 H-BRIDGE MOTOR DRIVER</li>
+    <li>1 x SNAP ACTION SWITCH</li>
+  </ul><br>
+
+  <p>The stepper motor needs at least 5.4 volts to run. A normal USB port will not supply enough power to run it. I will need either a 12Vin or a DC supply to supply the power for this project. The 5V voltage regulator is a important component here as the operating voltage of the ATtiny 44 microcontroller cannot exceed 5 volts. The regulator drops the 12Vin to a 5Vout so that the microcontroller does not burn. The datasheet of the <a href="http://www.ti.com/lit/ds/symlink/lm2940c.pdf" target="_blank">LM2940</a> indicates that a 22uf capacitor is required to maintain regulator stability. However, I did not use a 22uf capacitor, but was using a 1uf capacitor. And that seemed to work alright. </p>
+
+  <div class="container"><center>
+      <img src="final/lm2940c-15.jpg" class="img-thumbnail" width="700"><br>
+      <legend>LM2940 5V Regulator Datasheet Page 15</legend></center>
+</div><br><br>
+
+
+  <p>As my input device is an external foot switch, I would have to design a connecting header that will receive the input signal from the switch. I also designed a LED indicator to test if my programming is working. In my schematic, I have used a 2x2 header for the switch and 12V power supply. </p>
+
+  <div class="container"><center>
+      <img src="final/stepper_sch.jpg" class="img-thumbnail" width="700"><br>
+      <img src="final/stepper_brd.jpg" class="img-thumbnail" width="700"><br>
+      <legend>Design of electronic circuitry</legend></center>
+</div><br><br>
+
+  <h3>Electronics Production</h3>
+
+  Procedures on how to mill the circuit board have been documented in the <a href="exercise06.html">Electronics Design</a> week. <br>
+
+  <div class="container"><center>
+      <img src="final/milling01.jpg" class="img-thumbnail" width="400">
+      <img src="final/milling02.jpg" class="img-thumbnail" width="400">
+      <legend>Generating toolpath and checking for shorts in the paths</legend><br>
+      <img src="final/electronics01.jpg" class="img-thumbnail" width="400">
+      <img src="final/electronics02.jpg" class="img-thumbnail" width="400">
+      <legend>Milling and testing connectivity of the circuitry board</legend><br>
+      <img src="final/electronics03.jpg" class="img-thumbnail" width="400">
+      <img src="final/electronics04.jpg" class="img-thumbnail" width="400">
+      <legend>Stuffing the circuitry board</legend></center>
+  </div><br><br>
+
+	<h3>AVR Programming</h3><br>
+
+  <p>The programming phase has been a real challenge to me. I have used flashed c coded into microcontroller in previous assignments, but all of those programming codes are pre-written and all I need to do is the make sure the pins tally and flash the chip, and microcontroller will perform as expected. This is different. I will need to understand the coding and be able to modify it to perform what I wanted to it to do. Basically, I need to put together the stuff I learned about <a href="http://academy.cba.mit.edu/classes/input_devices/button/hello.button.45.c" target="_blank">hello.button.45.c</a> from <a href="http://academy.cba.mit.edu/classes/input_devices/index.html" target_"blank">Input Devices</a> class and <a href="http://academy.cba.mit.edu/classes/output_devices/stepper/hello.stepper.bipolar.44.full.c" target="_blank">hello.stepper.bipolar.44.full.c</a> from <a href="http://academy.cba.mit.edu/classes/output_devices/index.html" target="_blank">Output devices</a> class into one programme. I spent about a week just to read up on AVR programming using C to learn the syntax and the logic. Two resources have been extremely helpful in my study. One is <a href="http://www.foxebook.net/make-avr-programming-learning-to-write-software-for-hardware/#.UvrkMXqqX0w.scoopit" target="_blank">Make: AVR Programming: Learning to Write Software for Hardware</a> by Elliot Williams. This books deals with the fundamentals about how to literally think in binary terms. Now I understand what this means:</p>
+
+  Bit Twiddling 
+  <pre class="prettyprint linenums">
+  #define BV(bit) (1 << bit)
+  #define setBit(byte, bit) (byte |= BV(bit))     // set a bit to true
+  #define clearBit(byte, bit) (byte &= ~BV(bit))  // clearing a bit to false
+  #define toggleBit(byte, bit) (byte ^= BV(bit))  // toggling a bit to either true or false depending on its previous state
+  </pre>
+
+  <p>The other resource is a youtube series: <a href="https://www.youtube.com/playlist?list=PLE72E4CFE73BD1DE1" target="_blank">NewbieHack - Microcontroller Tutorial - A Beginners Guide</a> which gives step-by-step tutorials on how to install winavr, how to flash microcontrollers using AVRDUDE and how to write C programmes. The author's website is <a href="https://www.newbiehack.com/MicrocontrollerTutorial.aspx" target="_blank">NewbieHack.com</a>. This has been most helpful to my learning of AVR programming. </p><br>
+
+  Command used to flash the microchip in Command Prompt:
+  <pre class="prettyprint linenums">
+  cd "C:\Users\yoruichin\Dropbox\FAB\Final Project Page turner\Stepper motor\"
+
+  cp hello.stepper.bipolar.44.full.make makefile
+
+  make
+
+  avrdude -P com4 -c stk500v1 -b 19200 -p t44 -U flash:w:hello.stepper.bipolar.44.full.c.hex
+  </pre><br>
+
+  <h3>Embedded Programming for Automatic Score Turner</h3>
+
+  <p>The steps I took:</p>
+  <ul>
+    <li>My first step was to load Neil's C programme without any change to the microcontroller, to make sure the board works and the stepper motor can move. <b>Successful!</b></li>
+    <li>Then I modify the speed of the stepper motor by changing parameters of on_delay, off_delay and step_count. <b>Successful!</b></li>
+    <li>I proceed to test the pushbutton function. I used the arudino sketch I have made in embedded programming to see if my LED lights up at the press of the button. <b>Successful!</b></li>
+    <li>Now that I know the pushbutton circuitry is working, I know the only variable is the programme. And this is the hard part. I tried to add a if condition to the C code to listen to the input signal of my pushbutton, but there was no response. <b>Failed!</b></li>
+  </ul><br>
+
+  <h4>Troubleshooting the programme</h4>
+
+    <p>So I added a if condition to execute the stepper motor only when button is pressed. So it turned out that because I was following the book by Elliot Williams, I used the library function "bit_is_clear" without fully understanding what the arguments were. That was the reason I had a hard time trying to make the if condition work.  With the help of my instructor, we finally figured out that one of the 2 arguments I used there was not a valid one. I had used "if (bit_is_clear(PORTB, PB2))" instead of "if (bit_is_clear(PINB, PB2))" which is the correct one. No wonder it did nothing. Thanks, Rodney for sitting with me for an hour to help troubleshoot my codes! </p>
+
+    Embedded programming of the Automatic Score Turner - <b>Sucessful!</b><br><br>
+
+  The full code for my stepper.bipolar.44.full.c
+  <pre class="prettyprint linenums">
+   //
+   //
+   // hello.stepper.bipolar.44.full.c
+   //
+   // bipolar full stepping hello-world
+   //
+   // Neil Gershenfeld
+   // 11/21/12
+   //
+   // (c) Massachusetts Institute of Technology 2012
+   // This work may be reproduced, modified, distributed,
+   // performed, and displayed for any purpose. Copyright is
+   // retained and must be preserved. The work is provided
+   // as is; no warranty is provided, and users accept all 
+   // liability.
+   //
+   // Documentation
+   // =============
+   // Modified by Yue Siew Chin, Fablab Singapore, 2016
+   //
+   // This program causes a stepper motor to turn a page at the press of a pushbutton.
+   // Microcontroller = ATtiny44
+   // Pushbutton = PB2
+   // LED = PA7
+   // Stepper motor pins = PA0, PA1, PA3, PA4 (A2, A1, B2, B1)
+   // Bipolar stepper motor 14HS13-0804S
+   // H-bridge PWM Motor Driver Allegro A4950 
+   // 5V Regulator LM2940
+   
+   
+   #include avr/io.h          //<> required to enclose the library name
+   #include util/delay.h      //<> required to enclose the library name
+   #include avr/interrupt.h   //<> required to enclose the library name 
+   
+   #define output(directions,pin) (directions |= pin) // set port direction for output
+   #define input(directions,pin) (directions &= (~pin)) // set port direction for input
+   #define set(port,pin) (port |= pin) // set port pin
+   #define clear(port,pin) (port &= (~pin)) // clear port pin
+   #define toggle(port,pin) (port ^= pin)
+   #define pin_test(pins,pin) (pins & pin) // test for port pin
+   #define bit_test(byte,bit) (byte & (1 << bit)) // test for bit set
+   
+   #define bridge_port PORTA // H-bridge port
+   #define bridge_direction DDRA // H-bridge direction
+   #define A2 (1 << PA0) // H-bridge output pins
+   #define A1 (1 << PA1) // "
+   #define B2 (1 << PA3) // "
+   #define B1 (1 << PA4) // "
+   #define on_delay() _delay_us(35) // PWM on time
+   #define off_delay() _delay_us(15) // PWM off time
+   #define PWM_count 100 // number of PWM cycles
+   #define step_count 53 // number of steps
+   
+   
+   #define button_port PORTB
+   #define button_direction DDRB
+   #define button (1 << PB2) // set button input pin
+   
+   #define led_port PORTA
+   #define led_direction DDRA
+   #define led (1 << PA7) // set LED output pin
+      
+   static uint8_t count;
+   //
+   // A+ B+ PWM pulse
+   //
+   void pulse_ApBp() {
+     clear(bridge_port, A2);
+     clear(bridge_port, B2);
+     set(bridge_port, A1);
+     set(bridge_port, B1);
+      for (count = 0; count < PWM_count; ++count) {
+         set(bridge_port, A1);
+         set(bridge_port, B1);
+         on_delay();
+         clear(bridge_port, A1);
+         clear(bridge_port, B1);
+         off_delay();
+       }
+     }
+   //
+   // A+ B- PWM pulse
+   //
+   void pulse_ApBm() {
+     clear(bridge_port, A2);
+     clear(bridge_port, B1);
+     set(bridge_port, A1);
+     set(bridge_port, B2);
+      for (count = 0; count < PWM_count; ++count) {
+         set(bridge_port, A1);
+         set(bridge_port, B2);
+         on_delay();
+         clear(bridge_port, A1);
+         clear(bridge_port, B2);
+         off_delay();
+       }
+     }
+   //
+   // A- B+ PWM pulse
+   //
+   void pulse_AmBp() {
+     clear(bridge_port, A1);
+     clear(bridge_port, B2);
+     set(bridge_port, A2);
+     set(bridge_port, B1);
+      for (count = 0; count < PWM_count; ++count) {
+         set(bridge_port, A2);
+         set(bridge_port, B1);
+         on_delay();
+         clear(bridge_port, A2);
+         clear(bridge_port, B1);
+         off_delay();
+       }
+     }
+   //
+   // A- B- PWM pulse
+   //
+   void pulse_AmBm() {
+     clear(bridge_port, A1);
+     clear(bridge_port, B1);
+     set(bridge_port, A2);
+     set(bridge_port, B2);
+      for (count = 0; count < PWM_count; ++count) {
+         set(bridge_port, A2);
+         set(bridge_port, B2);
+         on_delay();
+         clear(bridge_port, A2);
+         clear(bridge_port, B2);
+         off_delay();
+       }
+     }
+   //
+   // clockwise step
+   //
+   void step_cw() {
+      pulse_ApBp();
+      pulse_AmBp();
+      pulse_AmBm();
+      pulse_ApBm();
+   }
+   //
+   // counter-clockwise step
+   //
+   void step_ccw() {
+      pulse_ApBm();
+      pulse_AmBm();
+      pulse_AmBp();
+      pulse_ApBp();
+   }
+   // Was intending to use a debounce function for the pushbutton but decided to comment out so as not to complicate things.
+   uint8_t debounce(void) {                      // check for button bounce
+     if (bit_is_clear(button_port, button)) {     // button is pressed
+       _delay_us(1000);                          // debounce timeout in microseconds
+       if (bit_is_clear(button_port, button)) {   // button is still pressed after a short delay
+         return (1);       // return true
+       }
+     }
+     return (0);           // otherwise return false
+   } 
+   int main(void) {
+      //
+      // main
+      //
+      static uint8_t i,j;
+      //
+      // set clock divider to /1
+      //
+      CLKPR = (1 << CLKPCE);
+      CLKPR = (0 << CLKPS3) | (0 << CLKPS2) | (0 << CLKPS1) | (0 << CLKPS0);
+      //
+      // initialize bridge pins
+      //
+      clear(bridge_port, A1);
+      output(bridge_direction, A1);
+      clear(bridge_port, A2);
+      output(bridge_direction, A2);
+      clear(bridge_port, B1);
+      output(bridge_direction, B1);
+      clear(bridge_port, B2);
+      output(bridge_direction, B2);
+   
+      input(button_direction, button);  // clear bit
+      output(led_direction, led);   // set bit of LED for output
+      set(led_port, led);
+      //
+      // main loop
+      //
+     while (1) {
+   
+       if (bit_is_clear(PINB, PB2)) {   // look for button press; equivalent to if ((PINB & (1 << PB2)) == 0 )
+         clear(led_port, led); 
+         for (i = 0; i < step_count; ++i) {
+   //          for (j = 0; j < i; ++j)
+             step_cw();
+           _delay_ms(10); 
+   //  stop stepper motor rotation
+              clear(bridge_port, A1);
+              clear(bridge_port, A2);
+              clear(bridge_port, B1);
+              clear(bridge_port, B2);
+         }         
+       }
+       else {
+         set(led_port, led);  // indicates ready to receive input
+       }
+     }
+   }
+  </pre>
+
+  <center><iframe width="560" height="315" src="https://www.youtube.com/embed/hOHq5DZja5I" frameborder="0" allowfullscreen></iframe></center>
+
+  <h3>Download work files</h3>
+
+  <ul>
+    <li><a href="workfiles/final/stepper.sch" target="_blank">stepper.sch</a></li>
+    <li><a href="workfiles/final/stepper.brd" target="_blank">stepper.brd</a></li>
+    <li><a href="workfiles/final/stepper.top.etch.tap" target="_blank">Generated milling outlines - stepper.top.etch.tap</a></li>
+    <li><a href="workfiles/final/attinyButton3.ino" target="_blank">attinyButton3.ino</a></li>
+    <li><a href="workfiles/final/hello.stepper.bipolar.44.full.c" target="_blank">hello.stepper.bipolar.44.full.c</a></li>
+    <li><a href="workfiles/final/hello.stepper.bipolar.44.full.make" target="_blank">hello.stepper.bipolar.44.full.make</a></li>
+  </ul>
+ 
+
+
+   <h3>References</h3>
+  <ul>
+    <li>
+      <a href="https://learn.sparkfun.com/tutorials/switch-basics/all" target="_blank">Switch Basics</a></li>
+    <li>
+      <a href="http://www.instructables.com/id/BYJ48-Stepper-Motor/?ALLSTEPS" target="_blank">BYJ48 Stepper Motor</a>
+    </li>
+    <li>
+      <a href="http://www.instructables.com/id/How-to-use-a-Stepper-Motor/?ALLSTEPS" target="_blank">How to use a Stepper Motor</a>
+    </li>
+    <li>
+      <a href="https://www.adafruit.com/products/858" target="_blank">Small Reduction Stepper Motor - 5VDC 32-Step 1/16 Gearing</a>
+    </li>
+    <li>
+      <a href="https://www.adafruit.com/products/918" target="_blank">Small Reduction Stepper Motor - 12VDC 32-Step 1/16 Gearing</a>
+    </li>
+    <li>
+      <a href="https://www.circuitspecialists.com/blog/unipolar-stepper-motor-vs-bipolar-stepper-motors/" target="_blank">Unipolar Stepper Motor vs Bipolar Stepper Motors</a>
+    </li>
+    <li>
+      <a href="http://www.instructables.com/id/Fuzz-Pedal/" target="_blank">Fuzz Pedal</a>
+    </li>
+
+    <li>
+      <a href="http://www.instructables.com/id/Overdrive-Pedal/" target="_blank">Overdrive Pedal</a>
+    </li>
+    <li>
+      <a href="http://www.tigoe.com/pcomp/code/circuits/motors/stepper-motors/" target="_blank">Stepper Motors</a>
+    </li>
+    <li>
+      <a href="http://42bots.com/tutorials/28byj-48-stepper-motor-with-uln2003-driver-and-arduino-uno/" target="_blank">28BYJ-48 Stepper Motor with ULN2003 driver and Arduino Uno</a>
+    </li>
+    <li>
+      <a href="https://en.wikipedia.org/wiki/Decoupling_capacitor" target="_blank">Decoupling capacitor</a>
+    </li>
+    <li>
+      <a href="https://www.servocity.com/html/stepper_motor_mounts.html#.V06bx5F942x" target="_blank">Stepper Motor Mounts</a>
+    </li>
+    <li>
+      <a href="http://www.omc-stepperonline.com/nema-14-bipolar-stepper-54v-08a-18ncm255ozin-14hs130804s-p-93.html" target="_blank">Nema 14 Bipolar Stepper 5.4V 0.8A 18Ncm(25.5oz.in) 14HS13-0804S</a>
+    </li>
+    <li>
+      <a href="http://mechanicalexpressions.com/explore/kinematics/4-bar-linkage.html" target="_blank">4 Bar Linkage Kinematics</a>
+    </li>
+    <li>
+      <a href="http://www.mekanizmalar.com/fourbar.html" target="_blank">Four-Bar Linkage and Coupler Curve</a>
+    </li>
+    <li>
+      <a href="http://www.instructables.com/id/Folding-Book-Stand/?ALLSTEPS" target="_blank">How to Make a Folding Book Stand</a>
+    </li>
+    <li>
+      <a href="https://www.geckodrive.com/gecko/images/cms_files/Step%20Motor%20Basics%20Guide.pdf" target="_blank">STEP MOTOR BASICS GUIDE</a>
+    </li>
+    <li>
+      <a href="http://42bots.com/tutorials/bipolar-stepper-motor-control-with-arduino-and-an-h-bridge/" target="_blank">Bipolar stepper motor control with Arduino and an H-Bridge</a>
+    </li>
+    <li>
+      <a href="https://www.youtube.com/watch?v=BPs1K-h9Gx4" target="_blank">Bipolar Stepper Motor Control with an Arduino and H-Bridge</a>
+    </li>
+    <li>
+      <a href="http://www.electrical4u.com/bipolar-stepper-motor/" target="_blank">Bipolar Stepper Motor</a>
+    </li>
+    <li>
+      <a href="http://www.open-electronics.org/the-power-of-arduino-this-unknown/" target="_blank">Feeding power to Arduino: the ultimate guide</a>
+    </li>
+    <li>
+      <a href="http://42bots.com/tutorials/28byj-48-stepper-motor-with-uln2003-driver-and-arduino-uno/" target="_blank">28BYJ-48 Stepper Motor with ULN2003 driver and Arduino Uno</a>
+    </li>
+    <li>
+      <a href="https://www.youtube.com/watch?v=RzVc3o0iedM" target="_blank">Microcontrollers - AVR Atmega32 - Adding a Button to the Microcontroller</a>
+    </li>
+    <li>
+      <a href="https://www.newbiehack.com/MicrocontrollerAddingabutton.aspx" target="_blank">Microcontroller - A Beginners Guide - Adding a Button to the Microcontroller and Making it Do Something</a>
+    </li>
+    <li>
+      <a href="http://highlowtech.org/?p=1695" target="_blank">Programming an ATtiny w/ Arduino 1.6</a>
+    </li>
+    <li>
+      <a href="http://www.oreilly.com/pub/e/3018" target="_blank">Beyond the Arduino: Programming AVR Microcontrollers in C</a>
+    </li>
+    <li>
+      <a href="http://www.scoop.it/t/avrfreaks/p/4022876742/2014/06/12/make-avr-programming-learning-to-write-software-for-hardware-pdf-free-download-fox-ebook" target="_blank">Make: AVR Programming: Learning to Write Software for Hardware</a> by Elliot Williams.
+    </li>
+    <li>
+      <a href="https://www.youtube.com/watch?v=XbtklND_wig" target="_blank">Professional Hand Soldering Basic to Advance Surface Mount, Through Hole, Wires & Terminals</a>
+    </li>
+    <li>
+      <a href="https://www.youtube.com/watch?v=aoD2aUvnQXg" target="_blank">Soldering Basics - Popular Solder Connections</a>
+    </li>
+    <li>
+      <a href="https://www.newbiehack.com/MicrocontrollerTutorial.aspx" target="_blank">NewbieHack.com - LEARN THE FUNDAMENTALS OF MECHATRONICS!</a>
+    </li>
+    <li>
+      <a href="https://www.youtube.com/playlist?list=PLE72E4CFE73BD1DE1" target="_blank">NewbieHack - Microcontroller Tutorial - A Beginners Guide</a>
+    </li>
+    <li>
+      <a href="http://ffden-2.phys.uaf.edu/211_fall2002.web.dir/ben_townsend/staticandkineticfriction.htm" target="_blank">Static and Kinetic Friction</a>
+    </li>
+    <li>
+      <a href="http://whatis.techtarget.com/definition/end-effector" target="_blank">end effector</a>
+    </li>
+    <li>
+      <a href="https://en.wikipedia.org/wiki/Torque" target="_blank">Torque</a>
+    </li>
+
+
+               
+    
+	</ul><br>
+
+
+  
+    <!-- End of your content -->
+
+    </div> <!-- /container -->
+
+	<!-- footer -->
+    
+    <footer id="footer">
+        <p id="cclicense">
+                </p>
+        <p class="license">
+        Theme: <a href="https://github.com/openp2pdesign/FabAcademy_Template">Fab Academy Template</a> by <a href="http://openp2pdesign.org">Massimo Menichinelli</a> <br>
+        Based on <a href="http://getbootstrap.com/">Twitter Bootstrap</a>+<a href="http://jquery.com/">JQuery</a>+<a href="https://code.google.com/p/google-code-prettify/">google-code-prettify</a>+<a href="http://jmblog.github.io/color-themes-for-google-code-prettify/github/">GitHub theme for google-code-prettify</a>+<a href="https://code.google.com/p/jsc3d/">JSC3D</a>+<a href="https://github.com/thegrubbsian/jquery.ganttView">jquery.ganttView</a>.
+        </p>
+    </footer>
+    
+
+	<!-- Do not touch this! -->
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="media/jquery-1.9.1.min.js"></script>
+    
+    <!-- Syntax Highlighter -->
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js">
+    </script>
+    <!-- From https://github.com/jmblog/color-themes-for-google-code-prettify -->
+    <link href="media/github.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript">
+	  !function ($) {
+		$(function(){
+		  window.prettyPrint && prettyPrint()   
+		})
+	  }(window.jQuery)
+	</script>
+	
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="bootstrap/js/ie10-viewport-bug-workaround.js"></script>
+
+  </body>
+</html>

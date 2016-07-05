@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Yue Siew Chin">
+    <link rel="icon" href="media/favicon.ico">
+
+    <title>Fab Academy 2016 | Yue Siew Chin | Exercise 13</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="media/fabacademy.css" rel="stylesheet">
+    
+    <!-- 3D files viewer -->
+    <script type="text/javascript" src="media/jsc3d_ie.min.js"></script>
+	<script type="text/javascript" src="media/jsc3d.min.js"></script>
+    <script type="text/javascript" src="media/jsc3d.webgl.js"></script>
+    <script type="text/javascript" src="media/jsc3d.touch.js"></script>
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="bootstrap/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="bootstrap/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- Load the menu file -->
+    <script>
+	function menu() {
+					  $('#exercises').load("exercises-menu.html");
+					  $('#project').load("project-menu.html");
+					  $('#cclicense').load("license.html");
+					  }
+	</script>
+
+  </head>
+
+  <body onload="menu()">
+
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">Home</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="about.html">About</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Exercises <span class="caret"></span></a>
+              <ul id="exercises" class="dropdown-menu" role="menu">
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Final Project <span class="caret"></span></a>
+              <ul id="project" class="dropdown-menu" role="menu">
+              </ul>
+            </li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    	
+	<!-- Insert your content here below! -->
+
+
+    <h2><b>Exercise 13 Output Devices</b></h2>
+    
+  <p><a href="http://archive.fabacademy.org/archives/2016/master/videos/04-27/index.html" target="_blank">
+  <button type="button" class="btn btn-primary btn">This week's Lecture</button></a><br>
+
+  <h3>Requirement</h3>
+	
+	<ul>
+	 <li>add an output device to a microcontroller board you've designed and program it to do something</li>
+	</ul><br>	
+
+	<h3>Introduction</h3>
+
+	<p>As my final project needs a mechanism to rotate and flip, I was really looking forward to this week's assignment so that though the process of doing it, I would have a better idea of how to proceed for my final project. In my mind, I know I would be working with some kind of motors, but exactly what type, I was not so certain until this week. I was reading this book called <a href="http://www.interactiondesign.se/wiki/_media/courses:making_things_move.pdf" target="_blank">Making things move</a> and I was able to have a better understanding of what different motors do. </p><br>
+
+  <ul>
+    <li><b>DC Motors</b>: Also called a DC toy motor, this motor has only two electrical connections, so all you need to do to make a 9V DC motor turn is hook it up to a 9V battery. To reverse the direction, reverse the connections to the battery. If you lower the voltage, it will still work over a certain range, but spin slower. If you raise the voltage, it will spin faster.2 DC toy motors usually need between 1.5V and 12V. They spin at speeds anywhere from 1,000 to 20,000 rpm or more. </li>
+    <li><b>DC Gearhead Motors</b>: This is just a standard DC motor with a gearhead on it. A gearhead is just a box of gears that takes the output shaft of the standard DC motor and “gears it up” to a second output shaft that has higher torque, but turns slower. Here, we’re trading speed for torque: a 100:1 gearhead ratio will give us 100 times more torque than without the gears, but also will be 100 times slower. DC gearhead motors usually range from about 3V to 30V and run at speeds from less than 1 rpm to a few hundred rpm.</li>
+    <li><b>Hobby Servo Motors</b>: There are two types of hobby servo motors: standard and continuous rotation. Standard servos are by far the more popular. They are usually found in radio-controlled models like planes and boats. Standard hobby servo motors are just little DC gearhead motors with some smarts in them. When you give the smarts a certain kind of pulse — basically just turning the power on and off in a specific pattern — you’re actually telling the servo motor where to point the shaft. Instead of having just two wires you attach to a power source like the DC motors described earlier, these motors have three wires and are controlled by pulses. Standard servos have ranges between 60° and 270° (typically 180°), so they are most useful for pointing and positioning tasks. They also typically use 4.8V to 6V.</li>
+    <li><b>Continuous Rotation Hobby Servos</b>: A continuous rotation servo is a modification of the standard servo motor. Instead of determining position, the pulses tell the motor how fast to go. You give up knowing he position of the servo arm here, but you gain speed control and 360° movement. A continuous rotation servo is a great option if you have something that needs to spin continuously but you want an easy way to control the speed</li>
+    <li><b>Stepper Motors</b>: The stepper motor combines the precise positioning of standard hobby servos and the continuous rotation of DC toy and gearhead motors. The central shaft of a stepper has a series of magnets on it in the shape of a gear, and there are several wire coils surrounding this gear magnet on the inside of the motor housing. Steppers work by moving in a bunch of little increments, or steps. If you step them fast enough, it looks like continuous motion. Each time one of the coils is energized, it pulls one of the teeth on the shaft toward it to complete one step. For example, a 200-step motor moves in a full 360° circle at 1.8° per step. These motors have four to eight wires you need to use to control the pulses to make the shaft step continuously, so they’re more complicated to control than the previously described motors. They are squatter looking than the rest of the DC motor family, and have less torque than you might expect for their size and weight. However, they’re also the fastest way to integrate both speed and position control into a project. Printers and scanners use stepper motors to control the speed and location of the print head with the ink and rotate the paper through them.</li>
+    <li><b>AC Motors</b>: You’ll find AC motors in many household appliances, like blenders and fans, because they are continuously rotating and use the AC from the wall to drive them. However, attempting to control AC motors can be dangerous. You’re playing with 120V from the wall, which is much higher than the voltages needed by the DC motors. An AC motor can draw as much current as it wants from the wall supply, up to about 15A before it trips a breaker in your house. The combination of high voltage and high current is enough to seriously hurt you if something goes wrong.</li>
+    <li><b>Rotary Solenoids</b>: Rotary solenoids are good for quick rotary movements through a short range of motion. They are really just modified linear solenoids that force the plunger into a guide that makes it rotate.</li>
+  </ul><br>
+
+  <h3>SG90 Micro Servo Motors</h3>
+
+  <p>I will be trying to drive 2 x 9G micro servo with a microcontroller board, not because they are special but because they are available in the lab. The <a href="http://www.micropik.com/PDF/SG90Servo.pdf" target="_blank">datasheet</a> of the motors states the following specifications:</p>
+
+  <ul>
+    <li>Weight: 9 g</li>
+    <li>Dimension: 22.2 x 11.8 x 31 mm approx.</li>
+    <li>Stall torque: 1.8 kgf·cm</li>
+    <li>Operating speed: 0.1 s/60 degree</li>
+    <li>Operating voltage: 4.8 V (~5V)</li>
+    <li>Dead band width: 10 µs</li>
+    <li>Temperature range: 0 ºC – 55 ºC </li>
+    <li>PWM: orange</li>
+    <li>VCC: red </li>
+    <li>GND: brown</li>  
+    <li>Position "0" (1.5 ms pulse) is middle, "90" (~2 ms pulse) is all the way to the right. "-90" (~1 ms pulse) is all the way to the left.</li>
+  </ul>
+
+  <p class="pic"><img src="photo/13_sg90servo_2.jpg" width="500">
+  <legend>9G Micro Servo Pulse Width Modulation</legend>
+  </p><br>
+
+
+  
+
+  <h3>Designing the board</h3>
+
+  <p> The sample board on our <a href="http://academy.cba.mit.edu/classes/output_devices/index.html" target="_blank">class page</a> looks like this:
+
+  <p class="pic"><img src="photo/13_hello.servo.44.png" width="400">
+  <legend>Hello Servo Board</legend>
+  </p>
+
+  <p>After discussing with the local instructor, we were advised to redesign the board using another microcontroller chip, the ATtiny45, and also to build the board without a 5V regulator and a 20MHz crystal. Referring to the datasheet of ATtiny45, and comparing the pins assignment with the t44, I made some notes on my memo pad. Scribbling down and drawing the diagram really helped, and I found myself referring to this scribble ever so often when I was working in Eagle to design the schematic and the board.</p><br>
+
+  <h4>Component List</h4>
+  <ul>
+    <li>2 x 9G MICRO SERVOS</li>
+    <li>1 x <s>ATTINY44</s> ATTINY45 MICROCONTROLLER</li>
+    <li>1 x 2x2 HEADER (POWER)</li>
+    <li>2 x 3X2 PIN HEADER (AVRISP & SERVO)</li>
+    <li>1 x CAPACITOR 1 uf</li>
+    <li>1 x 10 k Ohm RESISTOR RES-US1206FAB</li>
+    <li><s>1 x 5V REGULATOR</s></li>
+    <li><s>1 x 20MHz RESONATOR</s></li>
+  </ul><br>
+
+  <div class="container"><center>
+      <img src="photo/13_pins_reassignment.jpg" class="img-thumbnail" width="400">
+      <img src="photo/13_44-85pins_reassignment.jpg" class="img-thumbnail" width="400">
+      <img src="photo/13_servo2_sch.jpg" class="img-thumbnail" width="400">
+      <img src="photo/13_servo2_brd.jpg" class="img-thumbnail" width="400">
+      <img src="photo/13_stuffed_board.jpg" class="img-thumbnail" width="600">
+      <legend>Redesigning the board</legend></center>
+</div><br><br>
+
+<h3>Programming with Arduino</h3>
+
+<p>I soon realised that ATtiny85 microcontroller is not compatible with the "servo.h" library in Arduino because <a href="http://www.cunningturtle.com/attiny4585-servo-library/" target="_blank">ATtiny85</a> only has 8 bit counters, whereas Servo-library relies on having a 16-bit timer available. If I were using the ATtiny44, it would pose no issue because ATtiny44 has a 16 bit counters. I tried to workaround this by trying out two other libraries "<a href="http://www.cunningturtle.com/servo8bit-library-version-0-6-released/" target="_blank">servo8bit.h</a>" and "<a href="http://playground.arduino.cc/ComponentLib/Servo" target="_blank">SoftwareServo.h</a>". It seems that SoftwareServo.h is okay to use.</p><br>
+
+Sweeping the servos back and forth
+<pre class="prettyprint linenums">
+  #include <SoftwareServo.h>
+
+SoftwareServo myServo1;
+SoftwareServo myServo2;  
+
+int angle = 0; 
+void setup()
+{
+  myServo1.attach(0);
+  myServo2.attach(3);
+}
+
+void loop(){
+    for(angle = 1; angle < 180; angle++) 
+    {
+      myServo1.write(angle);
+      delay(20);
+      myServo2.write(angle);
+      delay(10);
+      SoftwareServo::refresh(); 
+    }
+    for(angle = 180; angle > 1; angle--) 
+    {
+      myServo1.write(angle);
+      delay(20);
+      myServo2.write(angle);
+      delay(10);
+      SoftwareServo::refresh(); 
+    }
+}
+  </pre><br>
+
+<h3>Programming the firmware with WinAVR</h3>
+
+  <p>I was only able to document the WinAVR programming process in week 13 when in fact, this topic has been covered as early as week 4. At that time I didn't understand C programming and was trying very hard to avoid avrdude which I couldn't understand. So all the while, I have been using Arduino IDE to flash my chip. It is only now that I am a little more ready to face the challenge and try to understand about AVR programming. I think this is a huge leap for me and I am happy to have a better understanding about AVR programming. For windows users, we need to download <a href="https://sourceforge.net/projects/winavr/">WinAVR</a>. </p><br>
+
+     The 3 most important commands to know are:
+  <pre class="prettyprint linenums">
+  1.    cp hello.servo.44.2.make makefile   // compiling the c program into a "makefile"
+
+  2.    make        // generate 2 files; the .hex file and the .out file
+
+  3.    avrdude -P com4 -c stk500v1 -b 19200 -p t45 -U flash:w:hello.servo.44.2.c.hex   //stk500v1 is my arduino programmer; 
+                                                                                        //t45 is the ATtiny45 chipset; 
+                                                                                        //hello.servo.44.c.hex is the hex file you want to flash 
+  </pre>
+
+  Because of the changes to my board and the change of chipset to ATtiny45, the following modifications to the C programme is essential: 
+  <pre class="prettyprint linenums">
+  #define PWM_port PORTB        // ATtiny45 only has PortB
+  #define PWM_direction DDRB    // Data Direction Registers B
+  #define PWM_pin_0 (1 << PB0)  // PortB Pin0
+  #define PWM_pin_1 (1 << PB3)  // PortB Pin3
+  </pre>
+
+  Changes required in the make file:
+  <pre class="prettyprint linenums">
+  MMCU=ATtiny45       // and all occurrence of t44 will be replaced by t45    
+  F_CPU = 8000000     // Instead of an 20MHz external crystal, we are using 8MHz internal clock
+  </pre>
+
+  Successfully flashing the microchip set:
+  <pre class="prettyprint linenums">
+C:\Users\yoruichin\Dropbox\FAB\Week 13 - Output\servo\2ch><b>cp hello.servo.44.2.make makefile</b>
+
+C:\Users\yoruichin\Dropbox\FAB\Week 13 - Output\servo\2ch><b>make</b>
+avr-gcc -mmcu=attiny45 -Wall -Os -DF_CPU=9600 -I./ -o hello.servo.44.2.out hello.servo.44.2.c
+avr-objcopy -O ihex hello.servo.44.2.out hello.servo.44.2.c.hex;\
+        avr-size --mcu=attiny45 --format=avr hello.servo.44.2.out
+AVR Memory Usage
+----------------
+Device: attiny45
+
+Program:     312 bytes (7.6% Full)
+(.text + .data + .bootloader)
+
+Data:          0 bytes (0.0% Full)
+(.data + .bss + .noinit)
+
+
+C:\Users\yoruichin\Dropbox\FAB\Week 13 - Output\servo\2ch>
+
+C:\Users\yoruichin\Dropbox\FAB\Week 13 - Output\servo\2ch><b>avrdude -P com4 -c stk500v1 -b 19200 -p t45 -U flash:w:hello.servo.44.2.c.hex</b>
+
+avrdude: please define PAGEL and BS2 signals in the configuration file for part ATtiny45
+avrdude: AVR device initialized and ready to accept instructions
+
+Reading | ################################################## | 100% 0.03s
+
+avrdude: Device signature = 0x1e9206
+avrdude: NOTE: FLASH memory has been specified, an erase cycle will be performed
+         To disable this feature, specify the -D option.
+avrdude: erasing chip
+avrdude: please define PAGEL and BS2 signals in the configuration file for part ATtiny45
+avrdude: reading input file "hello.servo.44.2.c.hex"
+avrdude: input file hello.servo.44.2.c.hex auto detected as Intel Hex
+avrdude: writing flash (332 bytes):
+
+Writing | ################################################## | 100% 0.53s
+
+avrdude: 332 bytes of flash written
+avrdude: verifying flash memory against hello.servo.44.2.c.hex:
+avrdude: load data flash data from input file hello.servo.44.2.c.hex:
+avrdude: input file hello.servo.44.2.c.hex auto detected as Intel Hex
+avrdude: input file hello.servo.44.2.c.hex contains 332 bytes
+avrdude: reading on-chip flash data:
+
+Reading | ################################################## | 100% 0.27s
+
+avrdude: verifying ...
+avrdude: 332 bytes of flash verified
+
+avrdude: safemode: Fuses OK
+
+avrdude done.  Thank you.
+
+C:\Users\yoruichin\Dropbox\FAB\Week 13 - Output\servo\2ch>
+  </pre>
+
+ <div class="container"><center>
+      <img src="photo/13_winavr.jpg" class="img-thumbnail" width="400">
+      <img src="photo/13_set_clock_divider.jpg" class="img-thumbnail" width="400">
+      <img src="photo/13_2ch_flash_cp_mk.jpg" class="img-thumbnail" width="400">
+      <img src="photo/13_2ch_flash_2.jpg" class="img-thumbnail" width="400">
+      <legend>Flashing the microcontroller using WinAVR</legend></center>
+</div><br><br>
+
+<center><iframe width="560" height="315" src="https://www.youtube.com/embed/n1-ugtX0CzM" frameborder="0" allowfullscreen></iframe></center>
+
+  <h3>Download work files</h3>
+
+<ul>
+  <li><a href="workfiles/wk13/servo2.sch" target="_blank">servo2.sch</a></li>
+  <li><a href="workfiles/wk13/servo2.brd" target="_blank">servo2.brd</a></li>
+  <li><a href="workfiles/wk13/Sweep_backforth.ino" target="_blank">Sweep_backforth.ino</a></li>
+  <li><a href="workfiles/wk13/hello.servo.44.2.c" target="_blank">hello.servo.44.2.c</a></li>
+  <li><a href="workfiles/wk13/hello.servo.44.2.make" target="_blank">hello.servo.44.2.make</a></li>
+</ul>
+
+   <h3>References</h3>
+  <ul>
+    <li>
+      <a href="http://www.interactiondesign.se/wiki/_media/courses:making_things_move.pdf" target="_blank">Making Things Move</a> by Dustyn Roberts
+    </li>
+    <li>
+      <a href="http://archive.fabacademy.org/archives/2016/doc/programming_FabISP.html" target="_blank">FabISP: Programming</a>
+    </li>
+    <li>
+      <a href="http://projectsfromtech.blogspot.sg/2013/03/attiny85-servo-softwareservo-library.html" target="_blank">ATtiny85 Servo: SoftwareServo Library</a>
+    </li>
+    <li>
+      <a href="http://highlowtech.org/?p=1695" target="_blank">Programming an ATtiny w/ Ardurino 1.6 - ATtiny45/85 vs. an Arduino Board</a>
+    </li>
+    <li>
+      <a href="https://www.youtube.com/playlist?list=PLE72E4CFE73BD1DE1" target="_blank">NewbieHack - Microcontroller Tutorial - A Beginners Guide</a>
+    </li>
+    <li>
+      <a href="https://www.youtube.com/watch?v=wfQBS22jxL8" target="_blank">Microcontrollers - AVR Atmega32 - Writing our first program and transferring it to the MCU</a>
+    </li>
+    <li>
+      <a href="https://www.newbiehack.com/MicrocontrollerWritingthefirstprogramandtransfer.aspx" target="_blank">Writing the First Program to Turn On an LED and Transferring the Program into the Microcontroller</a>
+    </li>
+    <li>
+      <a href="https://alselectro.wordpress.com/tag/avr-programming-programmers-notepad-make-file-creation/" target="_blank">AVR Programming–Tutorial 2–Hands on Programmers Notepad & MAKE file creation</a>
+    </li>
+    <li>
+      <a href="http://www.technoblogy.com/show?LE0" target="_blank">Four PWM Outputs from the ATtiny85</a>
+    </li>
+    <li>
+      <a href="http://www.opussoftware.com/tutorial/TutMakefile.htm" target="_blank">The Makefile</a>
+    </li>
+    <li>
+      <a href="http://www.pighixxx.com/test/pinoutspg/processors/#prettyPhoto[gallery]/3/" target="_blank">The pinouts of the most popular AVR processors.</a>
+    </li>
+    <li>
+      <a href="https://www.youtube.com/watch?v=TmpGXfVRd2A" target="_blank">Arduino Tutorial: TowerPro SG90 Micro Servo | With Sketch</a>
+    </li>
+    <li>
+      <a href="http://extremeelectronics.co.in/avr-tutorials/servo-motor-control-by-using-avr-atmega32-microcontroller/" target="_blank">Servo Motor Control by Using AVR ATmega32 Microcontroller</a>
+    </li>
+    <li>
+      <a href="http://extremeelectronics.co.in/avr-tutorials/introduction-to-pwm-pulse-width-modulation/" target="_blank">Introduction to PWM – Pulse Width Modulation</a>
+    </li>
+    <li>
+      <a href="http://extremeelectronics.co.in/avr-tutorials/pwm-signal-generation-by-using-avr-timers/" target="_blank">PWM Signal Generation by Using AVR Timers</a>
+    </li>
+    <li>
+      <a href="http://extremeelectronics.co.in/avr-tutorials/avr-timers-an-introduction/" target="_blank">AVR Timers – An Introduction</a>
+    </li>
+    <li>
+      <a href="http://extremeelectronics.co.in/avr-tutorials/timers-in-compare-mode-part-i/" target="_blank">Timers in Compare Mode – Part I</a> and <a href="http://extremeelectronics.co.in/avr-tutorials/timers-in-compare-mode-part-ii/" target="_blank">Timers in Compare Mode – Part II</a>
+    </li>
+    <li>
+      <a href="https://learn.adafruit.com/adafruit-arduino-lesson-14-servo-motors/arduino-code-for-sweep" target="_blank">Arduino Code for 'Sweep'</a>
+    </li>
+    <li>
+      <a href="https://tkkrlab.nl/wiki/Arduino_towerpro_sg90_9g_servo" target="_blank">Arduino towerpro sg90 9g servo</a>
+    </li>
+    <li>
+      <a href="https://github.com/fri000/Servo8Bit" target="_blank">Servo library for the ATtiny45 and the ATtiny85</a>
+    </li>
+    <li>
+      <a href="http://www.cunningturtle.com/servo8bit-library-version-0-6-released/" target="_blank">Servo8Bit Library version 0.6 released</a>
+    </li>
+    <li>
+      <a href="http://playground.arduino.cc/ComponentLib/Servo" target="_blank">The Software Servo Library</a>
+    </li>
+
+
+        
+    
+	</ul><br>
+
+
+  
+    <!-- End of your content -->
+
+    </div> <!-- /container -->
+
+	<!-- footer -->
+    
+    <footer id="footer">
+        <p id="cclicense">
+                </p>
+        <p class="license">
+        Theme: <a href="https://github.com/openp2pdesign/FabAcademy_Template">Fab Academy Template</a> by <a href="http://openp2pdesign.org">Massimo Menichinelli</a> <br>
+        Based on <a href="http://getbootstrap.com/">Twitter Bootstrap</a>+<a href="http://jquery.com/">JQuery</a>+<a href="https://code.google.com/p/google-code-prettify/">google-code-prettify</a>+<a href="http://jmblog.github.io/color-themes-for-google-code-prettify/github/">GitHub theme for google-code-prettify</a>+<a href="https://code.google.com/p/jsc3d/">JSC3D</a>+<a href="https://github.com/thegrubbsian/jquery.ganttView">jquery.ganttView</a>.
+        </p>
+    </footer>
+    
+
+	<!-- Do not touch this! -->
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="media/jquery-1.9.1.min.js"></script>
+    
+    <!-- Syntax Highlighter -->
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js">
+    </script>
+    <!-- From https://github.com/jmblog/color-themes-for-google-code-prettify -->
+    <link href="media/github.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript">
+	  !function ($) {
+		$(function(){
+		  window.prettyPrint && prettyPrint()   
+		})
+	  }(window.jQuery)
+	</script>
+	
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="bootstrap/js/ie10-viewport-bug-workaround.js"></script>
+
+  </body>
+</html>

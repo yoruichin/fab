@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Yue Siew Chin">
+    <link rel="icon" href="media/favicon.ico">
+
+    <title>Fab Academy 2016 | Yue Siew Chin | Exercise 05</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="media/fabacademy.css" rel="stylesheet">
+    
+    <!-- 3D files viewer -->
+    <script type="text/javascript" src="media/jsc3d_ie.min.js"></script>
+	<script type="text/javascript" src="media/jsc3d.min.js"></script>
+    <script type="text/javascript" src="media/jsc3d.webgl.js"></script>
+    <script type="text/javascript" src="media/jsc3d.touch.js"></script>
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="bootstrap/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="bootstrap/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- Load the menu file -->
+    <script>
+	function menu() {
+					  $('#exercises').load("exercises-menu.html");
+					  $('#project').load("project-menu.html");
+					  $('#cclicense').load("license.html");
+					  }
+	</script>
+
+  </head>
+
+  <body onload="menu()">
+
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">Home</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="about.html">About</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Exercises <span class="caret"></span></a>
+              <ul id="exercises" class="dropdown-menu" role="menu">
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Final Project <span class="caret"></span></a>
+              <ul id="project" class="dropdown-menu" role="menu">
+              </ul>
+            </li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    	
+	<!-- Insert your content here below! -->
+
+
+    <h2><b>Exercise 05 3D Scanning and Printing</b></h2>
+    
+  <p><a href="http://archive.fabacademy.org/archives/2016/master/videos/02-24/index.html" target="_blank">
+  <button type="button" class="btn btn-primary btn">This week's Lecture</button></a><br>
+
+  <h3>Requirement</h3>
+	
+	<ol>
+	 <li>
+		Test the design rules for your printer(s) (group project) 
+	 </li>
+	 <li>
+		Design and 3D print an object (small, few cm) that could not be made subtractively
+	 </li>
+	 <li>
+		3D scan an object (and optionally print it)
+	 </li>
+	</ol><br>
+	
+
+	<h3>Introduction</h3>
+
+	<p>Additive Manufacturing is a term to describe set of technologies that create 3D objects by adding layer-upon-layer of material. 3D printing is addictive manufacturing. On the other hand, subtractive manufacturing is a process by which 3D objects are constructed by successively cutting material away from a solid block of material. Subtractive manufacturing can be done by manually cutting the material but is most typically done with a CNC Machine. </p><br>
+
+  <h3>3D Printing Technologies</h3>
+
+    <ul>
+      <li><b>Filament-based 3D Printing (Fused Deposition Modeling)</b>: Home printers typically work with plastic filament. The technology behind this is often referred to as “Fused Filament Fabrication” (FFF). In our 3D printing factory, we have more professional, industrial-grade machines: our filament printers use a technology called “Fused Deposition Modeling” (FDM). In an FDM printer, a long plastic filament is fed by a spool to a nozzle where the material is liquefied and ‘drawn’ on the platform, where it immediately hardens again. The nozzle moves to place the material in the correct location to build your model up layer by layer. When a layer is drawn, the platform lowers by one layer thickness so the printer can start with the next layer.</li>
+      <li><b>Powder-based 3D Printing (Laser Sintering)</b>: The interior of the printer is heated up to just below the melting point of the powder of your choice. The printer then spreads out an incredibly fine layer of this powder. A laser beam heats up the areas that need to be sintered together just above the melting point. And voila: the parts that were touched by the laser are now fused together while the rest continues to remain loose powder. The models are printed layer by layer with the help of this laser beam. After a layer is printed, a new layer of fresh powder is spread over the surface by a roller. After the printing job is finished, the result is a big block of powder that contains the printed (sintered) models inside. In order to get your prints out of the powder block, we need to dig into the box of un-sintered powder and brush away the excess. The advantage of this technology is that no supporting structure is needed!</li>
+      <li><b>Powder- & Binder-based 3D Printing</b>: The starting process of this technology is quite similar to Laser Sintering: a roller puts a thin layer of powder on a platform. However, instead of a laser beam, a special print head places a binding agent at specific points, printing a thin layer of your model that is able to bind to subsequent layers. This process is then repeated over and over again until your model is complete. Since your model was only ‘glued’ together, some post processing is necessary with this 3D printing technology. The exact post-processing steps heavily depend on the material: Multicolor models get a bath in superglue, Ceramic prints are put in a drying oven and fired several times, High-Detail Stainless Steel and Stainless Steel objects are placed in an oven for fusing. Stainless Steel models are additionally infused with Bronze for extra strength.</li>
+      <li><b>Resin-based 3D Printing (Stereolithography)</b>: The Stereolithography process takes place in a large tank and begins with a layer of liquid polymer spread over a platform. Since this piqued polymer is UV-sensitive, a UV laser hardens the area that will become one layer of your 3D print. The rest of the layer stays liquid. The platform is then lowered and the next layer is drawn directly on top of the previous one. When the object is complete, it is raised out of the tank via the supporting platform – much like a submarine rising to the surface of the water – with the excess liquid flowing away. Because a liquid material is used (and not powder), we need to add support material for overhanging parts and parts that stick out. The supports will then be removed manually after the model is taken from the machine. This means that the design freedom of this technology is somewhat limited. The main advantages of materials printed with Stereolithography are smooth surfaces and a lot of finishing and post-processing possibilities. Materials used in this printing process include Paintable Resin, Transparent Resin, and Prime Gray. They all feature smooth, high-quality surfaces. Additional plus points: Paintable Resin can be spray-painted, Transparent Resin comes with a transparent look in different colors, and Prime Gray comes at a low price.</li>
+      <li><b>Lost-Wax 3D Printing & Casting</b>: First, 3D printing your model in wax. This step is a type of Stereolithography that uses a wax-like resin. Support structures are printed along with the model to make sure it doesn’t fall apart. These support structures are automatically generated and manually removed after the printing process. Next, one or more wax sprues will be attached to your model. Then your model will be attached by the sprue to a wax ‘tree’, together with several other models. The tree is then placed in a flask and covered in a fine plaster. When the plaster solidifies, it forms the mold for casting the metal. The plaster mold is then put in an oven and heated for several hours to a point where the wax is completely burned out. Then, molten metal is poured in to fill the cavities left by the wax. Once the metal has cooled and solidified, the plaster mold is broken and the metal models are removed by hand. Finally, your model is filed and sanded to get rid of the sprues. It will be sanded, polished or sandblasted to create the finish you desire. This means, however, that complicated designs such as a “ball within a ball” or links of chains cannot be made with this process. But the upside of casting your model is that the final product will have the best quality: surfaces will be smooth, and the strength, feel, and look of precious metals (e.g. a silver ring or a gold pendant) is exactly what a customer would expect.</li>
+    </ul><br>
+    
+  <h3>Stress-testing the 3D Printer</h3>
+
+  <p>The 3D printer in my lab is a ABS  <a href="https://www.up3d.com/?r=plus" target="_blank">UP Plus</a>. It uses a software called <a href="https://www.up3d.com/?r=support/download" target="_blank">UP!</a>. <a href="www.thingiverse.com" target="_blank">Thingiverse</a> has a collection of test files for 3D printers and I am using <a href="https://www.thingiverse.com/thing:704409" target="_blank">this model</a> to test my printer.</p>
+
+    <p class="pic"><img src="photo/05_3dprinter.jpg" width="400">
+  	<legend>UP Plus 3D Printer</legend></p>
+
+  	<p class="pic"><img src="photo/05_thingiverse_test.jpg" width="400">
+  	<legend>3D Printer Test file</legend></p>
+
+  	<p>The test file is able to observe the following:</p>
+  	<ul>
+  	<li>Size: the object is 2 x 50 x 30mm (baseplate)</li>
+		<li>Hole size: 3 holes (3/4/5mm)</li>
+		<li>Nut size: M4 Nut should fit perfectly</li>
+		<li>Fine details: pyramide, cone, all numbers</li>
+		<li>Rounded print: wave, half sphere</li>
+		<li>Minimum distance & walls: 0.1/0.2/0.3/0.4/0.5/0.6/0.7mm</li>
+		<li>Overhang: 25°/30°/35°/40°/45°</li>
+		<li>Bridge print: 2/4/8/16/mm</li>
+		<li>Surface: all the flat parts</li>
+  	</ul><br>
+
+  	<p>The observations are as follows:  		
+  	<ul>
+  		<li>Size: <font color="red">1.6 x 50.2 x 29.8mm (baseplate)</font></li>
+		<li>Hole size: <font color="red">3.2/4/4.8mm</font></li>
+		<li>Nut size: <font color="red">Did not have a M4 Nut available</font></li>
+		<li>Fine details: pyramide, cone, all numbers - <font color="red">Passed</font></li>
+		<li>Rounded print: wave, half sphere - <font color="red">Passed</font></li>
+		<li>Minimum distance & walls: 0.1/0.2/0.3/0.4/0.5/0.6/0.7mm - <font color="red">Failed to print walls which are less than 0.5mm. Minimum distance is about 0.5mm.</font></li>
+		<li>Overhang: 25°/30°/35°/40°/45° - <font color="red">Passed</font></li>
+		<li>Bridge print: 2/4/8/16/mm - <font color="red">2/4/8mm passed. 16mm bridge failed.</font></li>
+		<li>Surface: all the flat parts - <font color="red">Passed</font></li>
+  	</ul></p><br>
+
+  	<div class="container"><center>
+      <img src="photo/05_testprint_01.jpg" class="img-thumbnail" width="400">
+      <img src="photo/05_testprint_02.jpg" class="img-thumbnail" width="400">
+      <img src="photo/05_testprint_03.jpg" class="img-thumbnail" width="400">
+      <img src="photo/05_testprint_04.jpg" class="img-thumbnail" width="400">
+      <legend>Testing the quality of 3D printer</legend></center>
+    </div><br><br>
+
+    <p>My classmate, Steven did a similar test on <a href="http://www.imakr.com/en/3d-printers/343-cubicon-single.html" target="_blank">Cubicon 3DP-110F</a>, a 3D printer from Korea, and below is his result.</p>
+
+    <p class="pic"><img src="photo/05_3dprint_test_steven.jpg">
+    <legend>Test Print on the Cubicon 3DP-110F. The results seems better than the UP Plus.</legend></p><br>
+
+
+    
+
+    <h3>3D-print a small model</h3>
+
+    <p>I have decided to make a chain because you cannot do this subtractively without splitting it apart and gluing it back. But with a 3D printer, not only can you make the chain, you can add on and even close the loop, while printing the next set. Designing the set of 5 at a 45 degree angle is to facilitate the adding of more chains after it. I was inspired by this <a href="https://www.youtube.com/watch?v=PLbnoObuMYI" target="_blank">youtube video clip</a> to do this. 
+    </p>
+
+    <div class="container"><center>
+      <img src="photo/05_123D_chain_01.jpg" class="img-thumbnail" width="400">
+      <img src="photo/05_123D_chain_02.jpg" class="img-thumbnail" width="400">
+      <img src="photo/05_123D_chain_04.jpg" class="img-thumbnail" width="400">
+      <img src="photo/05_123D_chain_05.jpg" class="img-thumbnail" width="400">
+      <img src="photo/05_123D_chain_07.jpg" class="img-thumbnail" width="400">
+      <img src="photo/05_123D_chain_08.jpg" class="img-thumbnail" width="400">
+      <legend>Designing the chain model using 123D Design</legend></center>
+    </div><br><br>
+
+    <div class="container"><center>
+      <img src="photo/05_upsetting_01.jpg" width="350">
+      <img src="photo/05_upsetting_02.jpg" width="350">
+    <legend>3D Printer configuration</legend>
+    </center>
+    </div><br><br>
+
+
+    <div class="container"><center>
+      <img src="photo/05_chain_01.jpg" class="img-thumbnail" width="400">
+      <img src="photo/05_chain_02.jpg" class="img-thumbnail" width="400">
+      <img src="photo/05_chain_03.jpg" class="img-thumbnail" width="400">
+      <img src="photo/05_chain_04.jpg" class="img-thumbnail" width="400">
+      <img src="photo/05_chain_05.jpg" class="img-thumbnail" width="400">
+      <img src="photo/05_chain_06.jpg" class="img-thumbnail" width="400">
+      <legend>Printing the chain, cutting off support materials and add on to new set of 5 chains.</legend></center>
+    </div><br>
+	
+    <h3>3D Scanning</h3>
+
+    <h4>Prerequisites for the object to be digitized</h4>
+    <p>In order to be able to digitize an object in 3D, the object must be able to reflect light. The object cannot be too shiny or reflective either. A mirrored surface, polished metal or crystal cannot be digitized. Reflections and refractions of the light confuses the reading of the geometry. When the volume to be scanned is extremely thin, the canner can have difficulty determining the front side from the back side. 
+    Other tips and tutorials can be found below:
+    <ul><li><a href="http://area.autodesk.com/blogs/rodrigo/fotos-para-123d-catch" target="_blank">123D Catch Photo Tips</a></li>
+    <li><a href="http://makerlab.illinois.edu/2013/04/04/its-easy-as-123d-catch/" target="_blank">It’s Easy as 123D Catch</a></li>
+    <li><a href="https://www.youtube.com/playlist?list=PLu8TYSQ5jCFhD4IzK3BtzS53DMmFJpDzR" target="_blank">123D Catch web app Tutorials</a></li>
+    <li><a href="https://www.youtube.com/playlist?list=PLu8TYSQ5jCFjdQBHsLoybhdKXOTmpTRlb" target="_blank">Autodesk Meshmixer 101 Tutorials</a>
+    </p></li></ul>
+
+    <div class="container"><center>
+      <img src="photo/05_3dscan_object.jpg" width="250"> 
+      <img src="photo/05_3dscan.jpg" width="250">
+    <legend>Scan object of height of 37.5mm</legend></center></div><br><br>
+
+    <div class="container"><center>
+      <img src="photo/05_catch_01.jpg" class="img-thumbnail" width="400">
+      <img src="photo/05_catch_06.jpg" class="img-thumbnail" width="400">
+      <img src="photo/05_catch_07.jpg" class="img-thumbnail" width="400">
+      <img src="photo/05_catch_09.jpg" class="img-thumbnail" width="400">
+      <legend>Converting photographs to 3D model using 123D Catch</legend></center>
+    </div><br><br>
+
+    <center><iframe width="560" height="315" src="https://www.youtube.com/embed/Gibx8FCmI4A" frameborder="0" allowfullscreen></iframe>
+      <legend>Animation of 3D scan generated by 123D Catch</legend></center><br><br>
+
+
+  <h3>Download Week 5 work files</h3>
+  <ul>
+      <li><a href="workfiles/wk5/fivechains.123dx" target="_blank">fivechains.123dx</a></li>
+      <li><a href="workfiles/wk5/sai~.3dp" target="_blank">sai~.3dp</a></li>
+  </ul><br>
+
+
+
+    <h3>References</h3>
+  <ul>
+    <li><a href="http://www.creativemechanisms.com/blog/additive-manufacturing-vs-subtractive-manufacturing" target="_blank">Additive Manufacturing vs Subtractive Manufacturing</a></li>
+    <li><a href="http://3dprintingfromscratch.com/common/types-of-3d-printers-or-3d-printing-technologies-overview/" target="_blank">Types of 3D printers or 3D printing technologies overview</a></li>
+    <li><a href="http://3dprint.com/48922/3d-printer-calibrating-test/" target="_blank">Designer Creates an All-in-One Solution for Testing & Calibrating Your 3D Printer</a></li>
+    <li><a href="http://www.thingiverse.com/thing:1019228" target="_blank">Test your 3D printer! v2</a></li>
+    <li><a href="https://i.materialise.com/blog/3d-printing-technologies-and-materials" target="_blank">The Most Important 3D Printing Technologies & Materials You Need to Know</a></li>
+    <li><a href="https://i.materialise.com/blog/how-to-choose-the-perfect-file-resolution-when-turning-your-3d-model-into-a-3d-print" target="_blank">How to Choose the Perfect File Resolution When Turning Your 3D Model into a 3D Print</a></li>
+    <li><a href="https://i.materialise.com/blog/tips-and-tricks-to-design-3d-printable-models" target="_blank">3D Printing Tips & Tricks – How to 3D Model A Great 3D Print</a></li>
+    <li><a href="https://i.materialise.com/blog/how-to-design-and-3d-print-chainmail-and-other-interlocking-parts" target="_blank">How to Design and 3D Print Chainmail Patterns and Interlocking Parts</a></li>  
+    <li><a href="https://i.materialise.com/blog/5-mistakes-to-avoid-when-designing-a-3d-model-for-3d-printing" target="_blank">5 Mistakes to Avoid When Designing a 3D Model for 3D Printing</a></li>
+    <li><a href="http://www.ponoko.com/starter-kits/design-rules-3d" target="_blank">3D Design Rules</a></li> 
+    <li><a href="http://www.shapeways.com/tutorials/things-to-keep-in-mind" target="_blank">Things to keep in mind when designing for 3D Printing</a></li> 
+    <li><a href="http://www.instructables.com/id/3D-Design-For-3D-Printing/?ALLSTEPS" target="_blank">3D Design For 3D Printing</a></li> 
+    <li><a href="http://printa3d.blogspot.sg/p/design-tips.html" target="_blank">Design tips</a></li> 
+    <li><a href="https://www.youtube.com/watch?v=tC_z6jznFPY" target="_blank">PLA vs ABS | What's the Difference for 3D Printing?</a></li> 
+    <li><a href="http://www.amazon.com/Design-3D-Printing-Scanning-Dimensions/dp/1457187361/ref=pd_sim_14_1?ie=UTF8&dpID=51%2BXW8MrdFL&dpSrc=sims&preST=_AC_UL160_SR125%2C160_&refRID=06PFHJB3ASX3X0G88XF3" target="_blank">Make: Design for 3D Printing by Samuel N. Bernier, Bertier Luyt, Tatiana Reinhard </a></li>
+	</ul><br>
+
+
+  
+
+
+	
+    <!-- End of your content -->
+
+    </div> <!-- /container -->
+
+	<!-- footer -->
+    
+    <footer id="footer">
+        <p id="cclicense">
+                </p>
+        <p class="license">
+        Theme: <a href="https://github.com/openp2pdesign/FabAcademy_Template">Fab Academy Template</a> by <a href="http://openp2pdesign.org">Massimo Menichinelli</a> <br>
+        Based on <a href="http://getbootstrap.com/">Twitter Bootstrap</a>+<a href="http://jquery.com/">JQuery</a>+<a href="https://code.google.com/p/google-code-prettify/">google-code-prettify</a>+<a href="http://jmblog.github.io/color-themes-for-google-code-prettify/github/">GitHub theme for google-code-prettify</a>+<a href="https://code.google.com/p/jsc3d/">JSC3D</a>+<a href="https://github.com/thegrubbsian/jquery.ganttView">jquery.ganttView</a>.
+        </p>
+    </footer>
+    
+
+	<!-- Do not touch this! -->
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="media/jquery-1.9.1.min.js"></script>
+    
+    <!-- Syntax Highlighter -->
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js">
+    </script>
+    <!-- From https://github.com/jmblog/color-themes-for-google-code-prettify -->
+    <link href="media/github.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript">
+	  !function ($) {
+		$(function(){
+		  window.prettyPrint && prettyPrint()   
+		})
+	  }(window.jQuery)
+	</script>
+	
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="bootstrap/js/ie10-viewport-bug-workaround.js"></script>
+
+  </body>
+</html>

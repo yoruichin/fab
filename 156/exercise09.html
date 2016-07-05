@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Yue Siew Chin">
+    <link rel="icon" href="media/favicon.ico">
+
+    <title>Fab Academy 2016 | Yue Siew Chin | Exercise 09</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="media/fabacademy.css" rel="stylesheet">
+    
+    <!-- 3D files viewer -->
+    <script type="text/javascript" src="media/jsc3d_ie.min.js"></script>
+	<script type="text/javascript" src="media/jsc3d.min.js"></script>
+    <script type="text/javascript" src="media/jsc3d.webgl.js"></script>
+    <script type="text/javascript" src="media/jsc3d.touch.js"></script>
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="bootstrap/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="bootstrap/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- Load the menu file -->
+    <script>
+	function menu() {
+					  $('#exercises').load("exercises-menu.html");
+					  $('#project').load("project-menu.html");
+					  $('#cclicense').load("license.html");
+					  }
+	</script>
+
+  </head>
+
+  <body onload="menu()">
+
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">Home</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="about.html">About</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Exercises <span class="caret"></span></a>
+              <ul id="exercises" class="dropdown-menu" role="menu">
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Final Project <span class="caret"></span></a>
+              <ul id="project" class="dropdown-menu" role="menu">
+              </ul>
+            </li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    	
+	<!-- Insert your content here below! -->
+
+
+    <h2><b>Exercise 09 Mechanical design</b></h2>
+    
+  <p><a href="http://archive.fabacademy.org/archives/2016/master/videos/03-30/index.html" target="_blank">
+  <button type="button" class="btn btn-primary btn">This week's Lecture</button></a><br>
+
+  <h3>Requirement</h3>
+	
+	<ul>
+	 <li>Group assignment -  make a machine, including the end effector, build the passive parts and operate it manually </li>
+   <li>Document the group project and your individual contribution</li>
+	</ul>
+	
+
+	<h3>Forming of group</h3>
+
+	<p>There are 9 participants this year in Fablab @ SP, Singapore. We have agreed to form 2 groups. My group mates are <a href="http://archive.fabacademy.org/archives/2016/fablabsingapore/students/37/index.html" target="_blank">Mark</a>, <a href="http://archive.fabacademy.org/archives/2016/fablabsingapore/students/179/index.html" target="_blank">Tham</a>, and <a href="http://archive.fabacademy.org/archives/2016/fablabsingapore/students/101/index.html" target="_blank">Kaichi</a>. We have decided to make a  2-axis machine that would move a pen to draw a square. As this is a group project spread over 2 weeks, we have decided to split up the workload as such: Tham and Kaichi will design th/e housing of the fabnet kit we received from Fab Academy and assemble the machine. Mark and myself will explore the programming component. </p><br>
+
+  <h3>Workload Distribution</h3>
+
+  <p>As this is a group project spread over 2 weeks (30 Mar - 13 Apr 2016), we have decided to split up the workload as such: 
+
+  <ul>
+    <li>Designing of the housing using AutoCAD - <font color="red">Tham</font></li>
+    <li>CNC Routing of plywood stoppers using StarCAM 2D router - <font color="red">Tham</font></li>
+    <li>Lasercutting the design using Epilog Fusion M2 40 - <font color="green">Kaichi</font></li>
+    <li>Assembly of the stepper motor housing - <font color="green">Kaichi</font> & <font color="red">Tham</font></li>
+    <li>Programming on Mac platform - <font color="orange">Mark</font></li>
+    <li>Programming on Windows platform - <font color="blue">Siew Chin</font></li>
+    <li>Modifying GUI codes of wxGestalt IDE - <font color="orange">Mark</font></li>
+    <li>Designing and making a "gun" which can load rubberbands - <font color="orange">Mark</font></li>
+    <li>Milling of FTDI board - <font color="blue">Siew Chin</font></li>
+    <li>Soldering of FTDI board - <font color="green">Kaichi</font> & <font color="orange">Mark</font></li>
+    <li>Video-editing - <font color="blue">Siew Chin</font></li>
+    <li>Documentation and update of group page - <font color="blue">Siew Chin</font></li>
+  </ul></p>
+
+  <p>Links to my team-mates' contribution:</p>
+    <ul>
+      <li><a href="http://archive.fabacademy.org/archives/2016/fablabsingapore/students/179/weekly/09%20Week.html" target="_blank">Tham</a></li>
+      <li><a href="http://archive.fabacademy.org/archives/2016/fablabsingapore/students/101/exercise14.html" target="_blank">Kai Chi</a></li>
+      <li><a href="http://archive.fabacademy.org/archives/2016/fablabsingapore/students/37/exercise14.html" target="_blank">Mark</a></li>
+      </ul>
+    </ul>
+
+
+  <h3>My contribution</h3>
+
+  <p>In this group project, I was involved in the following specific areas:</p>
+    <ul>
+      <li>Programming on Windows platform</li>
+      <li>Milling of FTDI board</li>
+      <li>Video filming and Video-editing</li>
+      <li>Documentation and update of group page</li>
+    </ul><br>
+
+
+
+  <h3>Working on Python</h3>
+
+  For the first week, I spent most of the time figuring how to set up the python environment so that I can run the py files. Referring to the <a href="http://archive.fabacademy.org/archives/2016/doc/projects/wxgestalt.html" target="_blank">Tutorial on wxGestalt</a>, I found that there are many steps to prepare the environment for programming. I need to use Python 2.7 instead of 3.5 because the programming syntax of the example files we are working on is written for python 2. So far, I have completed the steps listed below and installed the relevant libraries of the packages.
+  <ol>
+    <li>Install <a href="https://www.python.org/downloads/" target="_blank">Python 2.7</a></li>
+    <li>Install <a href="https://pip.pypa.io/en/stable/installing/" target="_blank">pip</a> on windows. At command prompt, type <b>python get-pip.py</b>.</li>
+    <li>Install <a href="http://pythonhosted.org/pyserial/pyserial.html#installation" target="_blank">pyserial</a> 3.0.1. At command prompt, type <b>pip install pyserial</b>.  </li>
+    <li>Install <a href="http://fabacademy.org/archives/2015/doc/MachineMakingNotes.html" target="_blank">pygestalt</a>. </li>
+    <li>Install <a href="http://www.ftdichip.com/Drivers/VCP.htm" target="_blank">FTDI drivers</a> for windows. <a href="http://www.ftdichip.com/Support/Documents/InstallGuides/AN_396%20FTDI%20Drivers%20Installation%20Guide%20for%20Windows%2010.pdf" target="_blank">PDF Instruction</a></li>
+    <li>Install <a href="http://www.wxpython.org/download.php" target="_blank">wxPython</a> 32bit for python 2.7 </li>
+    <li>Execute <a href="http://archive.fabacademy.org/archives/2016/doc/projects/wxgestalt.html" target="_blank">wxgestalt</a></li>
+  </ol>
+
+  <div class="container"><center>
+      <img src="photo/09_install_python27.jpg" class="img-thumbnail" width="400">
+      <img src="photo/09_install_pip.jpg" class="img-thumbnail" width="400">
+      <img src="photo/09_install_pyserial.jpg" class="img-thumbnail" width="400">
+      <img src="photo/09_install-FTDI-driver.jpg" class="img-thumbnail" width="400">
+      <img src="photo/09_FTDI_detected.jpg" class="img-thumbnail" width="400">
+      <img src="photo/09_wxgestalt.jpg" class="img-thumbnail" width="400">
+      <img src="photo/09_install_unidecode.jpg" class="img-thumbnail" width="400">
+      <img src="photo/09_install_jsonpickle.jpg" class="img-thumbnail" width="400">
+      <legend>Setting up the environment for virtual machine</legend></center>
+</div><br><br>
+   
+
+  git submodule update --init gestalt
+  <pre class="prettyprint linenums">
+  yoruichin@CHIN-T450S MINGW64 ~/dropbox/fab/week 9/wxgestaltlib/wxGestalt (master                 )
+$ git submodule update --init gestalt
+Submodule 'gestalt' (https://github.com/imoyer/gestalt.git) registered for path 'gestalt'
+Cloning into 'gestalt'...
+remote: Counting objects: 573, done.
+remote: Total 573 (delta 0), reusReed 0 (ceidelta 0),vin pack-rg oeusedbje 573
+Receiving objects: 100% (573/573), 13.00 MiB | 1.46 MiB/s, done.
+Resolving deltas: 100% (254/254), done.
+Checking connectivity... done.
+Submodule path 'gestalt': checked out 'b5848c8fe97fd390c5ddb8e3b79a68b62f851c65'
+  </pre>
+
+  <h3>Installing libraries</h3>
+
+  <ul>
+    <li>Use <b>pip list</b> to check what are the libraries currently installed</li>
+    <li>Go to <b>pyserial</b> directory and execute <b>python setup.py install</b></li>
+    <li>Go to <b>pygestalt</b> directory and execute <b>python setup.py install</b></li>
+    <li>Go to <b>pyserial</b> directory and execute <b>pip install unidecode</b></li>
+    <li>Go to <b>pyserial</b> directory and execute <b>pip install jsonpickle</b></li>
+  </ul><br>
+  
+
+  <p>For a more detailed documentation of our group project, check out the group page.</p>
+  <p><a class="btn-lg btn-primary" href="http://archive.fabacademy.org/archives/2016/fablabsingapore/mtm/mtm_grp2/index.html" target="_blank" role="button">MTM Group Page &raquo;</a></p><br>
+  
+
+    <h3>References</h3>
+  <ul>
+    <li>
+      <a href="https://www.youtube.com/watch?v=oN-dkGSdzGM" target="_blank">Fab Academy Recitations - Nadya Peek</a>
+    </li>
+    <li>
+      <a href="https://www.youtube.com/watch?v=zPMr0lEMqpo" target="_blank">How to install pip on Windows (The easy way)</a>
+    </li>
+    <li>
+      <a href="https://www.youtube.com/watch?v=jnpC_Ib_lbc" target="_blank">How to download and install Python Packages and Modules with Pip</a>
+    </li>
+    <li>
+      <a href="http://archive.fabacademy.org/archives/2016/doc/projects/wxgestalt.html" target="_blank">Tutorial on wxGestalt</a>
+    </li>
+    <li>
+      <a href="https://learn.adafruit.com/arduino-lesson-17-email-sending-movement-detector/installing-python-and-pyserial" target="_blank">Installing Python and PySerial</a>
+    </li>
+    <li>
+      <a href="http://pythonhosted.org/pyserial/pyserial.html#installation" target="_blank">pySerial</a>
+    </li>
+    
+    
+	</ul><br>
+
+
+  
+
+
+	
+    <!-- End of your content -->
+
+    </div> <!-- /container -->
+
+	<!-- footer -->
+    
+    <footer id="footer">
+        <p id="cclicense">
+                </p>
+        <p class="license">
+        Theme: <a href="https://github.com/openp2pdesign/FabAcademy_Template">Fab Academy Template</a> by <a href="http://openp2pdesign.org">Massimo Menichinelli</a> <br>
+        Based on <a href="http://getbootstrap.com/">Twitter Bootstrap</a>+<a href="http://jquery.com/">JQuery</a>+<a href="https://code.google.com/p/google-code-prettify/">google-code-prettify</a>+<a href="http://jmblog.github.io/color-themes-for-google-code-prettify/github/">GitHub theme for google-code-prettify</a>+<a href="https://code.google.com/p/jsc3d/">JSC3D</a>+<a href="https://github.com/thegrubbsian/jquery.ganttView">jquery.ganttView</a>.
+        </p>
+    </footer>
+    
+
+	<!-- Do not touch this! -->
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="media/jquery-1.9.1.min.js"></script>
+    
+    <!-- Syntax Highlighter -->
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js">
+    </script>
+    <!-- From https://github.com/jmblog/color-themes-for-google-code-prettify -->
+    <link href="media/github.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript">
+	  !function ($) {
+		$(function(){
+		  window.prettyPrint && prettyPrint()   
+		})
+	  }(window.jQuery)
+	</script>
+	
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="bootstrap/js/ie10-viewport-bug-workaround.js"></script>
+
+  </body>
+</html>

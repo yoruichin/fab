@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Yue Siew Chin">
+    <link rel="icon" href="media/favicon.ico">
+
+    <title>Fab Academy 2016 | Yue Siew Chin | Exercise 16</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="media/fabacademy.css" rel="stylesheet">
+    
+    <!-- 3D files viewer -->
+    <script type="text/javascript" src="media/jsc3d_ie.min.js"></script>
+	<script type="text/javascript" src="media/jsc3d.min.js"></script>
+    <script type="text/javascript" src="media/jsc3d.webgl.js"></script>
+    <script type="text/javascript" src="media/jsc3d.touch.js"></script>
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="bootstrap/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="bootstrap/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- Load the menu file -->
+    <script>
+	function menu() {
+					  $('#exercises').load("exercises-menu.html");
+					  $('#project').load("project-menu.html");
+					  $('#cclicense').load("license.html");
+					  }
+	</script>
+
+  </head>
+
+  <body onload="menu()">
+
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">Home</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="about.html">About</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Exercises <span class="caret"></span></a>
+              <ul id="exercises" class="dropdown-menu" role="menu">
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Final Project <span class="caret"></span></a>
+              <ul id="project" class="dropdown-menu" role="menu">
+              </ul>
+            </li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    	
+	<!-- Insert your content here below! -->
+
+
+    <h2><b>Exercise 16 Interface and Application Programming</b></h2>
+    
+  <p><a href="http://archive.fabacademy.org/archives/2016/master/videos/05-18/index.html" target="_blank">
+  <button type="button" class="btn btn-primary btn">This week's Lecture</button></a><br>
+
+  <h3>Requirement</h3>
+	
+	<ol>
+    <li>write an application that interfaces with an input &/or output device that you made,</li>
+    <li>comparing as many tool options as possible</li>
+	</ol><br>	
+
+	<h3>Introduction</h3>
+
+	<p>So far we have been making quite a few boards in the past 5 months. For this week, I will be working on the thermistor, which is the input board I made in <a href="exercise11.html" target="_blank">week 11</a>. I would have loved to write an application programme for the phototransistor as well, but there was problem with the phototransistor board I made. I believe the board was short-circuited over time. So I tried doing a reflow, and in the course of that, the copper pad under the phototransistor fell out, rendering the board useless. I didn't have time to re-mill the board so I can only make do with using the thermistor board.<br><br>
+  
+
+<h3>Tkinter</h3>
+
+  <p><a href="http://www.pythonware.com/library/tkinter/introduction/index.htm" target="_blank">Tkinter</a>: I spent Thursday and Friday watching a Lydia tutorial, entitled "Python GUI Development with Tkinter", which greatly helped my learning of the syntax of Tkinter. Because the tutorial was conducted in Python 3, I have upgraded my Python 2.7 to 3.4. Minor syntax change applies.<br><br>
+
+  <div class="container"><center>
+      <img src="photo/16_lynda_tutorials.jpg" class="img-thumbnail" width="600">
+      <legend>Lynda online tutorials</legend></center>
+  </div><br><br>
+
+  Tkinter is a popular cross-platform, open-source scripting language/GUI widget, and is the only GUI packaged with Python itself. It is included in the Python Windows Installers of Python 3. To check if tkinter is properly installed on your system, execute the following: <b>"python -m tkinter"</b> from the command line; this should open a window demonstrating a simple Tk interface. <br><br>
+
+  I modified the <a href="http://academy.cba.mit.edu/classes/input_devices/temp/hello.temp.45.py" target="_blank">class python codes</a> that display temperature on a GUI bar. I was using IDLE and/or sublime text as the platform for writing the codes.<br><br>
+
+Some of the main additions are listed below:</p>
+
+  Libraries to include:
+  <pre class="prettyprint linenums">
+  <b>from tkinter import *</b>    // in Python 2, use capital T in "from Tkinter import *" 
+  from numpy import log
+  from tkinter import ttk 
+  import serial
+  </pre>  
+
+  I added 2 variable to hold celcius and Fahrenheit values, and call a function to check my radio button selection.
+  <pre class="prettyprint linenums">
+   ctemp = filter
+   ftemp = (ctemp*9.0)/5.0+32  # Celcius to Fahrenheit
+   display_temp()
+  </pre>  
+
+  <pre class="prettyprint linenums">
+   def display_temp():
+      if rbVar.get() == 2: # display Fahrenheit
+         text2 = "°F"
+         canvas.itemconfigure("text2",text="%s"%text2)
+         canvas.itemconfigure("text",text="%.2f"%ftemp) 
+         
+      else: # display Celcius
+         text2 = "°C"
+         canvas.itemconfigure("text2",text="%s"%text2)
+         canvas.itemconfigure("text",text="%.2f"%ctemp) 
+  </pre>
+
+  Radio buttons to be placed on the canvas
+  <pre class="prettyprint linenums">
+    rb1 = ttk.Radiobutton(root, text='Celcius °C ', variable=rbVar, value=1, command=display_temp).place(x=220,y=10)
+    rb2 = ttk.Radiobutton(root, text='Fahrenheit °F', variable=rbVar, value=2, command=display_temp).place(x=320,y=10)
+  </pre>  
+
+  <div class="container"><center>
+      <img src="photo/16_temppy01.jpg" class="img-thumbnail" width="500">
+      <img src="photo/16_temppy02.jpg" class="img-thumbnail" width="500">
+      <legend>Successfully writing a GUI to toggle between Celcius and Fahrenheit</legend></center>
+</div><br><br>
+
+
+<h3>matplotlib</h3>
+
+  <p><a href="http://matplotlib.org/" target="_blank">matplotlib</a>: I used another 1.5 days trying to understand matplotlib and how to plot a graph from live data. The <a href="http://www.toptechboy.com/tutorial/python-with-arduino-lesson-11-plotting-and-graphing-live-data-from-arduino-with-matplotlib/" target="_blank">website</a> and <a href="https://www.youtube.com/watch?v=zH0MGNJbenc" target="_blank">youtube</a> tutorial by Paul McWhorter has been most helpful to explain some of the concepts and purposes behind the syntaxes of matplotlib.<br><br>
+
+  matplotlib is a python 2D plotting library which produces publication quality figures in a variety of hardcopy formats and interactive environments across platforms. To install matplotlib, I will execute <b>"pip install matplotlib"</b> at command prompt. I will also need drawnow, which can be installed by executing <b>"pip install drawnow"</b> at command prompt. I was using IDLE and/or sublime text as the platform for writing the codes.
+
+</p>
+
+<div class="container"><center>
+      <img src="photo/16_matplotlib_install.jpg" class="img-thumbnail" width="500">
+      <img src="photo/16_drawnow_install.jpg" class="img-thumbnail" width="500">
+      <legend>Installing matplotlib & drawnow libraries</legend></center>
+</div><br><br>
+
+The codes are as follows:
+  <pre class="prettyprint linenums">
+  import matplotlib.pyplot as plt
+  from numpy import log
+  from drawnow import *
+  import serial
+
+ 
+  #plt.ion() # interactive mode to plot live data
+  tempV=[]
+
+  filter = 0.0
+  eps = 0.5
+  cnt = 0
+  SerialData = serial.Serial('COM9',9600)
+
+
+  def makeGraph():      # a function that makes desire plot 
+    plt.ylim(22,32)     # y axis limiter
+    plt.title('Live Temperature Sensor')
+    plt.grid(True)
+    plt.ylabel('Temperature (Celcius)')
+    plt.xlabel('time')
+    plt.plot(tempV, "bo-", label='Temperature') # blue round dot
+    plt.legend(loc='upper left')
+     
+    
+  while True:
+
+    byte2 = 0
+    byte3 = 0
+    byte4 = 0
+    SerialData.flush() 
+
+    while 1:
+      #
+      # find framing 
+      #
+      byte1 = byte2
+      byte2 = byte3
+      byte3 = byte4
+      byte4 = ord(SerialData.read())
+      if ((byte1 == 1) & (byte2 == 2) & (byte3 == 3) & (byte4 == 4)):
+         break
+        
+    low = ord(SerialData.read())
+    high = ord(SerialData.read())
+    print(low)
+    print(high)
+    value = 256*high + low
+        
+    if (value > 511):
+      value -= 1024                     # value = value - 1024
+    V = 2.5 - value*5.0/(20.0*512.0)    # Voltage out (Vo) = R / (R + 10K) * Vcc = 2.5
+    R = 10000.0/(5.0/V-1.0)
+    B = 3950.0
+    R25 =  10000.0
+    T = 1.0/(log(R/R25)/B+(1/(25.0+273.15))) - 273.15
+    filter = (1-eps)*filter + eps*T
+
+    temp = float(filter)
+    tempV.append("%.2f" % temp)         # Build our array by appending temperature readings
+    print("%.2f" % temp)
+    drawnow(makeGraph)                  # call drawnow to draw live graph
+    plt.pause (.0001)
+    cnt=cnt+1
+    if(cnt>30):                         # delete the first item from the array
+        tempV.pop(0)                    # this allows us to just see the last 30 data points
+  </pre> <br><br>
+
+  <h3>Problems encountered</h3>
+
+  <p>As for matplotlib, the outcome of the plotting is not returning the values which I was expecting. I couldn't understand what went wrong with my codes and why the serial input was not able to respond according to the temperature change. I spent 2 days troubleshooting this problem and was not able to solve it. The serial data generated from the <b>hello.temp.45.py</b> changes in response to temperature. But when I run the <b>display_temperature.py</b>, the serial data was "consistent" and does not respond to temperature change. Since everything on the board was constant (I didn't even change the c code on the microcontroller), the problem must have to do with the python coding of my matplotlib programme. 2nd half of the youtube video records the problem with the data.  </p><br><br>
+
+  <div class="container"><center>
+      <img src="photo/16_matplotlib_graph01.jpg" class="img-thumbnail" width="500">
+      <img src="photo/16_matplotlib_graph02.jpg" class="img-thumbnail" width="500">
+      <legend>Serial data unresponsive to temperature change</legend></center>
+</div><br><br>
+
+  
+<center><iframe width="560" height="315" src="https://www.youtube.com/embed/2RxdoCJBD8k" frameborder="0" allowfullscreen></iframe></center><br><br>
+
+<h3>Reflections</h3>
+
+<p>I really enjoyed this week's assignment because programming engaged my mind throughout the entire week, as I was thinking through the syntax and logic of the codes. It was fun exploring new languages and greatly satisfying when the programme was able to perform in the way I wanted it to. (And it can be rather frustrating, trying over and over again, just to get it right).</p>
+
+  <h3>Download work files</h3>
+
+<ul>
+  <li><a href="workfiles/wk16/hello.temp.45.py" target="_blank">hello.temp.45.py</a></li>
+  <li><a href="workfiles/wk16/display_temperature.py" target="_blank">display_temperature.py</a></li> 
+  <li><a href="workfiles/wk16/hello.temp.45.c" target="_blank">hello.temp.45.c</a></li>
+  <li><a href="workfiles/wk16/hello.temp.45.make" target="_blank">hello.temp.45.make</a></li> 
+</ul>
+
+   <h3>References</h3>
+  <ul>
+    <li>
+      <a href="http://www.tutorialspoint.com/python/pdf/python_gui_programming.pdf" target="_blank">PYTHON GUI PROGRAMMING TKINTER</a></li>
+    <li>
+      <a href="https://5f9310d2ce03af2821b9dcd1d1e945fe5e39e407.googledrive.com/host/0BwxxXawu42fWODBtRHk2TkdjQ00/ENG_%5B2000%5D%D0%93%D1%80%D0%B5%D0%B9%D1%81%D0%BE%D0%BD%20%D0%94.%D0%95.%20Python%20and%20Tkinter%20Programming.pdf" target="_blank">Python and Tkinter Programming</a> by John E. Grayson
+    </li>
+    <li>
+      <a href="http://www.dabeaz.com/special/Tkinter.pdf" target="_blank">An Introduction to Tkinter</a> by David Beazley
+    </li>
+    <li>
+      <a href="http://infohost.nmt.edu/tcc/help/pubs/tkinter/tkinter.pdf" target="_blank">Tkinter 8.5 reference: aGUI for
+Python</a> by John W. Shipman
+    </li>
+    <li>
+      <a href="https://cs.gmu.edu/~dfleck/classes/cs112/spring08/slides/tkinter.pdf" target="_blank">Tkinter – GUIs in Python</a>
+    </li>
+    <li>
+      <a href="http://www.tutorialspoint.com/tcl-tk/tcl_tk_tutorial.pdf" target="_blank">TCK TK</a>
+    </li>
+    <li>
+      <a href="https://wiki.scinet.utoronto.ca/wiki/images/9/9c/Tkinter.pdf" target="_blank">An introduction to GUI programming with Tkinter</a> by Erik Spence
+    </li>
+
+    <li>
+      <a href="http://www.toptechboy.com/tutorial/python-with-arduino-lesson-11-plotting-and-graphing-live-data-from-arduino-with-matplotlib/" target="_blank">Python with Arduino LESSON 11: Plotting and Graphing Live Data from Arduino with Matplotlib</a>
+    </li>
+    <li>
+      <a href="http://www.vishay.com/docs/29053/ntcintro.pdf" target="_blank">NTC Thermistors (Data sheet)</a>
+    </li>
+    <li>
+      <a href="https://learn.adafruit.com/thermistor/using-a-thermistor" target="_blank">Using a Thermistor</a>
+    </li>
+    <li>
+      <a href="http://www.ametherm.com/thermistor/what-is-an-ntc-thermistor" target="_blank">What Is An NTC Thermistor</a>
+    </li>
+    <li>
+      <a href="http://www.ni.com/white-paper/7112/en/" target="_blank">Temperature Measurements with Thermistors: How-To Guide</a>
+    </li>
+    <li>
+      <a href="http://datasheet.octopart.com/NHQ103B375T10-General-Electric-datasheet-9668659.pdf" target="_blank">NTC Type SMD</a> by Erik Spence
+    </li>
+    <li>
+      <a href="https://wiki.scinet.utoronto.ca/wiki/images/9/9c/Tkinter.pdf" target="_blank">An introduction to GUI programming with Tkinter</a>
+    </li>
+    <li>
+      <a href="http://www.rapidtables.com/convert/temperature/how-kelvin-to-celsius.htm" target="_blank">Kelvin to Celsius formula</a>
+    </li>
+
+            
+    
+	</ul><br>
+
+
+  
+    <!-- End of your content -->
+
+    </div> <!-- /container -->
+
+	<!-- footer -->
+    
+    <footer id="footer">
+        <p id="cclicense">
+                </p>
+        <p class="license">
+        Theme: <a href="https://github.com/openp2pdesign/FabAcademy_Template">Fab Academy Template</a> by <a href="http://openp2pdesign.org">Massimo Menichinelli</a> <br>
+        Based on <a href="http://getbootstrap.com/">Twitter Bootstrap</a>+<a href="http://jquery.com/">JQuery</a>+<a href="https://code.google.com/p/google-code-prettify/">google-code-prettify</a>+<a href="http://jmblog.github.io/color-themes-for-google-code-prettify/github/">GitHub theme for google-code-prettify</a>+<a href="https://code.google.com/p/jsc3d/">JSC3D</a>+<a href="https://github.com/thegrubbsian/jquery.ganttView">jquery.ganttView</a>.
+        </p>
+    </footer>
+    
+
+	<!-- Do not touch this! -->
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="media/jquery-1.9.1.min.js"></script>
+    
+    <!-- Syntax Highlighter -->
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js">
+    </script>
+    <!-- From https://github.com/jmblog/color-themes-for-google-code-prettify -->
+    <link href="media/github.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript">
+	  !function ($) {
+		$(function(){
+		  window.prettyPrint && prettyPrint()   
+		})
+	  }(window.jQuery)
+	</script>
+	
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="bootstrap/js/ie10-viewport-bug-workaround.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Fab Academy Exercise 02">
+    <meta name="author" content="Yue Siew Chin">
+    <link rel="icon" href="media/favicon.ico">
+
+    <title>Fab Academy 2016 | Yue Siew Chin | Exercise 02</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="media/fabacademy.css" rel="stylesheet">
+    
+    <!-- 3D files viewer -->
+    <script type="text/javascript" src="media/jsc3d_ie.min.js"></script>
+	<script type="text/javascript" src="media/jsc3d.min.js"></script>
+    <script type="text/javascript" src="media/jsc3d.webgl.js"></script>
+    <script type="text/javascript" src="media/jsc3d.touch.js"></script>
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="bootstrap/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="bootstrap/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- Load the menu file -->
+    <script>
+	function menu() {
+					  $('#exercises').load("exercises-menu.html");
+					  $('#project').load("project-menu.html");
+					  $('#cclicense').load("license.html");
+					  }
+	</script>
+
+  </head>
+
+  <body onload="menu()">
+
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">Home</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="about.html">About</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Exercises <span class="caret"></span></a>
+              <ul id="exercises" class="dropdown-menu" role="menu">
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Final Project <span class="caret"></span></a>
+              <ul id="project" class="dropdown-menu" role="menu">
+              </ul>
+            </li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    	
+	<!-- Insert your content here below! -->
+
+	<h2><b>Exercise 02 Computer-aided design</b></h2>
+
+	<p><a href="http://archive.fabacademy.org/archives/2016/master/videos/02-03/index.html" target="_blank">
+  	<button type="button" class="btn btn-primary btn">This week's Lecture</button></a><br>
+	
+	 <h3>Requirement</h3>
+	
+	<ol>
+	 <li>
+		Explore a few 2D and 3D software and document your evaluations. 
+	 </li>
+	 <li>
+		Model (draw, render, animate, simulate, ...) a possible final project , and post it on your page with original 2D and 3D files.
+	 </li>
+	</ol>
+	<br>
+
+	<h3>2D software</h3>
+	<p>
+	Because of my occupation in a school environment, I have access to the  campus licence of the Adobe suite - Photoshop, Illustrator, Indesign, Premiere Pro, Audition. And for many years I have found sufficiency in the suite, without exploring other open-source software. For the purpose of this course, I have explored GIMP and Inkscape.
+	</p><br>
+
+	<h4>GIMP</h4>
+	<p>
+	<a href="https://www.gimp.org/">GIMP</a>, which stands for GNU Image Manipulation Program, is a free and open-source raster graphics editor used for image retouching and editing, free-form drawing, resizing, cropping, photo-montages, converting between different image formats, and more specialized tasks.<br><br>
+
+	With my experince in using Adobe Photoshop, I was able to explore the various icons and menu selections and quickly understand their functions. With the help of an <a href="https://www.youtube.com/watch?v=WDvmyS7Kg5Y" target="_blank">online tutorial</a>, I was able to convert a bitmap image to a vector image quickly. I tested by creating a post card for Lunar New Year using GIMP and Inkscape.
+	</p>
+	<ul>
+	 <li>
+	 	[See Figure 1] Hand-wrote "Happy Monkey Year" on a piece of blank paper. 
+	 </li>
+	 <li>
+	 	Using my iphone, I took a photo of the sketch and upload to GIMP.
+	 </li>
+	 <li>
+	 	Crop the original image using the <b>Crop</b> tool.
+	 </li>
+	 <li>
+	 	To delete the unwanted background, perform this step: <b>Layer > Transparency > Add Alpha Channel</b>. 
+	 </li>
+	 <li>
+	 	Use the <b>Fuzzy Select</b> tool to select the areas to remove and hit the delete key.
+	 </li>
+	 <li>
+	 	Save / export the file to a PNG format.
+	 </li></ul>
+
+	<p class="pic"><img src="photo/02_italicscript.jpg" width="500">
+		<img src="photo/02_monkey_2016.jpg" width="200">
+	<legend>Figure 1. Handwritten draft of my Lunar New Year greetings (top) and a downloaded monkey image from the internet (bottom).</legend>
+	</p>	
+
+	
+	<h4>Inkscape</h4>
+	<p>
+	<a href="https://inkscape.org/en/">Inkscape</a> is a free and open-source vector graphics editor; it can be used to create or edit vector graphics such as illustrations, diagrams, line arts, charts, logos and complex paintings. Inkscape's primary vector graphics format is Scalable Vector Graphics (SVG). <br><br> 
+
+	I was quite impressed by the vectorized result of my test sketch. <br>
+	</p>
+	<ul>
+	<li>
+		[See Figure 2] With the <b>Selection</b> tool, select the image and head to <b>Path > Trace Bitmap</b>. Hit OK.
+	</li>
+	<li>
+		Close the dialog box and you will get a copy of the vectorized image, sitting on top of your original image. Pull them apart and you see stark difference. [See Figure 3]
+	</li>
+	<li>On the vector image, I can manipulate the form of the design by selecting the "<b>Editing paths by nodes</b>" icon or simply press F2.</li>
+	<li>
+		On a 4R layout, I followed to add another vectorized image, and moved my text around, aligned and distributed them centrally. And my Lunar New Year Greeting postcard is <a href="photo/02_CNY_Postcard.pdf" target="_blank">completed</a>. [See Figure 4]
+	</li>
+	</ul>
+
+	<p class="pic"><img src="photo/02_inkscape_tracebitmap.jpg" width="500">
+	<legend>Figure 2. Trace Bitmap to vectorize an image.</legend></p>
+
+	<p class="pic"><img src="photo/02_inkscape_bitmap_vector.jpg" width="500">
+	<legend>Figure 3. Bitmap (Top), Vectorized (Bottom).</legend></p>
+
+	<p class="pic">
+		<img src="photo/02_inkscape_postcard.jpg" width="500">
+	<legend>Figure 4. Lunar New Year Greeting Postcard</legend></p>
+
+	<p>
+	Surprisingly, inkscape does not have a Crop tool, which is such a common standard tool. And so, <a href="http://goinkscape.com/how-to-crop-an-image-in-inkscape/" target="_blank">cropping an image</a> takes a few more steps to complete.
+	</p>
+	 <ul>
+	 <li>Use the <b>Rectangle</b> tool and draw out an area you’d like to keep.</li>
+	 <li>Use the <b>Selection</b> tool to select both the image and the rectangle, then head to <b>Object > Clip > Set</b>.
+	 </li></ul><br>
+
+
+	<h3>3D software</h3>
+	<p>
+	In my line of work, I do not need to have a hands-on understanding of 3D CAD software, so this week's requirement is quite an uphill task for me. I explored Autodesk Inventor, 123D Design, Sketchup, Tinkercad but realized that seemed too ambitious, and I got confused by the different software. So I narrowed down to Inventor and 123D Design, which I think would be most helpful to my course of study.
+	</p><br>
+
+	<h4>Autodesk Inventor</h4>
+	<p>
+	<a href="http://www.autodesk.com/products/inventor/overview" target="_blank">Autodesk Inventor</a> is a CAD application for creating 3D digital prototypes used in the design, visualization and simulation of products. It is available free for download to educators and students, and the free licence lasts 3 years. It is a very powerful software if we are able to harness all the capabilities it offers.<br><br>
+
+	I have not used this software before. But thanks to Singapore Polytechnic being a premium member of <a href="http://www.lynda.com/">Lynda.com</a>, I was able to have unlimited access to many online tutorial courses. I find that to be better than reading reference books. And Inventor is NOT a software that can be learned by exploring the interface alone. User needs to be familiar with basic 3D terminology and characteristics. I practiced some hands-on with something simple, such as a <a href="photo/02_Lego Dimensions.pdf" target="_blank">Lego brick</a> and below are some screenshots of the results. Because Inventor is a very powerful tool, it is my software of choice.
+	</p>
+
+	<p class="pic"><img src="photo/02_inventor_legobrick_part.jpg" width="500">
+	<legend>Using extrude, mirror, shell etc to make a Lego brick.</legend></p>
+
+	<p class="pic"><img src="photo/02_inventor_legobrick_drawing.jpg" width="500">
+	<legend>Generating a drawing view of the Lego brick.</legend></p>	
+
+	</a>
+	</p>
+
+
+	<p class="pic"><img src="photo/02_inventor_bowlingpin_part.jpg" width="500">
+	<legend>Using offset planes and loft to make a bowling pin.</legend></p>	
+
+	</a>
+	</p>
+
+
+	<h4>Autodesk 123D Design</h4>
+	<p>
+	<a href="http://www.123dapp.com/design" target="_blank">Autodesk 123D</a> is a suite of hobbyist CAD and 3D modelling tools created by Autodesk. 123D is linked to a community of makers online where we can draw inspirations and learn from one another. It is easier for beginners compared to Inventor as instead of using 3-dimensional planes, it uses other primitive blocks to act as plane and axis. However, I don't think 123D has the functional capability to generate drawing view. So I had to import to Inventor to do that.
+	</p>
+
+	<p class="pic"><img src="photo/02_123d_legobrick.jpg" width="500">
+	<legend>Using press/pull, pattern, shell etc to make a similar Lego brick.</legend></p>
+
+	</a>
+	</p>
+	<br>
+	<p class="pic"><img src="photo/02_123d_mug.jpg" width="500">
+	<legend>Using extrude, move, shell, combine, fillet etc to make a mug.</legend></p>
+
+	</a>
+	</p>
+	<br><br>
+
+	<h3>Final Project Model</h3>
+	<p>
+	Using Inkscape and Autodesk Inventor, I created the 2D vector and 3D model of two of the proposed final project listed in my <a href="project01.html">final project proposal</a>. 
+
+	<p class="pic"><img src="photo/02_Inkscape_Simon_game.svg" width="300">
+	<legend>Vector image of Simon Game</legend></p>
+
+	<p class="pic"><img src="photo/02_inventor_simon.jpg" width="500">
+	<legend>3D model of Simon Game on Inventor</legend></p>
+
+	<p class="pic"><img src="photo/02_123d_bookstand.jpg" width="500">
+	<legend>3D model of automatic page turner</legend></p>
+
+
+	<h3>Download Week 2 work files</h3>
+  <ul>
+    <li><a href="workfiles/wk2/bowlingpin.ipt" target="_blank">bowlingpin.ipt</a></li>
+    <li><a href="workfiles/wk2/lego.123dx" target="_blank">lego.123dx</a></li>
+    <li><a href="workfiles/wk2/legobrick.ipt" target="_blank">legobrick.ipt</a></li>
+    <li><a href="workfiles/wk2/mug.123dx" target="_blank">mug.123dx</a></li>
+    <li><a href="workfiles/wk2/simon.ipt" target="_blank">simon.ipt</a></li>
+    <li><a href="workfiles/wk2/simon_game.svg" target="_blank">simon_game.svg</a></li>
+    <li><a href="workfiles/wk2/prototype.123dx" target="_blank">prototype.123dx</a></li>
+  </ul><br>
+
+
+
+	</a>
+	</p>
+
+
+	<h3>References</h3>
+	
+	 <li>
+	 	<a href="https://www.gimp.org/" target="_blank">GIMP</a>
+	 </li>
+	 <li>
+	 	<a href="https://inkscape.org/en/" target="_blank">Inkscape</a>
+	 </li>
+	 <li>
+	 	<a href="http://www.autodesk.com/products/inventor/overview" target="_blank">Autodesk Inventor</a>
+	 </li>
+	 <li>
+	 	<a href="http://www.123dapp.com/design" target="_blank">Autodesk 123D Design</a>
+	 </li>
+	 <li>
+	 	<a href="http://www.sketchup.com/" target="_blank">Trimble Sketchup</a>
+	 </li>
+	 <li>
+	 	<a href="https://www.tinkercad.com/" target="_blank">Tinkercad</a>
+	 </li>
+	 <li>
+		<a href="http://goinkscape.com/" target="_blank">Inkscape tutorial and tips</a>
+	 </li>
+	 <li>
+		<a href="https://www.youtube.com/watch?v=WDvmyS7Kg5Y" target="_blank">How to Convert a jpeg Image into a Vector Image Using Inkscape - Inkscape Tutorial</a>
+	 </li>
+	 <li>
+	 	<a href="http://www.lynda.com/">Lynda.com</a>'s tutorial in Autodesk Inventor, 123D Design, Sketchup.
+
+	
+	<p>
+    <!-- End of your content -->
+
+    </div> <!-- /container -->
+
+	<!-- footer -->
+    
+    <footer id="footer">
+        <p id="cclicense">
+                </p>
+        <p class="license">
+        Theme: <a href="https://github.com/openp2pdesign/FabAcademy_Template">Fab Academy Template</a> by <a href="http://openp2pdesign.org">Massimo Menichinelli</a> <br>
+        Based on <a href="http://getbootstrap.com/">Twitter Bootstrap</a>+<a href="http://jquery.com/">JQuery</a>+<a href="https://code.google.com/p/google-code-prettify/">google-code-prettify</a>+<a href="http://jmblog.github.io/color-themes-for-google-code-prettify/github/">GitHub theme for google-code-prettify</a>+<a href="https://code.google.com/p/jsc3d/">JSC3D</a>+<a href="https://github.com/thegrubbsian/jquery.ganttView">jquery.ganttView</a>.
+        </p>
+    </footer>
+    
+
+	<!-- Do not touch this! -->
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="media/jquery-1.9.1.min.js"></script>
+    
+    <!-- Syntax Highlighter -->
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js">
+    </script>
+    <!-- From https://github.com/jmblog/color-themes-for-google-code-prettify -->
+    <link href="media/github.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript">
+	  !function ($) {
+		$(function(){
+		  window.prettyPrint && prettyPrint()   
+		})
+	  }(window.jQuery)
+	</script>
+	
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="bootstrap/js/ie10-viewport-bug-workaround.js"></script>
+
+  </body>
+</html>

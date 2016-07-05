@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Yue Siew Chin">
+    <link rel="icon" href="media/favicon.ico">
+
+    <title>Fab Academy 2016 | Yue Siew Chin | Exercise 07</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="media/fabacademy.css" rel="stylesheet">
+    
+    <!-- 3D files viewer -->
+    <script type="text/javascript" src="media/jsc3d_ie.min.js"></script>
+	<script type="text/javascript" src="media/jsc3d.min.js"></script>
+    <script type="text/javascript" src="media/jsc3d.webgl.js"></script>
+    <script type="text/javascript" src="media/jsc3d.touch.js"></script>
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="bootstrap/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="bootstrap/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- Load the menu file -->
+    <script>
+	function menu() {
+					  $('#exercises').load("exercises-menu.html");
+					  $('#project').load("project-menu.html");
+					  $('#cclicense').load("license.html");
+					  }
+	</script>
+
+  </head>
+
+  <body onload="menu()">
+
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">Home</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="about.html">About</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Exercises <span class="caret"></span></a>
+              <ul id="exercises" class="dropdown-menu" role="menu">
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Final Project <span class="caret"></span></a>
+              <ul id="project" class="dropdown-menu" role="menu">
+              </ul>
+            </li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container">
+    	
+	<!-- Insert your content here below! -->
+
+
+    <h2><b>Exercise 07 Computer-Controlled Machining</b></h2>
+    
+  <p><a href="http://archive.fabacademy.org/archives/2016/master/videos/03-09/index.html" target="_blank">
+  <button type="button" class="btn btn-primary btn">This week's Lecture</button></a><br>
+
+  <h3>Requirement</h3>
+	
+	<ul>
+	 <li>
+		Make something <b>BIG</b> on a CNC machine. 
+	 </li>
+	</ul>
+	
+
+	<h3>Introduction</h3>
+
+	<p>This topic, make something big, seems extremely open-ended and free-to-explore. I was told by the local instructor, that we need to use computer to generate the design, and we are not supposed to use nails, screws or glue to put the parts together. Because there is such a restriction, I cannot just make something simply using a table saw or bend saw from the wood workshop. I have decided to make something simple, a stool. Below are some ideas I have found on the internet. 
+
+    <ul>
+    <li>
+      <a href="https://www.youtube.com/watch?v=1oVREdyD40g" target="_blank">Folding Stool - 3D CAD rendered video showing the construction of a folding stool</a>
+    </li>
+    <li>
+      <a href="http://www.craftsmanspace.com/free-projects/folding-stool-plan.html" target="_blank">Folding stool plan</a>
+    </li>
+    <li>
+      <a href="http://howaboutorange.blogspot.sg/2014/04/how-to-make-folding-camp-stool.html" target="_blank">How to make a folding camp stool</a>
+    </li>
+    <li>
+      <a href="http://thesorteddetails.blogspot.sg/2011/08/folding-step-stool-free-plan.html" target="_blank">Folding Step Stool</a>
+    </li>
+    <li>
+      <a href="http://internetsiao.com/wooden-foldable-chair-folds-extremely-flat/" target="_blank">Wooden Foldable Chair Folds Extremely Flat</a>
+    </li>
+    <li>
+      <a href="http://paleotool.com/furniture/" target="_blank">Furniture and Woodwork</a>
+    </li></ul><br>
+
+ 
+  <h3>Difficulty in designing</h3>
+
+  <p>I recalled having a hard time in week 3 trying to draw a parametric 2D design for the laser cutter. This week's assignment is quite similar to that. But by now, I have forgotten most of the things I learned about inventor and inkscape. And the most difficult issue I faced was how to derive the precision in measuring and drawing the design so that when the pieces are put together they can fit nicely. That was too mind-boggling for me, and I have difficulty imagining 2D and 3D models. There were not much instructional videos on making digital fabrication joints with precisions. Here are some guides and tutorials I found useful.</p>
+
+  <ul>
+    <li>
+      <a href="https://www.youtube.com/watch?v=_PfoMhFJXfk" target="_blank">Ben Heck’s CNC Router Tutorial</a>
+    </li>
+    <li>
+      <a href="https://www.youtube.com/watch?v=A1FIl5Eq4PQ" target="_blank">Designing a Laser Cut Tabbed Box Using Inkscape</a>
+    </li>
+    <li>
+      <a href="http://makezine.com/2012/04/13/cnc-panel-joinery-notebook/" target="_blank">CNC Panel Joinery Notebook</a>
+    </li>
+    <li>
+      <a href="http://www.instructables.com/id/Simple-knock-down-stool-made-from-plywood-flat-pa/" target="_blank">Simple knock down stool made from plywood (flat pack) </a>
+    </li>
+    </ul><br>
+
+
+  <h3>Decided on a design</h3>
+ 
+  <p>Initially, I had thought of making a folding stool but I quickly gave up the idea because it was too complicated for my brains. I decided on a simple and plain stool.I have decided to pick <a href="http://www.instructables.com/id/Simple-knock-down-stool-made-from-plywood-flat-pa/" target="_blank">this design</a> and try to replicate it.<br>
+
+    These are the measurement I have planned out:</p>
+
+    <ul><li>Seat: 420 x 340mm</li>
+      <li>Front & back legs: 420 x 450mm</li>
+      <li>Left & right legs: 340 x 450mm</li>
+      <li>Angle of inclination: 5degree</li>
+      <li>Length of slots on seat: 130 mm</li>
+      <li>Width of each legs: 75mm</li>
+      <li>Height of inside space between each pair of legs: 380mm</li>
+    </ul>
+
+  <p class="pic"><img src="photo/07_chair_design.jpg" width="500">
+  <legend>Design of chair I hope to replicate</legend>
+  </p>
+
+  <h3>Working on Inkscape</h3>
+
+  <p>The reason why I used inkscape to craft my chair was because I was unfamiliar with Inventor. I have forgotten a lot of what I've learnt from tutorial videos back in week 1 and 2. A classmate suggested using sketchup. I tried for a while and gave up too. I was really having mental block and couldn't figure out how to draw something so simple.</p>
+
+  <div class="container"><center>
+      <img src="photo/07_inkscape01.jpg" class="img-thumbnail" width="300">
+      <img src="photo/07_inkscape02.jpg" class="img-thumbnail" width="300">
+      <img src="photo/07_inkscape03.jpg" class="img-thumbnail" width="300">
+      <img src="photo/07_inkscape04.jpg" class="img-thumbnail" width="300">
+      <img src="photo/07_inkscape05.jpg" class="img-thumbnail" width="300">
+      <img src="photo/07_inkscape06.jpg" class="img-thumbnail" width="300">
+      <img src="photo/07_inkscape08.jpg" class="img-thumbnail" width="300">
+      <img src="photo/07_inkscape09.jpg" class="img-thumbnail" width="300">
+      <legend>Designing the chair on inkscape</legend></center>
+  </div><br><br>
+
+  <p>Inkscape was comparatively easier. So I tried doing it and was able to make all legs. However, I got stuck again and couldn't figure out how to measure out the 4 slots on the seat accurately. It was not helpful that I do not have experience as a designer or engineer. If I could have someone help me step through the thinking process, I would be able to learn faster. <br><br>
+
+  Because I was running out of time, I could not spend time on designing, so I have decided to move on and fall back on the <a href="http://www.instructables.com/file/FQ8LK7BGZKGLF1X/" target="_blank">design file</a> that was made available on the website where I downloaded the design. I used that as the base to adjust the thickness and joint cuts.</p><br>
+
+
+  <h3>CNC Routing Process</h3>
+
+  <p>The CNC router we have in Fablab @ SP is the <a href="http://www.signvec.com/product.php?cid=1&pid=74" target="_blank">SK2020</a>. We are using 8 x 4 feet plywood for our project. Thickness of the material is 11.7mm. A simple fitting test done by my classmate shows that <b>11.5mm</b> would be a good press-fit setting to use.</p>
+
+  <div class="container"><center>
+      <img src="photo/07_plywood.jpg" class="img-thumbnail" width="400">
+      <img src="photo/07_thickness.jpg" class="img-thumbnail" width="400">
+      <img src="photo/07_fitting_test.jpg" class="img-thumbnail" width="400">
+  </div><br>
+
+  <p>I was neither familiar in using MasterCam to finetune and simulate the routing process nor operating the SK2020 CNC router. Many thanks to my colleague, Tham, for his invaluable help on this week's assignment. </p><br>
+
+  <p>Generating Toolpath:
+    <ul> 
+      <li>Machine Type - Mill (Default)</li>
+      <li>Toolpath - Contours</li>
+      <li>Check "Absolute" for Clearance, Retract, Feed Plane, Top of Stock and Depth</li>
+      <li>Thickness of plywood is set at 11.5mm</li>
+      <li>5 passes needed to route to cut through the material </li>
+      <li>Select G1 to generate gcode</li>  
+      <li>Launch JG application to convert your nc file into jg because that is the format SK2020 understands.</li>
+    </ul>
+  </p>
+
+  <p class="pic"><img src="photo/07_mastercam.jpg" width="600">
+    <legend>Generating toolpath for CNC Milling</legend>
+    <img src="photo/07_cnc.jpg" width="400">
+    <legend>Open jg file and start milling</legend></p>
+  
+
+  <center>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/IOnqRmEbk7k" frameborder="0" allowfullscreen></iframe></center><br>
+
+  <div class="container"><center>
+      <img src="photo/07_after_milling.jpg" class="img-thumbnail" width="400">
+      <img src="photo/07_chair_legs_only.jpg" class="img-thumbnail" width="400">
+      <img src="photo/07_chair_done.jpg" class="img-thumbnail" width="400">
+      <img src="photo/07_chair_parts.jpg" class="img-thumbnail" width="300">
+      <legend>Assembly of the pieces to build the chair</legend></center>
+  </div><br><br>
+
+  <h3>Reflections</h3>
+
+  <p>I forgot to make the dog-bone edges in the slot of the seat, and ended up having to chisel off about 2mm of each of the sides of the joints to fit the slot. I was not satisfied with the way things turned out this week, but I sure know more of myself and have a better understanding of my weaknesses. I really hope I can revisit this topic again after I'm done with the course, to work on where I was lacking. For now, I have to leave this as it is and move on. </p><br>
+
+  <h3>Download Week 7 work files</h3>
+
+  <ul>
+    <li><a href="workfiles\wk7\07_mystool.svg" target="_blank">07_mystool.svg</a></li>
+    <li><a href="workfiles\wk7\top legs.jg">JG file</a></li>
+  </ul><br>
+
+
+    <h3>References</h3>
+  <ul>
+    <li>
+      <a href="https://www.youtube.com/watch?v=1oVREdyD40g" target="_blank">Folding Stool - 3D CAD rendered video showing the construction of a folding stool</a>
+    </li>
+    <li>
+      <a href="http://www.craftsmanspace.com/free-projects/folding-stool-plan.html" target="_blank">Folding stool plan</a>
+    </li>
+    <li>
+      <a href="http://www.instructables.com/id/Simple-knock-down-stool-made-from-plywood-flat-pa/" target="_blank">Simple knock down stool made from plywood (flat pack)</a>
+    </li>
+    
+    
+	</ul><br>
+
+
+  
+
+
+	
+    <!-- End of your content -->
+
+    </div> <!-- /container -->
+
+	<!-- footer -->
+    
+    <footer id="footer">
+        <p id="cclicense">
+                </p>
+        <p class="license">
+        Theme: <a href="https://github.com/openp2pdesign/FabAcademy_Template">Fab Academy Template</a> by <a href="http://openp2pdesign.org">Massimo Menichinelli</a> <br>
+        Based on <a href="http://getbootstrap.com/">Twitter Bootstrap</a>+<a href="http://jquery.com/">JQuery</a>+<a href="https://code.google.com/p/google-code-prettify/">google-code-prettify</a>+<a href="http://jmblog.github.io/color-themes-for-google-code-prettify/github/">GitHub theme for google-code-prettify</a>+<a href="https://code.google.com/p/jsc3d/">JSC3D</a>+<a href="https://github.com/thegrubbsian/jquery.ganttView">jquery.ganttView</a>.
+        </p>
+    </footer>
+    
+
+	<!-- Do not touch this! -->
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="media/jquery-1.9.1.min.js"></script>
+    
+    <!-- Syntax Highlighter -->
+    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js">
+    </script>
+    <!-- From https://github.com/jmblog/color-themes-for-google-code-prettify -->
+    <link href="media/github.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript">
+	  !function ($) {
+		$(function(){
+		  window.prettyPrint && prettyPrint()   
+		})
+	  }(window.jQuery)
+	</script>
+	
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="bootstrap/js/ie10-viewport-bug-workaround.js"></script>
+
+  </body>
+</html>
