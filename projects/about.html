@@ -8,7 +8,7 @@
     <meta name="author" content="Yue Siew Chin">
     <link rel="icon" href="media/favicon.ico">
 
-    <title>Chin's Projects</title>
+    <title>Fab Academy 2016 | Yue Siew Chin | About</title>
 
     <!-- Bootstrap core CSS -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -35,6 +35,7 @@
     <!-- Load the menu file -->
     <script>
 	function menu() {
+					  $('#exercises').load("exercises-menu.html");
 					  $('#project').load("project-menu.html");
 					  $('#cclicense').load("license.html");
 					  }
@@ -60,7 +61,12 @@
           <ul class="nav navbar-nav">
             <li><a href="about.html">About</a></li>
             <li class="dropdown">
-             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Projects <span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Exercises <span class="caret"></span></a>
+              <ul id="exercises" class="dropdown-menu" role="menu">
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Final Project <span class="caret"></span></a>
               <ul id="project" class="dropdown-menu" role="menu">
               </ul>
             </li>
@@ -73,59 +79,24 @@
     <div class="container">
 
 	<!-- Insert your content here below! -->
+      
+      
+        <h2><b>About</b></h2>
+        <p class="pic">
+        <img src="photo/01_01.jpg" width="300">
+		<legend>Me posing with a DSLR blocking my face.</legend>
+		</p>
+      	
+      	<p>
+        I am a technical support officer in the school of Architecture and the Built Environment in Singapore Polytechnic. My scope of work includes IT hardware and software support, photography, videography, 3D printing and poster printing. Through this course, I hope to acquire the necessary multi-disciplinary skills so that I can valueadd my organization. My hobbies include watching Japanese drama and doing dip-pen calligraphy. On my day-offs, I enjoy reading a book leisurely in a cafe.
+        <br><br>
+        Email: <a href="mailto:yuesiewchin@sp.edu.sg">yuesiewchin@sp.edu.sg</a>
+        <br>
+        Contact: +65 6772 1148
 
-      <div class="jumbotron" style="background-color:#ffffcc">
-        <center>
-            <img src="photo/00_fablabsp.png" height="110">
-            <h2>Chin's Fab Projects</h2>
-        </center>
-      </div>
+        </p>
+	  
 
-        <h2> Trying to <font color="red">make</font> something</h2>
-        <p>
-        I attended the Fab Academy in 2016 and have been seeking opportunities to brush up my skills in fabrication. <a href="http://fabacademy.org/diploma/">Fab Academy 2016</a> gives me the opportunity to. Well, the saying goes, you will never know if you have never tried. Being in the education sector I see the importance of life-long learning and exploring new things excites me. I am glad to have embarked on this course. Join me as I take you through my learning journey in trying to make almost anything. 
-        </p><br>
-
-        <h2>Projects</h2><br>
-            <p><a class="btn btn-primary" href="http://yoruichin.github.io/fab/156/" target="_blank" role="button">My Fab Academy Project Page &raquo;</a>
-            <p>This is the project journal I kept during the 6 months of Fab Academy course in 2016.</p><br>
-
-            <p><a class="btn btn-primary" href="project01.html" target="_blank" role="button">Fab 12 Conference & Symposium &raquo;</a> 
-            <p>I have the privilege of attending Fab 12 together with 6 other colleagues from Singapore Polytechnic. This conference was held on 8-14 Aug 2016, in Shenzhen, China. </p><br>
-
- <!--           <p><a class="btn btn-primary" href="project01.html" target="_blank" role="button">Creating a Github page &raquo;</a></p>
-            <p><a class="btn btn-primary" href="exercise17.html" target="_blank" role="button">Pencil Puzzle and illusion &raquo;</a></p>
-            <p><a class="btn btn-primary" href="project02.html" target="_blank" role="button">CNC Routing with Mastercam &raquo;</a></p>
-            <p><a class="btn btn-primary" href="project03.html" target="_blank" role="button">Mechanical Design &raquo;</a></p>
-            <p><a class="btn btn-primary" href="project04.html" target="_blank" role="button">Electronics Design &raquo;</a></p>
-            <a class="btn btn-primary" href="exercise19.html" target="_blank" role="button">Final Project Presentation &raquo;  </a> 
-          
-          <br>
-            
-        <br><br>  
-       </div>
-        <div class="col-lg-6">
-          <h2>Group Project</h2>
-          <br>
-        <p><a class="btn btn-primary" href="mtm_grp2/index.html" target="_blank" role="button">MTM Group Page &raquo;</a></p><br><br>
-        <h2>Final Project</h2>
-        <p><a class="btn btn-primary" href="project01.html" target="_blank" role="button">Project Proposal &raquo;</a></p>
-        <p><a class="btn btn-primary" href="exercise17.html" target="_blank" role="button">Project Planning &raquo;</a></p>
-        <p><a class="btn btn-primary" href="project02.html" target="_blank" role="button">Project Documentation &raquo;</a></p>
-        <p><a class="btn btn-primary" href="project03.html" target="_blank" role="button">Mechanical Design &raquo;</a></p>
-        <p><a class="btn btn-primary" href="project04.html" target="_blank" role="button">Electronics Design &raquo;</a></p>
-        <a class="btn btn-primary" href="exercise19.html" target="_blank" role="button">Final Project Presentation &raquo;  </a>-->
-	<br><br>
-    My projects are supported by:
-    <br><br>
-
-    <table style="width:100%">
-    <tr>
-        <td><a href="http://www.sp.edu.sg" target="_blank"><img src="photo/00_sp.png" width= "200"></a></td>  
-        <td><a href="http://www.sp.edu.sg/wps/portal/vp-spws/schabe" target="_blank"><img src="photo/00_ABE.png" width= "260"></a></td>
-        <td><a href="https://www.fablabs.io/fablabsp" target="_blank"><img src="photo/00_fablabsp.png" width="200"></a>
-    </tr>
-    </table>
       
     <!-- End of your content -->
 
@@ -135,7 +106,7 @@
     
     <footer id="footer">
         <p id="cclicense">
-        </p>
+                </p>
         <p class="license">
         Theme: <a href="https://github.com/openp2pdesign/FabAcademy_Template">Fab Academy Template</a> by <a href="http://openp2pdesign.org">Massimo Menichinelli</a> <br>
         Based on <a href="http://getbootstrap.com/">Twitter Bootstrap</a>+<a href="http://jquery.com/">JQuery</a>+<a href="https://code.google.com/p/google-code-prettify/">google-code-prettify</a>+<a href="http://jmblog.github.io/color-themes-for-google-code-prettify/github/">GitHub theme for google-code-prettify</a>+<a href="https://code.google.com/p/jsc3d/">JSC3D</a>+<a href="https://github.com/thegrubbsian/jquery.ganttView">jquery.ganttView</a>.
@@ -150,8 +121,7 @@
     <script src="media/jquery-1.9.1.min.js"></script>
     
     <!-- Syntax Highlighter -->
-    <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
-    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js">
+    <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js?skin=desert">
     </script>
     <!-- From https://github.com/jmblog/color-themes-for-google-code-prettify -->
     <link href="media/github.css" type="text/css" rel="stylesheet">
